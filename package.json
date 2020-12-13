@@ -1,5 +1,5 @@
 {
-  "name": "webpack-starter-kit",
+  "name": "team-project-olx",
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
@@ -17,7 +17,7 @@
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mobijam/team-project-12_OLX"
+    "url": "https://github.com/luxplanjay/webpack-starter-kit/issues"
   },
   "homepage": " https://mobijam.github.io/team-project-12_OLX/",
   "devDependencies": {
@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "handlebars": "^4.7.6"
+    "handlebars": "^4.7.6",
+    "material-design-icons": "^3.0.1"
   }
 }
