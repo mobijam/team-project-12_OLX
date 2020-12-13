@@ -1,0 +1,18 @@
+%container {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 15px;
+  outline: 1px solid $c-accent;
+  @media screen and (min-width: $mobile) {
+    width: $mobile;
+    padding-left: 31px;
+    padding-right: 31px;
+  }
+  @media screen and (min-width: $tablet-min) {
+    width: $mobile;
+    padding: 0 22px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding: 0 20px;
+  }
+}

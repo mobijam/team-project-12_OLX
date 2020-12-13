@@ -1,0 +1,75 @@
+main {
+  .container {
+    @media screen and (width: $mobile) {
+      position: relative;
+    }
+  }
+}
+.js-categories {
+  margin-top: 10px;
+
+  .categories-item {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 50px;
+    border-bottom: 1px solid red; //#e2e3e5;
+    &:last-child {
+      margin-bottom: 60px;
+      border-bottom: none;
+    }
+  }
+}
+.mobile-create-ad-btn {
+  display: none;
+  @media screen and (max-width: $mobile) {
+    display: inline;
+  }
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  border: none;
+  padding: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.js-page-list {
+  display: flex;
+  align-items: center;
+  margin-bottom: 60px;
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .js-page-number {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.42;
+    text-align: center;
+    letter-spacing: 0.02em;
+
+    background-color: $c-white;
+
+    width: 60px;
+    height: 60px;
+    padding: 0px;
+    margin-right: 1px;
+
+    @media screen and (max-width: $mobile) {
+      width: 50px;
+      height: 50px;
+    }
+    &:hover,
+    &:focus {
+      color: $c-white;
+      background-color: $c-black;
+      cursor: pointer;
+    }
+
+    &.active {
+      color: $c-white;
+      background-color: $c-black;
+    }
+  }
+}

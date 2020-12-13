@@ -1,0 +1,30 @@
+<ul class="cardset">
+  {{#each this}}
+  <li class="cardset__item">
+    <a href="" class="cardset__link">
+      <picture class="cardset__picture">
+        <img class="cardset__image" srcset="./images/Goods-image@1x.png 352w, ../images/Goods-image@2x.png 704w "
+          sizes="(min-width: 1280px) 25vw,(min-width: 768px) 50vw, (min-width: 480px) and (orientation: landscape) 50vw, 100vw"
+          src="../images/Goods-image@1x.png" alt="{{tags}}" />
+        <!-- src="{{image}}" alt="{{name}}" /> -->
+      </picture>
+      <div class="cardset__description">
+        <h4 class="cardset__title">{{title}}</h4>
+        <p><span class="cardset__price del"><span class="cardset__price old">{{oldPrice}}</span></span><span
+            class="cardset__price new">{{price}}</span></p>
+      </div>
+      <div class="cardset__overlay">
+        <div class="icons-container">
+          <span class="material-icons cardset__icons">favorite_border</span>
+        </div>
+        <div class="icons-container">
+          <span class="material-icons cardset__icons">create</span>
+        </div>
+        <div class="icons-container">
+          <span class="material-icons cardset__icons">fullscreen</span>
+        </div>
+      </div>
+    </a>
+  </li>
+  {{/each}}
+</ul>

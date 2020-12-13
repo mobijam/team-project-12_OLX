@@ -1,0 +1,44 @@
+html {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  background: $c-bg-main-grey;
+  color: $c-black;
+  font-family: $Roboto;
+  font-weight: $normal;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  // object-fit: none;
+}
+svg {
+  display: block;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+.no-scroll {
+  overflow: hidden;
+  width: 100%;
+}

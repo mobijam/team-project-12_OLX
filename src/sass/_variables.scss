@@ -1,0 +1,45 @@
+/* colors*/
+
+$c-white: #ffffff;
+$c-black: #000000;
+$c-logo-black: #000000;
+$c-accent: #ff6b09;
+
+// background Pop-Up / modal windows
+$c-bg-grey: #f5f6fb;
+
+// background all main section
+$c-bg-main-grey: #e5e5e5;
+
+// input
+$c-input-grey: #bbbbbb;
+
+// overlay
+$c-overlay: rgba(0, 0, 0, 0.7);
+
+/* shadows */
+
+$shade: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
+/* fonts */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+$Montserrat: "Montserrat", "Open Sans", sans-serif;
+$Roboto: "Roboto", "Open Sans", sans-serif;
+$normal: 400;
+$medium: 500;
+$bold: 700;
+
+/* dewice-width */
+
+$mobile: 320px;
+$mobile-max: 767px;
+$tablet-min: 768px;
+$tablet-max: 1279px;
+$desktop: 1280px;
+
+/* transition */
+
+$transition: 500ms cubic-bezier(0.4, 0, 0.2, 1);

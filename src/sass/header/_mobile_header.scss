@@ -1,0 +1,39 @@
+.mobile-header {
+  @media screen and (min-width: $tablet-min) {
+    display: none;
+  }
+}
+.mobile-upper-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mobile-menu-button {
+  border: none;
+  background-color: transparent;
+  padding: 25px;
+  margin: 0;
+  cursor: pointer;
+
+  .menu-close {
+    display: none;
+  }
+
+  &.is-open .menu-close {
+    display: block;
+  }
+  .menu-open {
+    display: block;
+  }
+  &.is-open .menu-open {
+    display: none;
+  }
+  &:hover,
+  &:focus {
+    background: $c-accent;
+  }
+
+  @media screen and (max-width: $tablet-min) {
+    display: inline-flex;
+  }
+}

@@ -1,0 +1,47 @@
+.categories-item {
+  .category-header {
+    display: flex;
+    // justify-content: space-between;
+    align-items: center;
+  }
+  .button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+    &.forward {
+      margin-left: auto;
+    }
+  }
+  .button:hover,
+  .button:focus {
+    background: $c-accent;
+  }
+}
+.category-name {
+  font-family: $Montserrat;
+  color: $c-black;
+  font-weight: $bold;
+  font-size: 12px;
+  line-height: 1.25px;
+
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 0;
+  margin-bottom: 0;
+  margin-left: 28px;
+  margin-right: 16px;
+}
+.show-total {
+  font-family: $Montserrat;
+  font-weight: $normal;
+  font-size: 12px;
+  line-height: 1.25px;
+
+  letter-spacing: 0.06em;
+  text-decoration-line: underline;
+
+  color: $c-accent;
+  background: none;
+  border: none;
+}

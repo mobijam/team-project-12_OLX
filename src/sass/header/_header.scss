@@ -1,0 +1,234 @@
+header {
+  border-bottom: 1px solid red; //  #e2e3e5
+
+  .upper-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.navigation-menu {
+  display: flex;
+  border-top: 1px solid red; //  #e2e3e5
+  border-right: 1px solid red;
+
+  width: 100%;
+
+  .js-nav-menu {
+    @media screen and (max-width: $desktop) {
+      display: none;
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 17px 0;
+
+    margin-right: 0px;
+  }
+  .js-nav-menu-item {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    height: 100%;
+    &:not(:last-child) {
+      margin-right: 42px;
+    }
+  }
+}
+
+.action-buttons {
+  display: flex;
+
+  .dropdown-menu {
+    padding: 20px;
+    background: #f5f6fb;
+    box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.15);
+    // left: 17px;
+
+    .btn {
+      text-align: left;
+      padding: 10px 0;
+      width: 100%;
+    }
+  }
+  .btn {
+    width: 188px;
+  }
+  .btn[data-action='register'] {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 25px 0 25px 34px;
+    border: none;
+    svg {
+      margin-right: 10px;
+      @media screen and (min-width: $desktop) {
+        display: none;
+      }
+    }
+    @media screen and(max-width: $desktop) {
+      padding: 0;
+      width: 60px;
+      span {
+        display: none;
+      }
+    }
+  }
+}
+
+.btn {
+  font-family: $Roboto;
+  border: none;
+  color: $c-black;
+  font-size: 12px;
+  line-height: 1.67;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  background-color: inherit;
+  padding: 29px 15px;
+  cursor: pointer;
+
+  @media screen and (min-width: $tablet-min) {
+    font-size: 10px;
+    line-height: 1.2;
+  }
+  @media screen and (min-width: $desktop) {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.67px;
+
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+  &:hover,
+  &:focus {
+    color: $c-white;
+    background-color: $c-accent;
+  }
+
+  &.reset {
+    display: flex;
+    align-items: center;
+    // justify-content: space-between;
+
+    font-family: $Montserrat;
+    color: $c-black;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.25;
+    letter-spacing: 0.03em;
+
+    width: 188px;
+    padding: 22px 5px;
+    margin-left: auto;
+
+    svg {
+      margin-right: 11px;
+    }
+  }
+
+  &.search {
+    padding: 25px;
+
+    &:hover,
+    &:focus {
+      fill: $c-white;
+      border-radius: 50%;
+    }
+  }
+  &.nav-mobile {
+    font-family: $Roboto;
+    color: $c-black;
+    font-weight: $bold;
+    font-size: 14px;
+    line-height: 1.14;
+    text-align: left;
+    letter-spacing: 0.02em;
+
+    padding: 27px 24px 27px 34px;
+    border: none;
+    width: 100%;
+  }
+  &.account {
+    font-family: $Roboto;
+    font-weight: $normal;
+    font-size: 14px;
+    line-height: 1.42;
+
+    letter-spacing: 0.02em;
+    padding: 20px 0 20px 34px;
+    color: $c-black;
+  }
+  .checked {
+    color: $c-white;
+    background: $c-accent;
+  }
+}
+
+.logo {
+  @media screen and (max-width: $mobile-max) {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+  @media screen and (min-width: $tablet-min) {
+    margin-left: auto;
+    margin-right: 10%;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-right: 20%;
+  }
+
+  font-family: $Montserrat;
+  color: $c-black;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.22;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  // margin-left: 225px;
+}
+.desktop-menu {
+  display: none;
+  @media screen and (min-width: $tablet-min) {
+    display: block;
+  }
+}
+.menu-button {
+  padding: 22px;
+  border-right: 1px solid red;
+  background: transparent;
+  text-align: center;
+  border: none;
+
+  margin: 0;
+  cursor: pointer;
+  @media screen and (min-width: $desktop) {
+    display: none;
+  }
+  .menu-close {
+    display: none;
+  }
+
+  &.is-open .menu-close {
+    display: block;
+  }
+  .menu-open {
+    display: block;
+  }
+  &.is-open .menu-open {
+    display: none;
+  }
+  &:hover,
+  &:focus {
+    background: $c-accent;
+  }
+
+  @media screen and (max-width: $desktop) {
+    display: inline-flex;
+  }
+}
