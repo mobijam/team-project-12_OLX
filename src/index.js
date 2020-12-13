@@ -1,7 +1,7 @@
 import './sass/main.scss';
 import './js/storage';
 import './js/pnotify';
-import './js/search-query';
+// import './js/search-query';
 // import './js/ivanov-modules';
 // import './js/oksana-favourites';
 // import './js/oksana-product';

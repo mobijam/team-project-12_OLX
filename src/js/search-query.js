@@ -1,6 +1,6 @@
 // connect imports from pertials to be used
 
-import card from '../template/item-card.hbs';
+import card from '../templates/item-card.hbs';
 import API from './fetch-query';
 import { pushError, removeError } from './pnotify';
 
