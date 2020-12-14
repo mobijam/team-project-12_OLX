@@ -1,6 +1,6 @@
-// import { load, save, remove } from './storage';
-// import { pushError, removeError } from './pnotify';
-// import fetchFunctions from './fetchMe';
+import { load, save, remove } from './storage';
+import { pushError, removeError } from './pnotify';
+
 
 const authBackdrop = document.querySelector('.authorization-backdrop');
 const googleAuthBtn = document.querySelector('.google-auth');

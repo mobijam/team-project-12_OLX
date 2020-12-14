@@ -1,28 +1,27 @@
+// styles
 import './sass/main.scss';
+import 'material-design-icons/iconfont/material-icons.css';
+// modules
 import './js/storage';
 import './js/pnotify';
 import './js/search-query';
+import './js/menu_mobile';
+import './js/modal';
+import './js/authorization';
 // import './js/oksana-favourites';
 // import './js/oksana-product';
 
-import './js/menu_mobile';
-import './js/modal';
-import './js/main.js';
-import 'material-design-icons/iconfont/material-icons.css';
-import './js/authorization';
-// import './js/vi-getProductsGallery';
-
+// templates
 import categories from './templates/categories.hbs';
 import mobileFilters from './templates/mobile_filters.hbs';
 import filters from './templates/filters.hbs';
-import register from './js/register';
 import FetchApi from './js/fetchAPI';
 
-const flatMapDeep = require('lodash.flatmapdeep');
-
+// DOM-elements selection
 const categoriesList = document.querySelector('.js-categories');
 const filtersList = document.querySelector('.js-nav-menu');
 const mobileFiltersList = document.querySelector('.mobile-js-nav-menu');
+
 
 const filtersAndCategories = new FetchApi();
 
