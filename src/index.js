@@ -1,18 +1,16 @@
 import './sass/main.scss';
 import './js/storage';
 import './js/pnotify';
-// import './js/search-query';
+import './js/search-query';
 // import './js/oksana-favourites';
 // import './js/oksana-product';
 
 import './js/menu_mobile';
 import './js/modal';
-
-//dima
 import './js/main.js';
 import 'material-design-icons/iconfont/material-icons.css';
 import './js/authorization';
-
+import './js/vi-getProductsGallery';
 
 import categories from './templates/categories.hbs';
 import mobileFilters from './templates/mobile_filters.hbs';

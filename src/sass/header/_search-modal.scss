@@ -1,0 +1,143 @@
+.search-container {
+  background-color: #ff6b09;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    padding-left: 18.5px;
+    padding-right: 20px;
+    padding-bottom: 60px;
+    padding-top: 43px;
+
+    max-width: 290px;
+    max-height: 152px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 94px;
+    padding-top: 93px;
+
+    max-width: 650px;
+    max-height: 230px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding-left: 105px;
+    padding-right: 105px;
+    padding-bottom: 94px;
+    padding-top: 93px;
+
+    max-width: 860px;
+    max-height: 230px;
+  }
+}
+
+#search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid #000000;
+  height: 43px;
+
+  color: #ffffff;
+
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    padding-left: 10.5px;
+    padding-right: 15px;
+    padding-bottom: 7px;
+    padding-top: 7px;
+
+    max-width: 251.5px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 7px;
+    padding-top: 7px;
+
+    max-width: 550px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 7px;
+    padding-top: 7px;
+
+    max-width: 650px;
+  }
+}
+
+#search-input {
+  display: inline-block;
+  caret-color: #ffffff;
+  border: transparent;
+  background-color: transparent;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #ffffff;
+
+  opacity: 0.5;
+}
+
+button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: inherit;
+  line-height: 0;
+  display: inline-block;
+}
+
+input {
+  padding: 0;
+  margin: 0;
+}
+
+.btn-close-modal {
+  position: absolute;
+
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    top: 15px;
+    right: 15px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    top: 25px;
+    right: 20px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    top: 25px;
+    right: 20px;
+  }
+}
+
+.material-icons.md-14 {
+  font-size: 14px;
+}
+.material-icons.md-18 {
+  font-size: 18px;
+}
+.material-icons.md-24 {
+  font-size: 24px;
+}
+
+.material-icons.md-dark {
+  color: rgba(0, 0, 0, 0.54);
+}
+.material-icons.md-light {
+  color: rgba(255, 255, 255, 1);
+}

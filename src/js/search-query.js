@@ -1,20 +1,19 @@
 // connect imports from pertials to be used
-
+import '../templates/search.hbs';
 import card from '../templates/item-card.hbs';
 import API from './fetch-query';
 import { pushError, removeError } from './pnotify';
 
 
-//  page elements to be operate
 
-const cardContainer = document.querySelector('.container');
-const userInput = document.getElementById('search');
+//  page elements to be operate
+const cardContainer = document.querySelector('.js-categories');
 
 // search information by user query
 
 const searchQuery = new API;
 
-function onSearch(event) {
+export function onSearch(event) {
     event.preventDefault();
     clearResult();
     searchQuery.query = event.currentTarget.elements.query.value;
@@ -45,7 +44,5 @@ function renderFoundCards(query) {
 
 // process the errors
 
-
 // add event listeners and functions' calls
-
-userInput.addEventListener('submit', onSearch);
+// document.querySelector('input[name="query"]').addEventListener('input', onSearch);
