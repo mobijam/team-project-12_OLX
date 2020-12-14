@@ -10,13 +10,15 @@ import './js/modal';
 import './js/main.js';
 import 'material-design-icons/iconfont/material-icons.css';
 import './js/authorization';
-import './js/vi-getProductsGallery';
+// import './js/vi-getProductsGallery';
 
 import categories from './templates/categories.hbs';
 import mobileFilters from './templates/mobile_filters.hbs';
 import filters from './templates/filters.hbs';
 import register from './js/register';
 import FetchApi from './js/fetchAPI';
+
+const flatMapDeep = require('lodash.flatmapdeep');
 
 const categoriesList = document.querySelector('.js-categories');
 const filtersList = document.querySelector('.js-nav-menu');
