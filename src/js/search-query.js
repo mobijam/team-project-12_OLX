@@ -1,7 +1,7 @@
 // connect imports from pertials to be used
 import '../templates/search.hbs';
 import card from '../templates/item-card.hbs';
-import API from './fetch-query';
+import FiltersApiService from './fetchAPI';
 import { pushError, removeError } from './pnotify';
 
 
@@ -11,7 +11,7 @@ const cardContainer = document.querySelector('.js-categories');
 
 // search information by user query
 
-const searchQuery = new API;
+const searchQuery = new FiltersApiService;
 
 export function onSearch(event) {
     event.preventDefault();
@@ -30,7 +30,7 @@ function clearResult() {
 }
 
 function loadCardsFromAPI() { 
-    return searchQuery.fetchData()
+    return searchQuery.fetchSearch()
         .then(renderFoundCards);
 }
 
