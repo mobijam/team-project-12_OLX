@@ -1,0 +1,293 @@
+.button {
+  display: flex;
+  align-items: center;
+
+  color: $c-black;
+  font-family: $Roboto;
+  font-size: 12px;
+  line-height: 1.67;
+  font-weight: $medium;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  background-color: transparent;
+  border: none;
+  padding: 29px 15px;
+
+  width: 188px;
+  height: 70px;
+
+  cursor: pointer;
+
+  @media screen and (min-width: $tablet-min) {
+    font-size: 10px;
+    line-height: 1.2;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 214px;
+    font-size: 12px;
+    line-height: 1.67;
+  }
+
+  &:hover,
+  &:focus {
+    color: $c-white;
+    background-color: $c-accent;
+  }
+  // &:not(.filter):hover,
+  // &:not(.filter):focus {
+  //   color: $c-white;
+  //   background-color: $c-accent;
+  // }
+
+  &.search {
+    width: 66px;
+    padding: 25px;
+    @media screen and (min-width: $tablet-min) {
+      width: 70px;
+    }
+    @media screen and (min-width: $desktop) {
+      paddding: 22px;
+      width: 72px;
+    }
+    &:hover,
+    &:focus {
+      fill: $c-white;
+      border-radius: 50%;
+    }
+  }
+
+  &.reset {
+    display: flex;
+    align-items: center;
+
+    font-family: $Montserrat;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: 0.03em;
+
+    padding: 22px 20px 22px 15px;
+    margin-left: auto;
+
+    @media screen and (min-width: $tablet-min) {
+      width: 214px;
+      padding: 22px 22px 22px 15px;
+    }
+
+    svg {
+      margin-right: 11px;
+    }
+  }
+  &.filter.active {
+    background-color: $c-accent;
+  }
+}
+
+.button.filter {
+  font-family: $Roboto;
+  color: $c-black;
+  font-weight: $bold;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  text-align: center;
+
+  padding: 15px;
+  border-radius: 10px;
+  width: 100%;
+  height: fit-content;
+
+  text-transform: capitalize;
+  cursor: pointer;
+
+  &.checked {
+    color: $c-accent;
+  }
+  // &:hover,
+  // &:focus {
+  //   color: $c-accent;
+  //   text-decoration: underline;
+  //   text-decoration-style: wavy;
+  // }
+}
+
+//Кнопки действий в хедере
+.action-buttons {
+  .button {
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    &[data-action='register'] {
+      padding: 25px 0 25px 34px;
+      width: 60px;
+
+      .account-logo {
+        margin-right: 10px;
+        @media screen and (min-width: $desktop) {
+          display: none;
+        }
+      }
+      .account-text {
+        @media screen and(min-width: $tablet-min) and (max-width: $tablet-max) {
+          display: none;
+        }
+      }
+      @media screen and (min-width: $tablet-min) {
+        padding: 25px 20px;
+      }
+      // @media screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+      //   padding: 29px 20px;
+      // }
+      @media screen and(min-width: $tablet-max) {
+        width: 214px;
+        padding: 29px 0 29px 15px;
+      }
+      &.hidden {
+        display: none;
+      }
+    }
+
+    &[data-action='account'] {
+      display: flex;
+      padding: 29px 0 29px 15px;
+
+      @media screen and (min-width: $mobile) {
+        padding: 10px 0 10px 34px;
+      }
+      @media screen and (min-width: $tablet-min) {
+        width: 60px;
+        padding: 25px 20px;
+      }
+      @media screen and (min-width: $tablet-max) {
+        width: 154px;
+        padding: 25px 18px 25px 20px;
+      }
+      .account-logo {
+        margin-right: 10px;
+      }
+      .account-text {
+        @media screen and(min-width: $tablet-min) and (max-width: $tablet-max) {
+          display: none;
+        }
+      }
+
+      &:hover ~ .dropdown-menu,
+      &:focus ~ .dropdown-menu {
+        display: block;
+      }
+      &.hidden {
+        display: none;
+      }
+    }
+
+    &[data-action='logout'] {
+      justify-content: center;
+      width: 60px;
+      border-left: 1px solid red;
+      border-right: 1px solid red;
+
+      @media screen and(max-width: $desktop) {
+        display: none;
+      }
+
+      &:hover,
+      &:focus {
+        fill: $c-white;
+      }
+      &.hidden {
+        display: none;
+      }
+    }
+  }
+  .dropdown-menu {
+    .button {
+      text-align: left;
+      padding: 10px 0;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+//Mobile-menu buttons
+.mobile-js-nav-menu {
+  .button.filter-mobile {
+    width: 100%;
+    padding-left: 34px;
+    @media screen and (min-width: $tablet-min) {
+      padding-left: 40px;
+    }
+  }
+  .button {
+    display: flex;
+    align-items: center;
+
+    font-family: $Roboto;
+    font-weight: $bold;
+    font-weight: $bold;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+
+    padding-left: 34px;
+    @media screen and (min-width: $tablet-min) {
+      padding-left: 40px;
+    }
+
+    &[data-action='account-mobile'] {
+      font-size: 14px;
+      text-align: left;
+
+      text-align: left;
+
+      width: 80%;
+
+      border: none;
+
+      .account-logo {
+        margin-right: 10px;
+      }
+    }
+    &[data-action='logout-mobile'] {
+      text-align: center;
+      padding: 29px 25px 29px 15px;
+
+      width: auto;
+    }
+    &[data-action='register-mobile'] {
+      width: 100%;
+      .account-logo {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+//Выпадающее меню
+.dropdown-menu-mobile {
+  .button {
+    font-family: $Roboto;
+    font-weight: $normal;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    padding: 10px 20px;
+    width: 100%;
+  }
+}
+
+//Кнопка добавления объявления в мобильной версии
+.create-call-mobile {
+  display: none;
+  @media screen and (max-width: $mobile) {
+    display: inline;
+  }
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  border: none;
+  padding: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
