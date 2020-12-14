@@ -1,0 +1,24 @@
+<ul class="category-list">
+{{#each this}}
+<li class="category-list item">
+    <b>{{this.category}}</b>
+    <ul class="category">
+        {{#each this}}
+        <li class="category-item">
+            <ul class="images">
+            <li class="image">
+                {{#each imageUrls}}
+                <img  src="{{this}}" alt="">
+                {{/each}}
+            </li>
+
+            </ul>
+
+            <p class="text"> {{title}}  </p>
+            <p>{{price}}</p>
+        </li>
+        {{/each}}
+    </ul>
+</li>
+{{/each}}
+</ul>

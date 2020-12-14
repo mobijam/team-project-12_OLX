@@ -8,6 +8,8 @@ import './js/search-query';
 import './js/menu_mobile';
 import './js/modal';
 
+import './js/vi-getProductsGallery';
+  
 import categories from './templates/categories.hbs';
 import mobileFilters from './templates/mobile_filters.hbs';
 import filters from './templates/filters.hbs';
