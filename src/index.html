@@ -27,22 +27,20 @@
               class="mobile-menu-button"
               aria-expanded="false"
               aria-controls="menu-container"
-              data-menu-mobile-button
-            >
+              data-menu-mobile-button>
               <svg
                 class="menu-icon"
                 width="24px"
                 height="24px"
-                aria-label="Переключатель мобильного меню"
-              >
+                aria-label="Переключатель мобильного меню">
                 <use
                   class="menu-open"
-                  href="./images/sprite_svg.svg#icon-menu"
-                ></use>
+                  href="./images/sprite_svg.svg#icon-menu">
+                </use>
                 <use
                   class="menu-close"
-                  href="./images/sprite_svg.svg#icon-close"
-                ></use>
+                  href="./images/sprite_svg.svg#icon-close">
+                </use>
               </svg>
             </button>
             <a href="./index.html" class="logo">LOGO</a>
@@ -53,18 +51,18 @@
             </button>
           </div>
         </div>
-        <div class="mobile-menu" id="menu-container" data-menu-mobile>
+
+        <!-- <div class="mobile-menu" id="menu-container" data-menu-mobile>
           <nav class="mobile-navigation-menu navbar">
             <button
               type="button"
               class="mobile-inner-menu-button"
-              data-menu-inner-button
-            >
+              data-menu-inner-button>
               <svg class="menu-icon" width="24px" height="24px">
                 <use
                   class="menu-close"
-                  href="./images/sprite_svg.svg#icon-close"
-                ></use>
+                  href="./images/sprite_svg.svg#icon-close">
+                </use>
               </svg>
             </button>
             <ul class="mobile-js-nav-menu navbar-nav">
@@ -72,8 +70,7 @@
                 <button
                   class="btn"
                   data-toggle="dropdown"
-                  data-action="mobile-register"
-                >
+                  data-action="mobile-register">
                   <svg width="20" height="20">
                     <use href="./images/sprite_svg.svg#icon-user"></use>
                   </svg>
@@ -94,7 +91,45 @@
               </li>
             </ul>
           </nav>
+        </div> -->
+
+
+      <!--dima-->
+        <div class="header_button__wrap">
+          <ul class="header_registration_identity" id="navigation" data-button>
+            <li class="header_registration_identity__item">
+          <a
+            data-modal-type="authorization"
+            data-modal="true"
+            data-hbs="7"
+            href="#"
+            class="header_registration_link"
+            >Реєстрація / Увійти</a
+          >
+          </li>
+          <li class="header_registration_identity__item">
+          <button type="button" class="header_button__perm_identity">
+            <span
+              data-modal-type="authorization"
+              data-modal="true"
+              data-hbs="7"
+              class="material-icons md-24"
+              >perm_identity</span
+            >
+          </button>
+          </li>
+        </ul>
+          <button
+            type="button"
+            class="header_button__create"
+            data-modal="true"
+            data-hbs="1"
+          >
+            Створити оголошення!
+          </button>
         </div>
+        <!--dima-->
+
         <div class="desktop-menu">
           <div class="upper-menu">
             <button class="btn search" data-modal-search>
@@ -111,12 +146,12 @@
                 aria-haspopup="true"
                 aria-expanded="false"
                 data-action="register"
-                data-modal-login
-              >
-                <span class="account-logo"
-                  ><svg width="20" height="20">
-                    <use href="./images/sprite_svg.svg#icon-user"></use></svg
-                ></span>
+                data-modal-login>
+                <span class="account-logo">
+                  <svg width="20" height="20">
+                    <use href="./images/sprite_svg.svg#icon-user"></use>
+                    </svg>
+                </span>
                 <span class="account-text">Реєстрація / Увійти</span>
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
@@ -143,22 +178,20 @@
                 class="menu-button"
                 aria-expanded="false"
                 aria-controls="menu-container"
-                data-menu-tablet-button
-              >
+                data-menu-tablet-button>
                 <svg
                   class="menu-icon"
                   width="20px"
                   height="20px"
-                  aria-label="Переключатель мобильного меню"
-                >
+                  aria-label="Переключатель мобильного меню">
                   <use
                     class="menu-open"
-                    href="./images/sprite_svg.svg#icon-menu"
-                  ></use>
+                    href="./images/sprite_svg.svg#icon-menu">
+                  </use>
                   <use
                     class="menu-close"
-                    href="./images/sprite_svg.svg#icon-close"
-                  ></use>
+                    href="./images/sprite_svg.svg#icon-close">
+                  </use>
                 </svg>
               </button>
               <ul class="js-nav-menu"></ul>
@@ -202,18 +235,12 @@
     </footer>
     <div class="backdrop is-hidden" data-modal>
       <div class="js-modal" data-modal-content>
-        <button class="button-modal-close" data-modal-close>
+        <button class="button-modal-close" data-action='modal-close'>
           <svg class="icon-close" width="24" height="24">
             <use href="./images/sprite_svg.svg#icon-close"></use>
           </svg>
         </button>
-        <h1>МОДАЛОЧКА</h1>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas,
-          eius voluptatibus. Incidunt alias, atque debitis nihil sunt, enim
-          fugiat nobis explicabo beatae ex dolores consectetur optio? Cum dicta
-          voluptates optio.
-        </p>
+        <div class="modal-form" data-modal-form></div>
       </div>
     </div>
     <script
