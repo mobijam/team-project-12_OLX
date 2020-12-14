@@ -4,18 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
-    />
+    /> -->
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
 
-    <title>Team-12-Project-OLX</title>
+    <title>JS-Project-OLX</title>
   </head>
   <body>
     <header>
@@ -46,7 +46,7 @@
               </svg>
             </button>
             <a href="./index.html" class="logo">LOGO</a>
-            <button class="btn search" data-modal-search-mobile>
+            <button class="button search" data-modal-search-mobile>
               <svg width="24px" height="24px">
                 <use href="./images/sprite_svg.svg#icon-search"></use>
               </svg>
@@ -54,7 +54,7 @@
           </div>
         </div>
         <div class="mobile-menu" id="menu-container" data-menu-mobile>
-          <nav class="mobile-navigation-menu navbar">
+          <nav class="mobile-navigation-menu">
             <button
               type="button"
               class="mobile-inner-menu-button"
@@ -67,48 +67,105 @@
                 ></use>
               </svg>
             </button>
-            <ul class="mobile-js-nav-menu navbar-nav">
+            <ul class="mobile-js-nav-menu">
               <li class="mobile-js-nav-menu-item">
-                <button
-                  class="btn"
-                  data-toggle="dropdown"
-                  data-action="mobile-register"
-                >
-                  <svg width="20" height="20">
-                    <use href="./images/sprite_svg.svg#icon-user"></use>
-                  </svg>
-                  Реєстрація / Увійти
-                </button>
-                <ul class="dropdown-menu">
-                  <li>
-                    <button class="btn account" data-action="my-calls-mobile">
-                      Мої оголошення
-                    </button>
-                  </li>
-                  <li>
-                    <button class="btn account" data-action="favorites-mobile">
-                      Обране
-                    </button>
-                  </li>
-                </ul>
+                <div class="mobile-js-nav-menu-item" data-action="auth-mobile">
+                  <button
+                    class="button"
+                    data-action="account-mobile"
+                    data-action-account-mobile
+                  >
+                    <span class="account-logo"
+                      ><svg width="20" height="20">
+                        <use
+                          href="./images/sprite_svg.svg#icon-user"
+                        ></use></svg></span
+                    >Мій кабінет
+                  </button>
+                  <button
+                    class="button"
+                    data-action="logout-mobile"
+                    data-action-logout-mobile
+                  >
+                    <svg width="20" height="20">
+                      <use href="./images/sprite_svg.svg#icon-logout"></use>
+                    </svg>
+                  </button>
+                  <ul class="dropdown-menu-mobile hidden">
+                    <li>
+                      <button
+                        class="button account"
+                        data-action="my-calls-mobile"
+                      >
+                        Мої оголошення
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        class="button account"
+                        data-action="favorites-mobile"
+                      >
+                        Обране
+                      </button>
+                    </li>
+                  </ul>
+
+                  <button
+                    class="button"
+                    data-action="register-mobile"
+                    data-modal-login-mobile
+                  >
+                    <span class="account-logo">
+                      <svg width="20" height="20">
+                        <use href="./images/sprite_svg.svg#icon-user"></use>
+                      </svg>
+                    </span>
+                    Реєстрація / Увійти
+                  </button>
+                </div>
               </li>
             </ul>
           </nav>
         </div>
         <div class="desktop-menu">
           <div class="upper-menu">
-            <button class="btn search" data-modal-search>
+            <button class="button search" data-modal-search>
               <svg width="24px" height="24px">
                 <use href="./images/sprite_svg.svg#icon-search"></use>
               </svg>
             </button>
             <a href="./index.html" class="logo">LOGO</a>
             <div class="action-buttons">
+              <!-- вернуть class hidden -->
+              <button class="button" data-action="account" data-action-account>
+                <span class="account-logo"
+                  ><svg width="20" height="20">
+                    <use
+                      href="./images/sprite_svg.svg#icon-user"
+                    ></use></svg></span
+                ><span class="account-text"> Мій кабінет</span>
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <button class="button account" data-action="my-calls">
+                    Мої оголошення
+                  </button>
+                </li>
+                <li>
+                  <button class="button account" data-action="favorites">
+                    Обране
+                  </button>
+                </li>
+              </ul>
+              <!-- Вернуть hidden -->
+              <button class="button" data-action="logout" data-action-logout>
+                <span class="account-logo"
+                  ><svg width="20" height="20">
+                    <use href="./images/sprite_svg.svg#icon-logout"></use></svg
+                ></span>
+              </button>
               <button
-                class="btn dropdown-toggle"
-                id="dropdownMenu2"
-                data-toggle="dropdown"
-                aria-haspopup="true"
+                class="button"
                 aria-expanded="false"
                 data-action="register"
                 data-modal-login
@@ -119,19 +176,12 @@
                 ></span>
                 <span class="account-text">Реєстрація / Увійти</span>
               </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <li>
-                  <button class="btn account" data-action="my-calls">
-                    Мої оголошення
-                  </button>
-                </li>
-                <li>
-                  <button class="btn account" data-action="favorites-mobile">
-                    Обране
-                  </button>
-                </li>
-              </ul>
-              <button class="btn" data-action="create-call" data-modal-create>
+
+              <button
+                class="button"
+                data-action="create-call"
+                data-modal-create
+              >
                 Створити оголошення!
               </button>
             </div>
@@ -162,7 +212,11 @@
                 </svg>
               </button>
               <ul class="js-nav-menu"></ul>
-              <button class="btn reset">
+              <button
+                class="button reset"
+                data-action-reset
+                data-action="reset"
+              >
                 <svg width="24" height="24">
                   <use href="./images/sprite_svg.svg#icon-reset"></use>
                 </svg>
@@ -181,7 +235,7 @@
           <li><button class="js-page-number">2</button></li>
           <li><button class="js-page-number">3</button></li>
         </ul>
-        <button class="mobile-create-ad-btn" data-modal-create-mobile>
+        <button class="create-call-mobile" data-modal-create-mobile>
           <svg width="50px" height="50px">
             <use href="./images/sprite_svg.svg#icon-add"></use>
           </svg>
@@ -191,7 +245,7 @@
     <footer>
       <div class="container">
         <p class="copy">
-          &copy 2020 <span class="devider">|</span> All Rights Reserved
+          &copy 2019 <span class="devider">|</span> All Rights Reserved
           <span class="devider">|</span> Developed with
           <svg width="16" height="16">
             <use href="./images/sprite_svg.svg#icon-favorite-heart"></use>
@@ -202,21 +256,23 @@
     </footer>
     <div class="backdrop is-hidden" data-modal>
       <div class="js-modal" data-modal-content>
-        <button class="button-modal-close" data-modal-close>
+        <button class="button-modal-close" data-action="modal-close">
           <svg class="icon-close" width="24" height="24">
             <use href="./images/sprite_svg.svg#icon-close"></use>
           </svg>
         </button>
         <h1>МОДАЛОЧКА</h1>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas,
-          eius voluptatibus. Incidunt alias, atque debitis nihil sunt, enim
-          fugiat nobis explicabo beatae ex dolores consectetur optio? Cum dicta
-          voluptates optio.
-        </p>
+        <div class="modal-form" data-modal-form>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas,
+            eius voluptatibus. Incidunt alias, atque debitis nihil sunt, enim
+            fugiat nobis explicabo beatae ex dolores consectetur optio? Cum
+            dicta voluptates optio.
+          </p>
+        </div>
       </div>
     </div>
-    <script
+    <!-- <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
       crossorigin="anonymous"
@@ -230,6 +286,6 @@
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
-    ></script>
+    ></script> -->
   </body>
 </html>

@@ -6,6 +6,7 @@ main {
   }
 }
 .js-categories {
+  display: block;
   margin-top: 10px;
 
   .categories-item {
@@ -20,19 +21,7 @@ main {
     }
   }
 }
-.mobile-create-ad-btn {
-  display: none;
-  @media screen and (max-width: $mobile) {
-    display: inline;
-  }
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  border: none;
-  padding: 0;
-  border-radius: 50%;
-  cursor: pointer;
-}
+
 .js-page-list {
   display: flex;
   align-items: center;
