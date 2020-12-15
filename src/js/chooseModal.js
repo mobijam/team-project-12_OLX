@@ -1,18 +1,18 @@
 import { refs } from './modal';
 import search from '../templates/search.hbs';
-import auth from '../templates/auth-form.hbs';
-import makeCall from '../templates/create-call.hbs'; 
+import auth from '../templates/authorization-modal.hbs';
+import makeCall from '../templates/create-call.hbs';
 
 export default function chooseModal() {
-  const checkType = refs.modalContent.getAttribute('action');
-  console.log(checkType);
+  const checkType = refs.modalContent.dataset.action;
   if (checkType === 'search') {
-    refs.modalForm.insertAdjacentHTML('beforeend', search());
+    refs.modalInner.insertAdjacentHTML('beforeend', search());
+    console.log('true');
   }
   if (checkType === 'login') {
-    refs.modalForm.insertAdjacentHTML('afterend', auth());
+    refs.modalInner.insertAdjacentHTML('beforeend', auth());
   }
   if (checkType === 'create') {
-    refs.modalForm.insertAdjacentHTML('afterend', makeCall());
+    refs.modalInner.insertAdjacentHTML('beforeend', makeCall());
   }
 }

@@ -1,6 +1,7 @@
 .button {
   display: flex;
   align-items: center;
+  justify-content: center;
 
   color: $c-black;
   font-family: $Roboto;
@@ -172,10 +173,10 @@
         }
       }
 
-      &:hover ~ .dropdown-menu,
-      &:focus ~ .dropdown-menu {
-        display: block;
-      }
+      // &:hover ~ .dropdown-menu,
+      // &:focus ~ .dropdown-menu {
+      //   display: block;
+      // }
       &.hidden {
         display: none;
       }
@@ -207,73 +208,6 @@
       width: 100%;
       height: auto;
     }
-  }
-}
-
-//Mobile-menu buttons
-.mobile-js-nav-menu {
-  .button.filter-mobile {
-    width: 100%;
-    padding-left: 34px;
-    @media screen and (min-width: $tablet-min) {
-      padding-left: 40px;
-    }
-  }
-  .button {
-    display: flex;
-    align-items: center;
-
-    font-family: $Roboto;
-    font-weight: $bold;
-    font-weight: $bold;
-    font-size: 14px;
-    line-height: 1.14;
-    letter-spacing: 0.02em;
-
-    padding-left: 34px;
-    @media screen and (min-width: $tablet-min) {
-      padding-left: 40px;
-    }
-
-    &[data-action='account-mobile'] {
-      font-size: 14px;
-      text-align: left;
-
-      text-align: left;
-
-      width: 80%;
-
-      border: none;
-
-      .account-logo {
-        margin-right: 10px;
-      }
-    }
-    &[data-action='logout-mobile'] {
-      text-align: center;
-      padding: 29px 25px 29px 15px;
-
-      width: auto;
-    }
-    &[data-action='register-mobile'] {
-      width: 100%;
-      .account-logo {
-        margin-right: 10px;
-      }
-    }
-  }
-}
-
-//Выпадающее меню
-.dropdown-menu-mobile {
-  .button {
-    font-family: $Roboto;
-    font-weight: $normal;
-    font-size: 14px;
-    line-height: 1.14;
-    letter-spacing: 0.02em;
-    padding: 10px 20px;
-    width: 100%;
   }
 }
 

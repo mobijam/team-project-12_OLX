@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="mobile-backdrop">
+      <div class="mobile-menu-container" id="menu-container" data-menu-mobile>
+        <div class="mobile-menu-inner"></div>
+        <button
+          type="mobile-button"
+          class="mobile-inner-menu-button"
+          data-menu-inner-button
+        >
+          <svg class="menu-icon" width="24px" height="24px">
+            <use
+              class="menu-close"
+              href="./images/sprite_svg.svg#icon-close"
+            ></use>
+          </svg>
+        </button>
+        <ul class="mobile-nav-menu">
+          <li class="mobile-nav-item">
+            <div class="mobile-account-menu" data-action="mobile-auth">
+              <button
+                class="mobile-button-account"
+                data-action="mobile-account"
+                data-action-mobile-account
+              >
+                <span class="account-logo"
+                  ><svg width="20" height="20">
+                    <use
+                      href="./images/sprite_svg.svg#icon-user"
+                    ></use></svg></span
+                >Мій кабінет
+              </button>
+              <button
+                class="mobile-button-logout"
+                data-action="mobile-logout"
+                data-action-mobile-logout
+              >
+                <svg width="20" height="20">
+                  <use href="./images/sprite_svg.svg#icon-logout"></use>
+                </svg>
+              </button>
+              <ul class="mobile-dropdown-menu hidden">
+                <li>
+                  <button
+                    class="mobile-button-calls"
+                    data-action="my-calls-mobile"
+                  >
+                    Мої оголошення
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="mobile-button-calls"
+                    data-action="favorites-mobile"
+                  >
+                    Обране
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <button
+              class="mobile-button-register"
+              data-action="register-mobile"
+              data-modal-mobile-login
+            >
+              <span class="account-logo">
+                <svg width="20" height="20">
+                  <use href="./images/sprite_svg.svg#icon-user"></use>
+                </svg>
+              </span>
+              Реєстрація / Увійти
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

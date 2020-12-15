@@ -15,13 +15,17 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid red;
   }
 }
-
+.account-menu {
+  &[data-action='account']:hover > .dropdown-menu {
+    display: block;
+  }
+}
 .navigation-menu {
   display: flex;
   align-items: center;
-  border: 1px solid red;
   width: 100%;
 
   .js-nav-menu {
@@ -80,6 +84,8 @@ header {
   text-transform: uppercase;
 }
 .desktop-menu {
+  border-right: 1px solid red;
+  border-left: 1px solid red;
   display: none;
   @media screen and (min-width: $tablet-min) {
     display: block;

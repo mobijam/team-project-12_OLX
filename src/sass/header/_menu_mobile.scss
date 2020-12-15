@@ -1,4 +1,4 @@
-.mobile-menu {
+.mobile-menu-container {
   display: none;
   @media screen and (max-width: $tablet-max) {
     height: 100vh;
@@ -17,16 +17,16 @@
     width: 45%;
   }
 }
-
+.mobile-menu-inner {
+  margin-top: 70px;
+}
 .mobile-inner-menu-button {
+  border: none;
+  background: transparent;
   position: absolute;
-  right: 25px;
-  top: 25px;
-
-  background-color: inherit;
-  padding: 0;
-
-  //   border-right: 1px solid red; //#E2E3E5
+  right: 15px;
+  top: 15px;
+  padding: 10px;
 
   &:hover,
   &:focus {
@@ -34,43 +34,29 @@
   }
 }
 
-.mobile-js-nav-menu {
+.mobile-nav-menu {
   display: block;
   align-items: center;
   margin-top: 70px;
   border-top: 1px solid red;
-
   width: 100%;
-
-  .mobile-js-nav-menu-item {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-    border-bottom: 1px solid red;
-
-    &[data-action='auth-mobile'] {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-  }
 }
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
 
-  background: none;
-  border: none;
-  &-mobile {
-    position: static;
-    padding-left: 64px;
-    padding-top: 10;
-    padding-bottom: 10px;
-    width: 100%;
-  }
+.mobile-nav-item {
+  list-style: none;
+  margin: 0;
+
+  border-bottom: 1px solid red;
 }
-// .show {
-//   display: block;
-// }
+
+.mobile-account-menu {
+  display: flex; // CHECK
+  flex-wrap: wrap;
+}
+.mobile-dropdown-menu {
+  position: block;
+  padding-left: 64px;
+  padding-top: 10;
+  padding-bottom: 10px;
+  width: 100%;
+}

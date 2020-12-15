@@ -40,14 +40,91 @@
               </svg>
             </button>
             <a href="./index.html" class="logo">LOGO</a>
-            <button class="button search" data-modal-search-mobile>
+            <button
+              class="button search"
+              data-action="mobile-search"
+              data-modal-search-mobile
+            >
               <svg width="24px" height="24px">
                 <use href="./images/sprite_svg.svg#icon-search"></use>
               </svg>
             </button>
           </div>
         </div>
-        <div class="mobile-menu" id="menu-container" data-menu-mobile>
+        <!-- новое -->
+        <div class="mobile-menu-container" id="menu-container" data-menu-mobile>
+          <div class="mobile-menu-inner">
+            <button
+              type="mobile-button"
+              class="mobile-inner-menu-button"
+              data-menu-inner-button
+            >
+              <svg class="menu-icon" width="24px" height="24px">
+                <use
+                  class="menu-close"
+                  href="./images/sprite_svg.svg#icon-close"
+                ></use>
+              </svg>
+            </button>
+            <ul class="mobile-nav-menu">
+              <li class="mobile-nav-item">
+                <div
+                  class="mobile-account-menu"
+                  data-action="mobile-account-nav"
+                >
+                  <button
+                    class="mobile-button-account"
+                    data-action="mobile-account"
+                  >
+                    <span class="account-logo"
+                      ><svg width="20" height="20">
+                        <use
+                          href="./images/sprite_svg.svg#icon-user"
+                        ></use></svg></span
+                    >Мій кабінет
+                  </button>
+                  <button
+                    class="mobile-button-logout"
+                    data-action="mobile-logout"
+                  >
+                    <svg width="20" height="20">
+                      <use href="./images/sprite_svg.svg#icon-logout"></use>
+                    </svg>
+                  </button>
+                  <ul class="mobile-dropdown-menu">
+                    <li>
+                      <button
+                        class="mobile-button-calls"
+                        data-action="my-calls-mobile"
+                      >
+                        Мої оголошення
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        class="mobile-button-calls"
+                        data-action="favorites-mobile"
+                      >
+                        Обране
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+                <button class="mobile-button-login" data-action="mobile-login">
+                  <span class="account-logo">
+                    <svg width="20" height="20">
+                      <use href="./images/sprite_svg.svg#icon-user"></use>
+                    </svg>
+                  </span>
+                  Реєстрація / Увійти
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Старое -->
+        <!-- <div class="mobile-menu" id="menu-container" data-menu-mobile>
           <nav class="mobile-navigation-menu">
             <button
               type="button"
@@ -120,7 +197,7 @@
               </li>
             </ul>
           </nav>
-        </div>
+        </div> -->
 
         <!-- <div class="header_button__wrap">
           <ul class="header_registration_identity" id="navigation" data-button>
@@ -165,34 +242,42 @@
             </button>
             <a href="./index.html" class="logo">LOGO</a>
             <div class="action-buttons">
-              <!-- вернуть class hidden -->
-              <button class="button" data-action="account" data-action-account>
-                <span class="account-logo"
-                  ><svg width="20" height="20">
-                    <use
-                      href="./images/sprite_svg.svg#icon-user"
-                    ></use></svg></span
-                ><span class="account-text"> Мій кабінет</span>
-              </button>
-              <ul class="dropdown-menu">
-                <li>
-                  <button class="button account" data-action="my-calls">
-                    Мої оголошення
-                  </button>
-                </li>
-                <li>
-                  <button class="button account" data-action="favorites">
-                    Обране
-                  </button>
-                </li>
-              </ul>
-              <!-- Вернуть hidden -->
-              <button class="button" data-action="logout" data-action-logout>
-                <span class="account-logo"
-                  ><svg width="20" height="20">
-                    <use href="./images/sprite_svg.svg#icon-logout"></use></svg
-                ></span>
-              </button>
+              <div class="account-menu">
+                <!-- вернуть class hidden -->
+                <button
+                  class="button"
+                  data-action="account"
+                  data-action-account
+                >
+                  <span class="account-logo"
+                    ><svg width="20" height="20">
+                      <use
+                        href="./images/sprite_svg.svg#icon-user"
+                      ></use></svg></span
+                  ><span class="account-text"> Мій кабінет</span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <button class="button account" data-action="my-calls">
+                      Мої оголошення
+                    </button>
+                  </li>
+                  <li>
+                    <button class="button account" data-action="favorites">
+                      Обране
+                    </button>
+                  </li>
+                </ul>
+                <!-- Вернуть hidden -->
+                <button class="button" data-action="logout" data-action-logout>
+                  <span class="account-logo"
+                    ><svg width="20" height="20">
+                      <use
+                        href="./images/sprite_svg.svg#icon-logout"
+                      ></use></svg
+                  ></span>
+                </button>
+              </div>
               <button
                 class="button"
                 aria-expanded="false"

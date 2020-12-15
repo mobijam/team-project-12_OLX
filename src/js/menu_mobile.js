@@ -6,7 +6,7 @@ const mobileMenuRef = document.querySelector('[data-menu-mobile]');
 menuMobileBtnRef.addEventListener('click', openMobileMenu);
 menuTabletBtnRef.addEventListener('click', openMobileMenu);
 
-// menuCloseBtnRef.addEventListener('click', openMobileMenu);
+menuCloseBtnRef.addEventListener('click', openMobileMenu);
 
 function openMobileMenu() {
   const expanded =

@@ -1,4 +1,4 @@
-// import checkType from './chooseModal'; вернуть
+import checkType from './chooseModal';
 export const refs = {
   openModalSearchBtn: document.querySelector('[data-modal-search]'),
   openModalSearchMobileBtn: document.querySelector(
@@ -13,15 +13,19 @@ export const refs = {
 
   modal: document.querySelector('[data-modal]'),
   modalContent: document.querySelector('[data-modal-content]'),
-  modalForm: document.querySelector('[data-modal-form]'),
+  modalInner: document.querySelector('[data-modal-inner]'),
 
   accountBtn: document.querySelector('[data-action-account]'),
-  accountMobileBtn: document.querySelector('[data-action-account-mobile]'),
+  accountMobileBtn: document.querySelector('[data-action="mobile-account"]'),
 
   accountLogoutBtn: document.querySelector('[data-action-logout]'),
-  accountLogoutMobileBtn: document.querySelector('[data-action-logout-mobile]'),
+  accountLogoutMobileBtn: document.querySelector(
+    '[data-action="mobile-logout"]',
+  ),
   accountRegisterBtn: document.querySelector('[data-modal-login]'),
-  accountRegisterMobileBtn: document.querySelector('[data-modal-login-mobile]'),
+  accountRegisterMobileBtn: document.querySelector(
+    '[data-acton="mobile-login]',
+  ),
 };
 
 export default function openModal(e) {
@@ -30,7 +34,7 @@ export default function openModal(e) {
   let type = '';
   if (
     e.currentTarget.hasAttribute('data-modal-search') ||
-    e.currentTarget.hasAttribute('data-modal-search-mobile')
+    e.currentTarget.dataset.action === 'mobile-search'
   ) {
     type = 'search';
   }
@@ -54,18 +58,18 @@ export default function openModal(e) {
   ) {
     type = 'logout';
   }
-  console.dir(e.currentTarget);
   toggleModal();
-  refs.modalContent.setAttribute('action', `${type}`);
-  // checkType(); вернуть
-  refs.modalContent.children[1].textContent = `МОДАЛОЧКА ${type}`;
+  refs.modalContent.setAttribute('data-action', `${type}`);
+  console.dir(e.currentTarget.dataset.action);
+  console.log(type);
+  checkType();
 }
 
 refs.openModalSearchBtn.addEventListener('click', openModal);
 refs.openModalSearchMobileBtn.addEventListener('click', openModal);
 
 refs.accountRegisterBtn.addEventListener('click', openModal);
-refs.accountRegisterMobileBtn.addEventListener('click', openModal);
+// refs.accountRegisterMobileBtn.addEventListener('click', openModal);
 
 refs.openModalCreateBtn.addEventListener('click', openModal);
 refs.openModalCreateMobileBtn.addEventListener('click', openModal);
@@ -76,7 +80,7 @@ refs.accountLogoutMobileBtn.addEventListener('click', openModal);
 refs.closeModalBtn.addEventListener('click', toggleModal);
 
 function toggleModal() {
-  refs.modalForm.innerHTML = '';
+  refs.modalInner.innerHTML = '';
   if (refs.modalContent.hasAttribute('action')) {
     refs.modalContent.removeAttribute('action');
   }
