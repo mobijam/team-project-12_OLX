@@ -12,10 +12,11 @@ import './js/authorization';
 // import './js/oksana-product';
 
 // templates
-// import categories from './templates/categories.hbs';
+import categories from './templates/categories.hbs';
 import mobileFilters from './templates/mobile_filters.hbs';
 import filters from './templates/filters.hbs';
 import FetchApi from './js/fetchAPI';
+import cards from './templates/item-card.hbs';
 
 // DOM-elements selection
 const categoriesList = document.querySelector('.js-categories');
@@ -62,20 +63,20 @@ async function createSingleCategory() {
   }
 }
 
-// async function createCategories() {
-//   try {
-//     const categories = await filtersAndCategories.fetchCategories();
-//     const list = await categories.json();
-//     const result = Object.keys(list);
-//     const buildMarkup = items => {
-//       categoriesMarkup(items);
-//     };
-//     clearCategories();
-//     return buildMarkup(result);
-//   } catch (error) {
-//     throw error;
-//   }
-// }
+async function createCategories() {
+  try {
+    const categories = await filtersAndCategories.fetchCategories();
+    const list = await categories.json();
+    const result = Object.keys(list);
+    const buildMarkup = items => {
+      categoriesMarkup(items);
+    };
+    clearCategories();
+    return buildMarkup(result);
+  } catch (error) {
+    throw error;
+  }
+}
 
 function filtersMarkup(items) {
   filtersList.insertAdjacentHTML('beforeend', filters(items));
@@ -89,7 +90,7 @@ function categoriesMarkup(items) {
 }
 createFilters();
 
-// createCategories();
+createCategories();
 
 const page = document.querySelector('.js-page-number');
 // page.addEventListener('click', createCategories);

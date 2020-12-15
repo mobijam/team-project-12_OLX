@@ -14,7 +14,7 @@ main {
     margin: 0;
     padding: 0;
     margin-bottom: 50px;
-    border-bottom: 1px solid red; //#e2e3e5;
+    border-bottom: 1px solid $c-accent; //#e2e3e5;
     &:last-child {
       margin-bottom: 60px;
       border-bottom: none;
