@@ -12,7 +12,6 @@ import './js/authorization';
 // import './js/oksana-product';
 
 // templates
-// import categories from './templates/categories.hbs';
 import mobileFilters from './templates/mobile_filters.hbs';
 import filters from './templates/filters.hbs';
 import FetchApi from './js/fetchAPI';
