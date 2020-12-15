@@ -1,0 +1,97 @@
+.mobile-nav-menu {
+  button {
+    display: flex;
+    align-items: center;
+
+    font-family: $Roboto;
+    font-weight: $bold;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+
+    text-transform: uppercase;
+
+    background-color: transparent;
+    border: none;
+
+    height: 70px;
+    padding-left: 34px;
+    @media screen and (min-width: $tablet-min) {
+      padding-left: 40px;
+    }
+
+    cursor: pointer;
+
+    .account-logo {
+      margin-right: 10px;
+    }
+
+    @media screen and (min-width: $tablet-min) {
+      padding-left: 40px;
+    }
+    &.mobile-button-account {
+      display: flex;
+      align-items: center;
+      text-align: left;
+      width: 80%;
+    }
+    &.mobile-button-logout {
+      text-align: center;
+      padding: 15px 15px 15px 15px;
+
+      height: 50px;
+      width: 50px;
+    }
+    &.mobile-button-login {
+      width: 100%;
+      &.hidden {
+        display: none;
+      }
+    }
+  }
+}
+.mobile-dropdown-menu {
+  .mobile-button-calls {
+    font-weight: $normal;
+    letter-spacing: 0.02em;
+    padding: 10px 20px;
+    width: 100%;
+    height: fit-content;
+  }
+}
+
+.mobile-button-filter {
+  width: 100%;
+}
+
+//Кнопка меню
+.mobile-menu-button {
+  border: none;
+  border-right: 1px solid red; //#e2e3e5;
+  background-color: transparent;
+  padding: 25px;
+  margin: 0;
+  cursor: pointer;
+
+  .menu-close {
+    display: none;
+  }
+
+  &.is-open .menu-close {
+    display: block;
+  }
+  .menu-open {
+    display: block;
+  }
+  &.is-open .menu-open {
+    display: none;
+  }
+  &:hover,
+  &:focus {
+    background: $c-accent;
+  }
+
+  @media screen and (max-width: $tablet-min) {
+    display: inline-flex;
+  }
+}

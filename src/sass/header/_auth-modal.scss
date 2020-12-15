@@ -21,7 +21,7 @@
   @media screen and(min-width:$tablet-max) {
     padding: 65px 100px;
   }
-  background-color: $main-grey;
+  background-color: $c-bg-grey;
   &-header {
     font-weight: $bold;
     margin-bottom: 20px;
@@ -30,7 +30,7 @@
     }
   }
   &-register {
-    background-color: $main-grey;
+    background-color: $c-bg-grey;
     border: 1px solid $dark-grey;
   }
   &-login {
