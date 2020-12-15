@@ -3,7 +3,7 @@ const BASE_URL = 'https://callboard-backend.herokuapp.com';
 export default class FiltersApiService {
   constructor() {
     this.searchQuery = '';
-    this.pageNum = 1;
+    this.pageNum = 0;
     this.category = '';
     this.endPoint = {
       reg: '/auth/register',
