@@ -1,10 +1,7 @@
 // connect imports from pertials to be used
-import '../templates/search.hbs';
 import card from '../templates/item-card.hbs';
 import FiltersApiService from './fetchAPI';
 import { pushError, removeError } from './pnotify';
-
-
 
 //  page elements to be operate
 const cardContainer = document.querySelector('.js-categories');

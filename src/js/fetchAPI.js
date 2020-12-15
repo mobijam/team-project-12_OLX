@@ -3,7 +3,7 @@ const BASE_URL = 'https://callboard-backend.herokuapp.com';
 export default class FiltersApiService {
   constructor() {
     this.searchQuery = '';
-    this.pageNum = 1;
+    this.pageNum = 0;
     this.category = '';
     this.endPoint = {
       reg: '/auth/register',
@@ -20,6 +20,24 @@ export default class FiltersApiService {
       cat: '/call/categories',
       specCat: '/call/specific/',
     };
+
+    this.user = {
+      email: 'cj@examle.com',
+      password: 'qwerty123',
+    };
+
+    this.options = {
+      method: 'POST',
+      body: JSON.stringify(this.user),
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+    };
+  }
+
+  resetPage() {
+    this.pageNum = 1;
   }
 
   get query() {
@@ -28,6 +46,20 @@ export default class FiltersApiService {
 
   set query(value) {
     this.searchQuery = value;
+  }
+
+  async register() {
+    try {
+      const getCategories = await fetch(
+        `${BASE_URL}${this.endPoint.reg}`,
+        this.options,
+      );
+      const result = await getCategories.json();
+      console.log(result);
+      return result;
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   async fetchSearch() {
@@ -46,10 +78,6 @@ export default class FiltersApiService {
     } catch (error) {
       throw error;
     }
-  }
-
-  resetPage() {
-    this.pageNum = 1;
   }
 
   async fetchFIlters() {
@@ -88,6 +116,7 @@ export default class FiltersApiService {
       throw error;
     }
   }
+
   async fetchSingleCategory() {
     try {
       const getCategories = await fetch(

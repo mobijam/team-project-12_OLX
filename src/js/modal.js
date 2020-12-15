@@ -29,7 +29,7 @@ export const refs = {
 };
 
 export default function openModal(e) {
-  // checkLogin();
+  checkLogin();
 
   let type = '';
   if (
@@ -89,35 +89,35 @@ function toggleModal() {
   document.body.classList.toggle('no-scroll');
 }
 
-// function checkLogin() {
-//   const checkAuth = localStorage.getItem('key');
+function checkLogin() {
+  const checkAuth = localStorage.getItem('key');
 
-//   if (checkAuth !== null) {
-//     refs.openModalCreateBtn.removeAttribute('data-modal-login');
-//     refs.openModalCreateBtn.setAttribute('data-modal-create', '');
-//     refs.openModalCreateMobileBtn.removeAttribute('data-modal-login-mobile');
-//     refs.openModalCreateMobileBtn.setAttribute('data-modal-create-mobile', '');
+  if (checkAuth !== null) {
+    refs.openModalCreateBtn.removeAttribute('data-modal-login');
+    refs.openModalCreateBtn.setAttribute('data-modal-create', '');
+    refs.openModalCreateMobileBtn.removeAttribute('data-modal-login-mobile');
+    refs.openModalCreateMobileBtn.setAttribute('data-modal-create-mobile', '');
 
-//     refs.accountRegisterBtn.removeEventListener('click', openModal);
-//     refs.accountRegisterMobileBtn.removeEventListener('click', openModal);
-//     refs.accountLogoutBtn.classList.remove('hidden');
-//     refs.accountLogoutMobileBtn.classList.remove('hidden');
-//     refs.accountRegisterBtn.classList.add('hidden');
-//     refs.accountBtn.classList.remove('hidden');
-//     refs.accountMobileBtn.classList.remove('hidden');
-//   }
-//   if (checkAuth === null) {
-//     refs.openModalCreateBtn.removeAttribute('data-modal-create');
-//     refs.openModalCreateBtn.setAttribute('data-modal-login', '');
-//     refs.openModalCreateMobileBtn.removeAttribute('data-modal-create-mobile');
-//     refs.openModalCreateMobileBtn.setAttribute('data-modal-login-mobile', '');
-//     refs.accountRegisterBtn.addEventListener('click', openModal);
-//     refs.accountRegisterMobileBtn.addEventListener('click', openModal);
-//     refs.accountLogoutBtn.classList.add('hidden');
-//     refs.accountLogoutMobileBtn.classList.add('hidden');
-//     refs.accountRegisterBtn.classList.remove('hidden');
-//     refs.accountBtn.classList.add('hidden');
-//     refs.accountMobileBtn.classList.add('hidden');
-//   }
-// }
-// checkLogin();
+    refs.accountRegisterBtn.removeEventListener('click', openModal);
+    refs.accountRegisterMobileBtn.removeEventListener('click', openModal);
+    refs.accountLogoutBtn.classList.remove('hidden');
+    refs.accountLogoutMobileBtn.classList.remove('hidden');
+    refs.accountRegisterBtn.classList.add('hidden');
+    refs.accountBtn.classList.remove('hidden');
+    refs.accountMobileBtn.classList.remove('hidden');
+  }
+  if (checkAuth === null) {
+    refs.openModalCreateBtn.removeAttribute('data-modal-create');
+    refs.openModalCreateBtn.setAttribute('data-modal-login', '');
+    refs.openModalCreateMobileBtn.removeAttribute('data-modal-create-mobile');
+    refs.openModalCreateMobileBtn.setAttribute('data-modal-login-mobile', '');
+    refs.accountRegisterBtn.addEventListener('click', openModal);
+    refs.accountRegisterMobileBtn.addEventListener('click', openModal);
+    refs.accountLogoutBtn.classList.add('hidden');
+    refs.accountLogoutMobileBtn.classList.add('hidden');
+    refs.accountRegisterBtn.classList.remove('hidden');
+    refs.accountBtn.classList.add('hidden');
+    refs.accountMobileBtn.classList.add('hidden');
+  }
+}
+checkLogin();

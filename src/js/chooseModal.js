@@ -1,7 +1,7 @@
 import { refs } from './modal';
 import search from '../templates/search.hbs';
-import auth from '../templates/authorization-modal.hbs';
-import makeCall from '../templates/create-call.hbs';
+import auth from '../templates/auth-form.hbs';
+// import makeCall from '../templates/create-call.hbs';
 
 export default function chooseModal() {
   const checkType = refs.modalContent.dataset.action;
