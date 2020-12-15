@@ -29,20 +29,24 @@
     @media screen and (min-width: $tablet-min) {
       padding-left: 40px;
     }
-    &[data-action='mobile-account'] {
+    &.mobile-button-account {
       display: flex;
       align-items: center;
       text-align: left;
       width: 80%;
     }
-    &[data-action='mobile-logout'] {
+    &.mobile-button-logout {
       text-align: center;
-      padding: 29px 25px 29px 15px;
+      padding: 15px 15px 15px 15px;
 
-      width: auto;
+      height: 50px;
+      width: 50px;
     }
-    &[data-action='mobile-login'] {
+    &.mobile-button-login {
       width: 100%;
+      &.hidden {
+        display: none;
+      }
     }
   }
 }
@@ -58,4 +62,36 @@
 
 .mobile-button-filter {
   width: 100%;
+}
+
+//Кнопка меню
+.mobile-menu-button {
+  border: none;
+  border-right: 1px solid red; //#e2e3e5;
+  background-color: transparent;
+  padding: 25px;
+  margin: 0;
+  cursor: pointer;
+
+  .menu-close {
+    display: none;
+  }
+
+  &.is-open .menu-close {
+    display: block;
+  }
+  .menu-open {
+    display: block;
+  }
+  &.is-open .menu-open {
+    display: none;
+  }
+  &:hover,
+  &:focus {
+    background: $c-accent;
+  }
+
+  @media screen and (max-width: $tablet-min) {
+    display: inline-flex;
+  }
 }

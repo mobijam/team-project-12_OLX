@@ -88,8 +88,6 @@ function categoriesMarkup(items) {
   categoriesList.insertAdjacentHTML('beforeend', categories(items));
 }
 createFilters();
-getrefs();
-// console.log(filterBtn);
 
 // createCategories();
 

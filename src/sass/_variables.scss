@@ -23,11 +23,11 @@ $shade: 0px 2px 4px rgba(0, 0, 0, 0.1);
 
 /* fonts */
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-$Montserrat: "Montserrat", "Open Sans", sans-serif;
-$Roboto: "Roboto", "Open Sans", sans-serif;
+$Montserrat: 'Montserrat', 'Open Sans', sans-serif;
+$Roboto: 'Roboto', 'Open Sans', sans-serif;
 $normal: 400;
 $medium: 500;
 $bold: 700;
@@ -42,4 +42,4 @@ $desktop: 1280px;
 
 /* transition */
 
-$transition: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+$transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);

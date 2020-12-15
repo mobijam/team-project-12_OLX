@@ -6,13 +6,30 @@ import auth from '../templates/auth-form.hbs';
 export default function chooseModal() {
   const checkType = refs.modalContent.dataset.action;
   if (checkType === 'search') {
-    refs.modalInner.insertAdjacentHTML('beforeend', search());
-    console.log('true');
+    refs.modalContent.insertAdjacentHTML('beforeend', search());
+    console.log('search');
   }
   if (checkType === 'login') {
-    refs.modalInner.insertAdjacentHTML('beforeend', auth());
+    refs.modalContent.insertAdjacentHTML('beforeend', auth());
+  }
+  if (checkType === 'logout') {
+    console.log('LogOut');
+    // refs.modalContent.insertAdjacentHTML('beforeend', logOut());
   }
   if (checkType === 'create') {
-    refs.modalInner.insertAdjacentHTML('beforeend', makeCall());
+    console.log('make-call');
+    // refs.modalContent.insertAdjacentHTML('beforeend', makeCall());
+  }
+  if (checkType === 'edit-call') {
+    console.log('edit-call');
+    // refs.modalContent.insertAdjacentHTML('beforeend', editCall());
+  }
+  if (checkType === 'favorites') {
+    console.log('favorites');
+    // refs.modalContent.insertAdjacentHTML('beforeend', favorites());
+  }
+  if (checkType === 'my-calls') {
+    console.log('my-calls');
+    // refs.modalContent.insertAdjacentHTML('beforeend', my-calls());
   }
 }
