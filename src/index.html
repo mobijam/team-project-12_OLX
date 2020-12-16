@@ -27,20 +27,22 @@
               class="mobile-menu-button"
               aria-expanded="false"
               aria-controls="menu-container"
-              data-menu-mobile-button>
+              data-menu-mobile-button
+            >
               <svg
                 class="menu-icon"
                 width="24px"
                 height="24px"
-                aria-label="Переключатель мобильного меню">
+                aria-label="Переключатель мобильного меню"
+              >
                 <use
                   class="menu-open"
-                  href="./images/sprite_svg.svg#icon-menu">
-                </use>
+                  href="./images/sprite_svg.svg#icon-menu"
+                ></use>
                 <use
                   class="menu-close"
-                  href="./images/sprite_svg.svg#icon-close">
-                </use>
+                  href="./images/sprite_svg.svg#icon-close"
+                ></use>
               </svg>
             </button>
             <a href="./index.html" class="logo">LOGO</a>
@@ -56,12 +58,13 @@
             <button
               type="button"
               class="mobile-inner-menu-button"
-              data-menu-inner-button>
+              data-menu-inner-button
+            >
               <svg class="menu-icon" width="24px" height="24px">
                 <use
                   class="menu-close"
-                  href="./images/sprite_svg.svg#icon-close">
-                </use>
+                  href="./images/sprite_svg.svg#icon-close"
+                ></use>
               </svg>
             </button>
             <ul class="mobile-js-nav-menu navbar-nav">
@@ -69,7 +72,8 @@
                 <button
                   class="btn"
                   data-toggle="dropdown"
-                  data-action="mobile-register">
+                  data-action="mobile-register"
+                >
                   <svg width="20" height="20">
                     <use href="./images/sprite_svg.svg#icon-user"></use>
                   </svg>
@@ -107,11 +111,12 @@
                 aria-haspopup="true"
                 aria-expanded="false"
                 data-action="register"
-                data-modal-login>
+                data-modal-login
+              >
                 <span class="account-logo">
                   <svg width="20" height="20">
                     <use href="./images/sprite_svg.svg#icon-user"></use>
-                    </svg>
+                  </svg>
                 </span>
                 <span class="account-text">Реєстрація / Увійти</span>
               </button>
@@ -139,20 +144,22 @@
                 class="menu-button"
                 aria-expanded="false"
                 aria-controls="menu-container"
-                data-menu-tablet-button>
+                data-menu-tablet-button
+              >
                 <svg
                   class="menu-icon"
                   width="20px"
                   height="20px"
-                  aria-label="Переключатель мобильного меню">
+                  aria-label="Переключатель мобильного меню"
+                >
                   <use
                     class="menu-open"
-                    href="./images/sprite_svg.svg#icon-menu">
-                  </use>
+                    href="./images/sprite_svg.svg#icon-menu"
+                  ></use>
                   <use
                     class="menu-close"
-                    href="./images/sprite_svg.svg#icon-close">
-                  </use>
+                    href="./images/sprite_svg.svg#icon-close"
+                  ></use>
                 </svg>
               </button>
               <ul class="js-nav-menu"></ul>
@@ -169,8 +176,9 @@
     </header>
     <main>
       <div class="container">
-        <ul class="js-categories"></ul>
+        <div class="category-list-container"></div>
         <ul class="js-page-list">
+          <ul class="js-categories"></ul>
           <li><button class="js-page-number active">1</button></li>
           <li><button class="js-page-number">2</button></li>
           <li><button class="js-page-number">3</button></li>
@@ -196,7 +204,7 @@
     </footer>
     <div class="backdrop is-hidden" data-modal>
       <div class="js-modal" data-modal-content>
-        <button class="button-modal-close" data-action='modal-close'>
+        <button class="button-modal-close" data-action="modal-close">
           <svg class="icon-close" width="24" height="24">
             <use href="./images/sprite_svg.svg#icon-close"></use>
           </svg>

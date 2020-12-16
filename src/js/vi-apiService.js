@@ -1,6 +1,6 @@
 
 // const BASE_URL = 'https://callboard-backend.herokuapp.com/call/categories';
-const BASE_URL =  'https://callboard-backend.herokuapp.com/call?page=1';
+const BASE_URL =  'https://callboard-backend.herokuapp.com/call?';
 
 // const API_KEY = '19172915-1886b55ac07c270b02db4da6f';
 //  должен еще быть импорт алертов из нотифай
@@ -8,15 +8,15 @@ const BASE_URL =  'https://callboard-backend.herokuapp.com/call?page=1';
 
 export default class GetProduct {
     constructor() {
-        this.searchQuery = '';
-        // this.page = page;
+        // this.searchQuery = '';
+        this.page = 1;
         // this.key = API_KEY
         // this.perpage = perpage;
     }
     
 
     fetchProduct() {
-        const url = `${BASE_URL}`;
+        const url = `${BASE_URL}page=${this.page}`;
 
         return fetch(url)
         .then(response => {
@@ -28,10 +28,10 @@ export default class GetProduct {
         
     };
 
-    pageIncrement() {
-    return this.page+=1
-    };
-
+    set pageNumber (newPage) {
+        this.page = newPage;
+    }
+    
     pageReset() {
         return this.page = 1
     };
