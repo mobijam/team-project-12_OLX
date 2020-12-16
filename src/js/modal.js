@@ -2,8 +2,12 @@ import checkType from './chooseModal';
 
 export const refs = {
   openModalSearchBtn: document.querySelector('[data-modal-search]'),
-  openModalSearchMobileBtn: document.querySelector('[data-modal-search-mobile]'),
+  openModalSearchMobileBtn: document.querySelector(
+    '[data-modal-search-mobile]',
+  ),
 
+  openModalFavBtn: document.querySelector('[data-modal-favorite]'),
+  // openModalFavMobileBtn: document.querySelector('[data-modal-favorite-mobile]'),
   // openModalLoginBtn: document.querySelector('[data-modal-login]'),
   // openModalLoginMobileBtn: document.querySelector(
   //   '[data-action="register-mobile"]',
@@ -19,7 +23,6 @@ export const refs = {
   modalContent: document.querySelector('[data-modal-content]'),
   modalForm: document.querySelector('[data-modal-form]'),
 };
-
 
 export default function openModal(e) {
   // checkLogin();
@@ -45,12 +48,18 @@ export default function openModal(e) {
     type = 'login';
   }
 
+  if (
+    e.currentTarget.hasAttribute('data-modal-favorite') ||
+    e.currentTarget.hasAttribute('data-modal-favorite-mobile')
+  ) {
+    type = 'favorite';
+  }
+
   toggleModal();
   refs.modalContent.setAttribute('action', `${type}`);
   checkType();
   refs.modalContent.children[1].textContent = ` `;
 }
-
 
 refs.openModalSearchBtn.addEventListener('click', openModal);
 refs.openModalSearchMobileBtn.addEventListener('click', openModal);
@@ -64,7 +73,6 @@ refs.openModalSearchMobileBtn.addEventListener('click', openModal);
 
 refs.closeModalBtn.addEventListener('click', toggleModal);
 
-
 function toggleModal() {
   refs.modalForm.innerHTML = '';
   if (refs.modalContent.hasAttribute('action')) {
@@ -74,7 +82,6 @@ function toggleModal() {
   refs.modal.classList.toggle('is-hidden');
   document.body.classList.toggle('no-scroll');
 }
-
 
 // function checkLogin() {
 //   const checkAuth = localStorage.getItem('key');
@@ -96,6 +103,5 @@ function toggleModal() {
 //     refs.openModalLoginMobileBtn.addEventListener('click', openModal);
 //   }
 // }
-
 
 // checkLogin();

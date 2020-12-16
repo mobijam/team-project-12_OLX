@@ -27,20 +27,22 @@
               class="mobile-menu-button"
               aria-expanded="false"
               aria-controls="menu-container"
-              data-menu-mobile-button>
+              data-menu-mobile-button
+            >
               <svg
                 class="menu-icon"
                 width="24px"
                 height="24px"
-                aria-label="Переключатель мобильного меню">
+                aria-label="Переключатель мобильного меню"
+              >
                 <use
                   class="menu-open"
-                  href="./images/sprite_svg.svg#icon-menu">
-                </use>
+                  href="./images/sprite_svg.svg#icon-menu"
+                ></use>
                 <use
                   class="menu-close"
-                  href="./images/sprite_svg.svg#icon-close">
-                </use>
+                  href="./images/sprite_svg.svg#icon-close"
+                ></use>
               </svg>
             </button>
             <a href="./index.html" class="logo">LOGO</a>
@@ -93,32 +95,31 @@
           </nav>
         </div> -->
 
-
-      <!--dima-->
+        <!--dima-->
         <div class="header_button__wrap">
           <ul class="header_registration_identity" id="navigation" data-button>
             <li class="header_registration_identity__item">
-          <a
-            data-modal-type="authorization"
-            data-modal="true"
-            data-hbs="7"
-            href="#"
-            class="header_registration_link"
-            >Реєстрація / Увійти</a
-          >
-          </li>
-          <li class="header_registration_identity__item">
-          <button type="button" class="header_button__perm_identity">
-            <span
-              data-modal-type="authorization"
-              data-modal="true"
-              data-hbs="7"
-              class="material-icons md-24"
-              >perm_identity</span
-            >
-          </button>
-          </li>
-        </ul>
+              <a
+                data-modal-type="authorization"
+                data-modal="true"
+                data-hbs="7"
+                href="#"
+                class="header_registration_link"
+                >Реєстрація / Увійти</a
+              >
+            </li>
+            <li class="header_registration_identity__item">
+              <button type="button" class="header_button__perm_identity">
+                <span
+                  data-modal-type="authorization"
+                  data-modal="true"
+                  data-hbs="7"
+                  class="material-icons md-24"
+                  >perm_identity</span
+                >
+              </button>
+            </li>
+          </ul>
           <button
             type="button"
             class="header_button__create"
@@ -146,11 +147,12 @@
                 aria-haspopup="true"
                 aria-expanded="false"
                 data-action="register"
-                data-modal-login>
+                data-modal-login
+              >
                 <span class="account-logo">
                   <svg width="20" height="20">
                     <use href="./images/sprite_svg.svg#icon-user"></use>
-                    </svg>
+                  </svg>
                 </span>
                 <span class="account-text">Реєстрація / Увійти</span>
               </button>
@@ -161,7 +163,11 @@
                   </button>
                 </li>
                 <li>
-                  <button class="btn account" data-action="favorites-mobile">
+                  <button
+                    class="btn account"
+                    data-action="favorites-mobile"
+                    data-modal-favorite
+                  >
                     Обране
                   </button>
                 </li>
@@ -178,20 +184,22 @@
                 class="menu-button"
                 aria-expanded="false"
                 aria-controls="menu-container"
-                data-menu-tablet-button>
+                data-menu-tablet-button
+              >
                 <svg
                   class="menu-icon"
                   width="20px"
                   height="20px"
-                  aria-label="Переключатель мобильного меню">
+                  aria-label="Переключатель мобильного меню"
+                >
                   <use
                     class="menu-open"
-                    href="./images/sprite_svg.svg#icon-menu">
-                  </use>
+                    href="./images/sprite_svg.svg#icon-menu"
+                  ></use>
                   <use
                     class="menu-close"
-                    href="./images/sprite_svg.svg#icon-close">
-                  </use>
+                    href="./images/sprite_svg.svg#icon-close"
+                  ></use>
                 </svg>
               </button>
               <ul class="js-nav-menu"></ul>
@@ -235,12 +243,14 @@
     </footer>
     <div class="backdrop is-hidden" data-modal>
       <div class="js-modal" data-modal-content>
-        <button class="button-modal-close" data-action='modal-close'>
+        <button class="button-modal-close" data-action="modal-close">
           <svg class="icon-close" width="24" height="24">
             <use href="./images/sprite_svg.svg#icon-close"></use>
           </svg>
         </button>
-        <div class="modal-form" data-modal-form></div>
+        <div class="modal-form" data-modal-form>
+          <ul class="js-favorites-container"></ul>
+        </div>
       </div>
     </div>
     <script

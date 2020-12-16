@@ -67,4 +67,3 @@ page.addEventListener('click', createCategories);
 function clearCategories() {
   categoriesList.innerHTML = '';
 }
-
