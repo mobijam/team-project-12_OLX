@@ -4,7 +4,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  padding: 55px 105px;
+  padding: 10px 10px;
+  z-index: 100;
 
   text-align: center;
   background: $c-bg-grey;
@@ -16,42 +17,4 @@
   .is-hidden & {
     transform: translate(-50%, -50%) scale(1.2);
   }
-  &[action='search'] {
-    background-color: $c-accent;
-    padding: 20px 50px;
-    @media screen and (min-width: $tablet-min) {
-      padding: 50px 93px;
-    }
-    @media screen and (min-width: $desktop) {
-      padding: 93px 105px;
-    }
-  }
-  &[action='search'] .icon-close {
-    fill: $c-white;
-  }
-  &[action='login'] {
-    background-color: $c-bg-grey;
-    padding: 62px 105px;
-    @media screen and (width: $mobile) {
-      padding: 60px 18px;
-    }
-  }
-  &[action='create'] {
-    padding: 54px 20px;
-    @media screen and (min-width: $tablet-min) {
-      padding: 54px;
-    }
-    @media screen and (min-width: $desktop) {
-      padding: 54px 105px;
-    }
-  }
-}
-
-.button-modal-close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  border: none;
-  padding: 25px;
-  background: transparent;
 }

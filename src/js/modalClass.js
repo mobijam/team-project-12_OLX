@@ -1,5 +1,5 @@
 
-import authorizationModal from '../templates/authorization-modal.hbs';
+import authorizationModal from '../templates/auth-form.hbs';
 
 
 const hbsFunctions = [
