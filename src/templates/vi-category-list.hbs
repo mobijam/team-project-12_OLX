@@ -1,24 +1,19 @@
+
 <ul class="category-list">
 {{#each this}}
 <li class="category-list item">
-    <b>{{this.category}}</b>
+    <b class="title">{{this.category}}</b>
     <ul class="category">
         {{#each this}}
         <li class="category-item">
-            <ul class="images">
-            <li class="image">
-                {{#each imageUrls}}
-                <img  src="{{this}}" alt="">
-                {{/each}}
-            </li>
-
-            </ul>
-
+             <img class="img" src="{{imageUrls}}" alt="">
+           
             <p class="text"> {{title}}  </p>
-            <p>{{price}}</p>
+            <p class="price">{{price}} тугриков </p>
         </li>
         {{/each}}
     </ul>
 </li>
 {{/each}}
 </ul>
+
