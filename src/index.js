@@ -8,7 +8,7 @@ import './js/search-query';
 import './js/menu_mobile';
 import './js/modal';
 import './js/authorization';
-// import './js/oksana-favourites';
+// import './js/oksana-favorites';
 // import './js/oksana-product';
 
 // templates

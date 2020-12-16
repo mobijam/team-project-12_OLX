@@ -24,8 +24,10 @@ export const refs = {
   // openModalEditCallBtn: document.querySelector('[data-action="edit-call"]'),
   // openModalEditCallBtnMobile: document.querySelector('[data-action="mobile-edit-call"]'),
 
-  // openModalFavoritesBtn: document.querySelector('[data-action="favorites"]'),
-  // openModalFaforitesBtnMobile: document.querySelector('[data-action="mobile-favorites"]'),
+  openModalFavoritesBtn: document.querySelector('[data-action="favorites"]'),
+  openModalFaforitesBtnMobile: document.querySelector(
+    '[data-action="mobile-favorites"]',
+  ),
 
   // openModalMyCallsBtn: document.querySelector('[data-action="my-calls"]'),
   // openModalMyCallsBtnMobile: document.querySelector('[data-action="mobile-my-calls"]'),
@@ -41,7 +43,7 @@ export const refs = {
 };
 
 export default function openModal(e) {
-  checkLogin();
+  // checkLogin();
 
   let type = '';
   if (
@@ -113,8 +115,8 @@ refs.openModalCreateBtnMobile.addEventListener('click', openModal);
 // refs.openModalEditCallBtn.addEventListener('click', openModal);
 // refs.openModalEditCallBtnMobile.addEventListener('click', openModal);
 
-// refs.openModalFavoritesBtn.addEventListener('click', openModal);
-// refs.openModalFaforitesBtnMobile.addEventListener('click', openModal);
+refs.openModalFavoritesBtn.addEventListener('click', openModal);
+refs.openModalFaforitesBtnMobile.addEventListener('click', openModal);
 
 // refs.openModalMyCallsBtn.addEventListener('click', openModal);
 // refs.openModalMyCallsBtnMobile.addEventListener('click', openModal);
@@ -162,4 +164,4 @@ function checkLogin() {
     refs.accountMenuMobile.classList.add('hidden');
   }
 }
-checkLogin();
+// checkLogin();

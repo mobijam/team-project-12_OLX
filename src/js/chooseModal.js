@@ -1,9 +1,9 @@
 import { refs } from './modal';
 import search from '../templates/search.hbs';
 import auth from '../templates/auth-form.hbs';
-import makeCall from '../templates/create-call.hbs';
+// import makeCall from '../templates/create-call.hbs';
 import favorTmpl from '../templates/favorite-item-card.hbs';
-import makeCall from '../templates/create-call.hbs';
+// import makeCall from '../templates/create-call.hbs';
 
 export default function chooseModal() {
   const checkType = refs.modalContent.dataset.action;

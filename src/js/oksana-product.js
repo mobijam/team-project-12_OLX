@@ -1,21 +1,25 @@
-import userInfoTpl from '../templates/seller-info.hbs';
+import userInfoTpl from '../templates/user-info.hbs';
+const BASE_URL = 'https://callboard-backend.herokuapp.com';
+const refs = {
+  userContainer: document.querySelector('.js-user-container'),
+  userBtn: document.querySelector('.js-user-button'),
+};
+userBtn.addEventListener('click', onUserBtnClick);
 
-userInfo.addEventListener('click', onUserBtnClick);
+function onUserBtnClick(e) {
+  e.preventDefault();
 
-fetch('https://callboard-backend.herokuapp.com/user')
-  .then(responce => {
-    return responce.json();
-  })
-  .then(product => {
-    console.log(product);
-  })
-  .catch(error => {
-    console.log(error);
-  });
-
-const userInfo = document.querySelector('.js-user-button');
-function onUserBtnClick(evt) {
-  evt.preventDefault();
+  userInfo().then;
 
   return (userInfo.innerHTML = userInfoTpl(product));
 }
+
+function userInfo(userId) {
+  return fetch(`${BASE_URL}/user/{userId}`).then(responce => Response.json());
+}
+
+function renderUserInfo(userId) {
+  refs.userContainer.innerHTML = userInfoTpl(userId);
+}
+
+export default { userInfo };
