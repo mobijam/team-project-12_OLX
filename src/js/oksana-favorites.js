@@ -1,19 +1,30 @@
-// const BASE_URL = 'https://callboard-backend.herokuapp.com';
-// const refs = {
-//   cardContainer: document.querySelector('.js-card-container'),
-// };
+// import FiltersApiService from './fetchAPI';
 
-// fetchFavourites()
-//   .then(renderFavourites)
-//   .catch(error => console.log(error));
+import itemCardTpl from '../templates/favorite-item-card.hbs';
 
-// function fetchFavourites() {
-//   return fetch((`${BASE_URL}/call/favourites`).then(
-//     responce => {
-//       return responce.json();
-//     }
-//   )
+const BASE_URL = 'https://callboard-backend.herokuapp.com';
+const refs = {
+  cardFavContainer: document.querySelector('.js-favorites-container'),
+  favBtn: document.querySelector('[data-action="favorites"]'),
+};
 
-// function renderFavourites(favourites) {
-//   refs.cardContainer.innerHTML = itemCardTpl(favourites);
-// }
+refs.favBtn.addEventListener('click', onFavBtnClick);
+
+function onFavBtnClick(e) {
+  e.preventDefault();
+  fetchFavorites().then(renderFavorites).catch(onFetchError);
+}
+
+function fetchFavorites() {
+  return fetch(`${BASE_URL}/call/favourites`).then(responce => {
+    return responce.json();
+  });
+}
+
+function renderFavorites(favorites) {
+  refs.cardFavContainer.innerHTML = itemCardTpl(favorites);
+}
+
+function onFetchError(error) {
+  console.log(error);
+}

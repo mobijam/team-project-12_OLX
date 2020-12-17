@@ -1,5 +1,3 @@
-const BASE_URL = 'https://callboard-backend.herokuapp.com';
-
 export default class FiltersApiService {
   constructor() {
     this.searchQuery = '';
@@ -50,10 +48,7 @@ export default class FiltersApiService {
 
   async register() {
     try {
-      const getCategories = await fetch(
-        `${BASE_URL}${this.endPoint.reg}`,
-        this.options,
-      );
+      const getCategories = await fetch(`${BASE_URL}${this.endPoint.reg}`, this.options);
       const result = await getCategories.json();
       console.log(result);
       return result;
@@ -64,15 +59,12 @@ export default class FiltersApiService {
 
   async fetchSearch() {
     try {
-      const getData = await fetch(
-        `${BASE_URL}${this.endPoint.find}${this.query}`,
-        {
-          method: 'GET',
-          headers: {
-            Accept: 'application/json',
-          },
+      const getData = await fetch(`${BASE_URL}${this.endPoint.find}${this.query}`, {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
         },
-      );
+      });
       const getResult = await getData.json();
       return getResult;
     } catch (error) {
@@ -95,9 +87,7 @@ export default class FiltersApiService {
     try {
       if (this.pageNum <= 5) {
         this.pageNum += 1;
-        const getCategories = await fetch(
-          `${BASE_URL}${this.endPoint.call}?page=${this.pageNum}`,
-        );
+        const getCategories = await fetch(`${BASE_URL}${this.endPoint.call}?page=${this.pageNum}`);
         return getCategories;
       }
     } catch (error) {
@@ -107,9 +97,7 @@ export default class FiltersApiService {
 
   async fetchCategory() {
     try {
-      const getCategories = await fetch(
-        `${BASE_URL}${this.endPoint.specCat}${this.category}`,
-      );
+      const getCategories = await fetch(`${BASE_URL}${this.endPoint.specCat}${this.category}`);
 
       return getCategories;
     } catch (error) {
@@ -119,9 +107,7 @@ export default class FiltersApiService {
 
   async fetchSingleCategory() {
     try {
-      const getCategories = await fetch(
-        `${BASE_URL}${this.endPoint.specCat}${this.searchQuery}`,
-      );
+      const getCategories = await fetch(`${BASE_URL}${this.endPoint.specCat}${this.searchQuery}`);
 
       return getCategories;
     } catch (error) {
