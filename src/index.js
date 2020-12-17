@@ -8,6 +8,7 @@ import './js/search-query';
 import './js/menu_mobile';
 import './js/modal';
 import './js/authorization';
+import './js/mfhillowsJS/js-for-edit-cards';
 // import './js/oksana-favourites';
 // import './js/oksana-product';
 
