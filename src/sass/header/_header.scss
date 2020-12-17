@@ -15,9 +15,11 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-left: 1px solid $c-accent;
     border-right: 1px solid $c-accent;
     border-bottom: 1px solid $c-accent;
+    @media screen and(min-width:$desktop) {
+      border-left: 1px solid $c-accent;
+    }
   }
 }
 .desktop-menu {
@@ -73,8 +75,10 @@ header {
   display: flex;
   align-items: center;
   width: 100%;
-  border-left: 1px solid $c-accent;
   border-right: 1px solid $c-accent;
+  @media screen and(min-width:$desktop) {
+    border-left: 1px solid $c-accent;
+  }
 
   .js-nav-menu {
     padding-left: 5px;
