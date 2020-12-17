@@ -28,3 +28,19 @@ function renderFavorites(favorites) {
 function onFetchError(error) {
   console.log(error);
 }
+
+// const el = document.getElementById('heart');
+// el.addEventListener('click', onFavIconClick);
+
+// function onFavIconClick(e) {
+//   e.preventDefault();
+//   deleteFavorites();
+// }
+
+// function deleteFavorites(callId) {
+//   const url = `${BASE_URL}/call/favourites${callId}`;
+//   const options = {
+//     method: 'DELETE',
+//   };
+//   return fetch(url, options).then(res => res.json());
+// }
