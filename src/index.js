@@ -10,6 +10,7 @@ import './js/modal';
 import './js/authorization';
 // import './js/oksana-favorites';
 // import './js/oksana-product';
+import toggleMobileMenu from './js/menu_mobile';
 
 // templates
 import mobileFilters from './templates/mobile_filters.hbs';
@@ -23,15 +24,23 @@ const mobileFiltersList = document.querySelector('.mobile-nav-menu');
 
 const filtersAndCategories = new FetchApi();
 
-filtersList.addEventListener('click', onFilterBtnClick);
+// filtersList.addEventListener('click', onFilterBtnClick);
+// mobileFiltersList.addEventListener('click', onMobileFilterBtnClick);
 
 function onFilterBtnClick(e) {
-  console.log(e.target.nodeName);
-  if (e.target.nodeName === 'BUTTON') {
+  if (e.target.dataset.action === 'filter') {
     filtersAndCategories.searchQuery = e.target.textContent;
-    createSingleCategory(filtersAndCategories.searchQuery);
+    loadSingleCategory(filtersAndCategories.searchQuery);
     e.target.classList.add('active');
   }
+}
+
+function onMobileFilterBtnClick(e) {
+  if (e.target.dataset.action === 'mobile-filter') {
+    filtersAndCategories.searchQuery = e.target.textContent;
+    loadSingleCategory(filtersAndCategories.searchQuery);
+  }
+  toggleMobileMenu();
 }
 
 async function createFilters() {
@@ -46,7 +55,7 @@ async function createFilters() {
   }
 }
 
-async function createSingleCategory() {
+async function loadSingleCategory() {
   try {
     const categories = await filtersAndCategories.fetchSingleCategory();
     const list = await categories.json();
@@ -61,21 +70,6 @@ async function createSingleCategory() {
   }
 }
 
-// async function createCategories() {
-//   try {
-//     const categories = await filtersAndCategories.fetchCategories();
-//     const list = await categories.json();
-//     const result = Object.keys(list);
-//     const buildMarkup = items => {
-//       categoriesMarkup(items);
-//     };
-//     clearCategories();
-//     return buildMarkup(result);
-//   } catch (error) {
-//     throw error;
-//   }
-// }
-
 function filtersMarkup(items) {
   filtersList.insertAdjacentHTML('beforeend', filters(items));
   mobileFiltersList.insertAdjacentHTML('beforeend', mobileFilters(items));
@@ -88,10 +82,7 @@ function categoriesMarkup(items) {
 }
 createFilters();
 
-// createCategories();
-
 const page = document.querySelector('.js-page-number');
-// page.addEventListener('click', createCategories);
 
 function clearCategories() {
   categoriesList.innerHTML = '';
