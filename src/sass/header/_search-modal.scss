@@ -72,6 +72,9 @@
 
     max-width: 650px;
   }
+  ::placeholder {
+    color: $c-white;
+  }
 }
 
 #search-input {
@@ -121,9 +124,4 @@ input {
 }
 .material-icons.md-light {
   color: rgba(255, 255, 255, 1);
-}
-.button-modal-close {
-  .icon-close {
-    fill: $c-white;
-  }
 }

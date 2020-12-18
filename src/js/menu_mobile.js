@@ -30,7 +30,6 @@ export default function toggleMobileMenu() {
 
 function addMobileMenuListeners() {
   if (localStorage.getItem('key') == null) {
-    console.log(!localStorage.getItem('key'));
     refs.accountLoginBtnMobile.addEventListener('click', insideMobileMenulistener);
   }
 

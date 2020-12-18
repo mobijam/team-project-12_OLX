@@ -25,7 +25,7 @@
                 <use class="menu-close" href="./images/sprite_svg.svg#icon-close"></use>
               </svg>
             </button>
-            <a href="./index.html" class="logo">LOGO</a>
+            <a href="./index.html" class="logo" id="logo">LOGO</a>
             <button class="button search" data-action="mobile-search" data-modal-search-mobile>
               <svg width="24px" height="24px">
                 <use href="./images/sprite_svg.svg#icon-search"></use>
@@ -175,7 +175,7 @@
                   <use class="menu-close" href="./images/sprite_svg.svg#icon-close"></use>
                 </svg>
               </button>
-              <ul class="js-nav-menu"></ul>
+              <ul class="js-nav-menu" role="group"></ul>
               <button class="button desktop reset" data-action-reset data-action="reset">
                 <svg width="24" height="24">
                   <use href="./images/sprite_svg.svg#icon-reset"></use>
@@ -189,7 +189,7 @@
     </header>
     <main>
       <div class="container">
-        <ul class="js-categories"></ul>
+        <div class="category-list-container"></div>
         <ul class="js-page-list">
           <li><button class="js-page-number active">1</button></li>
           <li><button class="js-page-number">2</button></li>
