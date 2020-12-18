@@ -12,31 +12,26 @@ export default function chooseModal(checkType) {
   }
   if (checkType === 'login') {
     // refs.modalContent.insertAdjacentHTML('beforeend', login());
-    refs.modalContent.innerHTML = `<h1> Модалка ${checkType}</h1>`;
+    refs.modalContent.innerHTML = `<h1> Шаблон для модалки ${checkType} вставляется в chooseModal.js</h1>`;
   }
   if (checkType === 'logout') {
-    console.log('LogOut');
     // refs.modalContent.insertAdjacentHTML('beforeend', logOut());
-    refs.modalContent.innerHTML = `<h1> Модалка ${checkType}</h1>`;
+    refs.modalContent.innerHTML = `<h1>  Шаблон для модалки ${checkType} вставляется в chooseModal.js</h1>`;
   }
   if (checkType === 'create') {
-    console.log('make-call');
     // refs.modalContent.insertAdjacentHTML('beforeend', createCall());
-    refs.modalContent.innerHTML = `<h1> Модалка ${checkType}</h1>`;
+    refs.modalContent.innerHTML = `<h1>  Шаблон для модалки ${checkType} вставляется в chooseModal.js</h1>`;
   }
   if (checkType === 'edit-call') {
-    console.log('edit-call');
     // refs.modalContent.insertAdjacentHTML('beforeend', editCall());
-    refs.modalContent.innerHTML = `<h1> Модалка ${checkType}</h1>`;
+    refs.modalContent.innerHTML = `<h1>  Шаблон для модалки ${checkType} вставляется в chooseModal.js</h1>`;
   }
   if (checkType === 'favorites') {
-    console.log('favorites');
-    refs.modalContent.innerHTML = `<h1> Модалка ${checkType}</h1>`;
+    refs.modalContent.innerHTML = `<h1>  Шаблон для модалки ${checkType} вставляется в chooseModal.js</h1>`;
     // refs.modalContent.insertAdjacentHTML('beforeend', favorites());
   }
   if (checkType === 'my-calls') {
-    console.log('my-calls');
-    refs.modalContent.innerHTML = `<h1> Модалка ${checkType}</h1>`;
+    refs.modalContent.innerHTML = `<h1>  Шаблон для модалки ${checkType} вставляется в chooseModal.js</h1>`;
     // refs.modalContent.insertAdjacentHTML('beforeend', myCall());
   }
 }

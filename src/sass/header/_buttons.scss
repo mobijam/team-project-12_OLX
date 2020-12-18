@@ -270,8 +270,20 @@
     background: $c-accent;
   }
 }
+
 .button-modal-close {
   position: absolute;
+
+  .icon-close {
+    fill: $c-black;
+
+    transition: $transition;
+  }
+
+  &:hover .icon-close,
+  &:focus .icon-close {
+    transform: rotate(720deg);
+  }
 
   @media screen and (min-width: 320px) and (max-width: 767px) {
     top: 15px;
