@@ -2,6 +2,7 @@ import checkType from './chooseModal';
 
 export const refs = {
   modal: document.querySelector('[data-modal]'),
+  modalWindow: document.querySelector('[data-modal-window]'),
   modalContent: document.querySelector('[data-modal-content]'),
 
   openModalSearchBtn: document.querySelector('[data-action="search"]'),
@@ -61,7 +62,7 @@ export default function showModal(action) {
   } else if (action === 'my-calls' || action === 'mobile-my-calls') {
     type = 'my-calls';
   }
-  refs.modalContent.setAttribute('data-action', `${type}`);
+  refs.modalWindow.setAttribute('data-action', `${type}`);
   // toggleModal();
 
   document.body.classList.add('modal-open');
@@ -87,8 +88,8 @@ export default function showModal(action) {
       e.currentTarget.dataset.action === 'modal-close' ||
       e.target.hasAttribute('data-modal')
     ) {
-      if (refs.modalContent.hasAttribute('data-action')) {
-        refs.modalContent.removeAttribute('data-action');
+      if (refs.modalWindow.hasAttribute('data-action')) {
+        refs.modalWindow.removeAttribute('data-action');
       }
       document.body.classList.remove('modal-open');
       refs.modal.classList.add('is-hidden');

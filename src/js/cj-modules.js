@@ -29,11 +29,23 @@ function onSiteLogoClick(e) {
 function onFilterBtnClick(e) {
   if (e.target.dataset.action === 'filter') {
     filter.resetBtn.addEventListener('click', filter.resetFilter);
-    const category = (filtersAndCategories.searchQuery = e.target.textContent);
 
-    loadSingleCategory(filtersAndCategories.searchQuery);
-    e.target.classList.add('active');
-    const curLoc = `${filtersAndCategories.endPoint.specCat}${filtersAndCategories.searchQuery}`;
+    const category = (filtersAndCategories.searchQuery = e.target.textContent);
+    const listOfFilters = document.querySelectorAll('[data-action="filter"]');
+    const status = e.target.hasAttribute('disabled');
+
+    if (status) {
+      return;
+    } else {
+      listOfFilters.forEach(filter => {
+        filter.removeAttribute('disabled');
+        filter.classList.remove('active');
+      });
+      e.target.setAttribute('disabled', 'disabled');
+      e.target.classList.add('active');
+      loadSingleCategory(filtersAndCategories.searchQuery);
+      const curLoc = `${filtersAndCategories.endPoint.specCat}${filtersAndCategories.searchQuery}`;
+    }
     // setLocation(category, curLoc);
   }
 }
