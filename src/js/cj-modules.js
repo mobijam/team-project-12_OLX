@@ -26,6 +26,10 @@ function onSiteLogoClick(e) {
   // getProductList(); //для работы нужен шаблон галереи
 }
 
+window.onpopstate = function (event) {
+  console.log('location: ' + document.location + ', state: ' + JSON.stringify(event.state));
+};
+
 function onFilterBtnClick(e) {
   if (e.target.dataset.action === 'filter') {
     filter.resetBtn.addEventListener('click', filter.resetFilter);
@@ -33,6 +37,9 @@ function onFilterBtnClick(e) {
     const category = (filtersAndCategories.searchQuery = e.target.textContent);
     const listOfFilters = document.querySelectorAll('[data-action="filter"]');
     const status = e.target.hasAttribute('disabled');
+    const curLoc = `${filtersAndCategories.searchQuery}`;
+
+    history.pushState({ page: `${category}` }, null, `${category}`);
 
     if (status) {
       return;
@@ -44,17 +51,8 @@ function onFilterBtnClick(e) {
       e.target.setAttribute('disabled', 'disabled');
       e.target.classList.add('active');
       loadSingleCategory(filtersAndCategories.searchQuery);
-      const curLoc = `${filtersAndCategories.endPoint.specCat}${filtersAndCategories.searchQuery}`;
     }
-    // setLocation(category, curLoc);
   }
-}
-function setLocation(category, curLoc) {
-  try {
-    history.pushState(category, null, curLoc);
-    return;
-  } catch (e) {}
-  location.hash = '#' + curLoc;
 }
 
 function onMobileFilterBtnClick(e) {
