@@ -5,8 +5,9 @@ export function resetFilter() {
   const listOfFilters = document.querySelectorAll('[data-action="filter"]');
   function resetFilter(items) {
     items.forEach(item => {
-      if (item.classList.contains('active')) {
+      if (item.hasAttribute('disabled') && item.classList.contains('active')) {
         item.classList.remove('active');
+        item.removeAttribute('disabled');
         // getProductList(); //для включения нужен шаблон галереи
       }
     });
