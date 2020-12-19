@@ -1,11 +1,22 @@
 //const { async } = require("q");
-//Валидация и отправка форм
 
+export default function addModalRefs(){
 const addForm = document.querySelector('.add-modal-form')
 const validateBtn = addForm.querySelector('.button-add')
 const addInputs = addForm.querySelectorAll('.add-input')
-
 addForm.addEventListener('submit', addFormValidate); 
+const addModalBtn = document.querySelector('[data-action="submit-modal"]')
+addModalBtn.addEventListener('click', addFormValidate);
+addModalBtn.addEventListener('click', formSend); 
+const addCategory = document.querySelector('.js-category-input');
+addCategory.addEventListener('click', renderCategoriesList);
+const formImage = document.querySelector('.add-photo');
+const formPreview = document.querySelector('.file-preview-add');
+formImage.addEventListener('change', onFormImageClick);
+formPreview.addEventListener('click', onFormPreviewClick);
+}
+
+//Валидация и отправка форм
 async function addFormValidate(e) {
   e.preventDefault();
     removeValidation();
@@ -53,16 +64,14 @@ function removeValidation() {
 
 //Открытие модалки "Додати оголошення" и закрытие тремя способами
 
-const refs = {
-  //openModalBtn: document.querySelector('[data-action="open-modal"]'),
+//openModalBtn: document.querySelector('[data-action="open-modal"]'),
   //closeModalBtn: document.querySelector('[data-action="modal-close"]'),
-  addModalBtn: document.querySelector('[data-action="submit-modal"]'),
   //backdrop: document.querySelector('.js-backdrop'),
-};
 //refs.openModalBtn.addEventListener('click', onOpenModal);
 //refs.closeModalBtn.addEventListener('click', onCloseModal);
-refs.addModalBtn.addEventListener('click', addFormValidate);
-refs.addModalBtn.addEventListener('click', formSend);
+//
+//refs.addModalBtn.addEventListener('click', addFormValidate);
+//
 //refs.backdrop.addEventListener('click', onBackdropClick);
 
 //function onOpenModal() {
@@ -88,8 +97,7 @@ refs.addModalBtn.addEventListener('click', formSend);
 //}
 //Категории в выпадашке модалки "Додати оголошення"
 const BASE_URL = `https://callboard-backend.herokuapp.com`;
-const addCategory = document.querySelector('.js-category-input');
-addCategory.addEventListener('click', renderCategoriesList);
+
 // Функция делает запрос на бэк по категориям, массив в ответе
 function fetchCategories() {
   return fetch(`${BASE_URL}/call/categories`)
@@ -98,57 +106,56 @@ function fetchCategories() {
     })
 }
 //Функция добавляет разметку выпадающего списка в модалку "Додати оголошення"
-function renderCategoriesList() {
-  let categoryMarkup = ``;
-  fetchCategories().then((categories) => {
-    for (let category of categories){
-      categoryMarkup += `<option value="${category}" class="js-add-category">${category}</option> `;
-    }
-    addCategory.insertAdjacentHTML('beforeend', categoryMarkup);
-    addCategory.removeEventListener('click', renderCategoriesList);
-   })
-    .catch(error => console.log(error));
-}
+//function renderCategoriesList() {
+  //let categoryMarkup = ``;
+  //fetchCategories().then((categories) => {
+    //for (let category of categories){
+      //categoryMarkup += `<option value="${category}" class="js-add-category">${category}</option> `;
+    //}
+    //addCategory.insertAdjacentHTML('beforeend', categoryMarkup);
+    //addCategory.removeEventListener('click', renderCategoriesList);
+   //})
+    //.catch(error => console.log(error));
+//}
 // загрузка фото
-const formImage = document.querySelector('.add-photo');
-const formPreview = document.querySelector('.file-preview-add');
 
-formImage.addEventListener('change', () => {
+function onFormImageClick() {
   uploadFile(formImage.files[0]);
-});
+};
 
-function uploadFile(file) {
+//function uploadFile(file) {
   
-  if (!['image/jpeg', 'image/png', 'image/gif'].includes(file.type)) {
-    alert('Only images!');
-    formImage.value = '';
-    return;
-  }
-  if (file.size > 3 * 1024 * 1024) {
-    alert('The file is to big!');
-    return;
-  }
+  //if (!['image/jpeg', 'image/png', 'image/gif'].includes(file.type)) {
+    //alert('Only images!');
+    //formImage.value = '';
+    //return;
+  //}
+  //if (file.size > 3 * 1024 * 1024) {
+    //alert('The file is to big!');
+    //return;
+  //}
 
-  let reader = new FileReader();
-  reader.onload = function(e) {
-  formPreview.insertAdjacentHTML(
-    'beforeend',
-    `<li class="file-preview-item"><img src="${e.target.result}" alt="" /></li>`,
-  );
+  //let reader = new FileReader();
+  //reader.onload = function(e) {
+  //formPreview.insertAdjacentHTML(
+    //'beforeend',
+    //`<li class="file-preview-item"><img src="${e.target.result}" alt="" /></li>`,
+  //);
 
-  };
-  reader.onerror = function(e) {
-  alert('Error');
-  };
-  reader.readAsDataURL(file);
-}
+  //};
+  //reader.onerror = function(e) {
+  //alert('Error');
+  //};
+  //reader.readAsDataURL(file);
+//}
 
-formPreview.addEventListener('click', e => {
-  if (e.target.tagName === 'IMG') {
+
+function onFormPreviewClick (e) {
+if (e.target.tagName === 'IMG') {
     const remove = confirm('Delete file?');
     if (remove) {
       e.target.parentNode.remove();
     }
   }
-});
+}
 

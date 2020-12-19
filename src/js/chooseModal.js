@@ -2,6 +2,7 @@ import { refs } from './modal';
 import search from '../templates/search.hbs';
 import auth from '../templates/auth-form.hbs';
 import addForm from '../templates/add-modal.hbs';
+import addModalRefs from './add-modal';
 
 export default function chooseModal(checkType) {
   // let checkType = refs.modalContent.dataset.action;
@@ -22,6 +23,7 @@ export default function chooseModal(checkType) {
   if (checkType === 'create') {
     //console.log('make-call');
     refs.modalContent.insertAdjacentHTML('beforeend', addForm());
+    addModalRefs();
     //refs.modalContent.innerHTML = `<h1> Модалка ${checkType}</h1>`;
   }
   if (checkType === 'edit-call') {
