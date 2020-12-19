@@ -43,7 +43,7 @@ function openModal(e) {
 }
 
 export default function showModal(action) {
-  checkLogin();
+  //checkLogin();
 
   let type = '';
 
@@ -132,6 +132,6 @@ function checkLogin() {
     refs.accountMenuMobile.classList.add('hidden');
   }
 }
-checkLogin();
+//checkLogin();
 
 //

@@ -10,13 +10,14 @@ import './js/modal';
 import './js/authorization';
 // import './js/oksana-favourites';
 // import './js/oksana-product';
+import './js/add-modal';
 import toggleMobileMenu from './js/menu_mobile';
 
 // templates
 import mobileFilters from './templates/mobile_filters.hbs';
 import filters from './templates/filters.hbs';
 import FetchApi from './js/fetchAPI';
-
+import './templates/add-modal.hbs';
 // DOM-elements selection
 const categoriesList = document.querySelector('.js-categories');
 const filtersList = document.querySelector('.js-nav-menu');

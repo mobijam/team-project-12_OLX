@@ -1,15 +1,15 @@
-$var1: #2A2A2A;
+$var1: #2a2a2a;
 $var2: #000000;
-$var3: #FFFFFF;
-$var4: #BBBBBB;
-$var5: #FFFFFF;
-$var6: #FF6B09;
-$var7: #F5F6FB;
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+$var3: #ffffff;
+$var4: #bbbbbb;
+$var5: #ffffff;
+$var6: #ff6b09;
+$var7: #f5f6fb;
+//*,
+//*::before,
+//*::after {
+  //box-sizing: border-box;
+//}
 //body {
   //font-family: Roboto, sans-serif;
   //color: $var1;
@@ -34,14 +34,6 @@ label {
   font-size: 14px;
   line-height: 1.14;
   color: $var2;
-  @media screen and (min-width: 768px) {
-    margin: 0px;
-    padding-left: 53px;
-  }
-  @media screen and (min-width: 1280px) {
-    margin: 0px;
-    padding-left: 105px;
-  }
 }
 .add-input {
   height: 56px;
@@ -69,11 +61,9 @@ label {
   }
   @media screen and (min-width: 768px) {
     width: 458px;
-    margin-right: 55px;
   }
   @media screen and (min-width: 1280px) {
     width: 440px;
-    margin-right: 105px;
   }
 }
 
@@ -88,36 +78,11 @@ label {
   font-size: 20px;
   line-height: 1.15;
   color: $var2;
-  @media screen and (min-width: 768px) {
-    margin-left: 53px;
-  }
-  @media screen and (min-width: 1280px) {
-    margin-left: 105px;
-  }
 }
 
-//.backdrop {
-  //display: flex;
-  //justify-content: center;
-  //align-items: center;
-  //position: fixed;
-  //top: 0;
-  //left: 0;
-  //width: 100vw;
-  //height: 100vh;
-  //background-color: rgba(0, 0, 0, 0.7);
-  //z-index: 999;
-  //pointer-events: none;
-  //opacity: 0;
-  //visibility: hidden;
-  //transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
-  //overflow-y: scroll;
-//}
-
 .add-modal {
-  padding-left: 20px;
-  padding-bottom: 60px;
-  position: absolute;
+  padding: 54px 19px 60px 20px;
+  //position: absolute;
   background-color: $var5;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
@@ -125,18 +90,14 @@ label {
   transition: transform 200ms ease-in-out;
   height: 100%;
   overflow: auto;
-  @media screen and (min-width: 320px) {
-    max-width: 290px;
-    max-height: 875px;
-    height: auto;
+  @media screen and (max-width: 767px) {
+    width: 290px;
   }
   @media screen and (min-width: 768px) {
-    min-width: 724px;
-    min-height: 698px;
+    padding: 54px 105px 60px 105px;
   }
   @media screen and (min-width: 1280px) {
-    min-width: 861px;
-    min-height: 698px;
+    padding: 53px 105px 55px 105px;
   }
 }
 .add-modal-container {
@@ -166,11 +127,11 @@ label {
   text-align: center;
   text-transform: uppercase;
   color: $var3;
+  margin-top: 41px;
+  margin-left: auto;
+  margin-right: auto;
   @media screen and (min-width: 768px) {
     width: 266px;
-    margin-top: 41px;
-    margin-left: auto;
-    margin-right: auto;
   }
   @media screen and (min-width: 1280px) {
     width: 210px;
@@ -192,8 +153,13 @@ label {
 }
 
 .add-photos {
-  padding-left: 0px;
-  width: 100%;
+  width: 251px;
+  @media screen and (min-width: 768px) {
+    width: 458px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 440px;
+  }
 }
 
 .file-preview-add {
@@ -202,6 +168,7 @@ label {
   width: 100%;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: start;
+  padding: 0px;
   @media screen and (min-width: 768px) {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
@@ -216,12 +183,17 @@ label {
   align-items: center;
   justify-content: center;
   background-color: #f5f6fb;
+  padding: 0px;
   img {
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
   }
   @media screen and (min-width: 768px) {
-    width: 85px;
+    width: 83px;
+    height: 50px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 78px;
     height: 50px;
   }
 }
@@ -248,11 +220,9 @@ label {
   @media screen and (min-width: 768px) {
     width: 458px;
     float: right;
-    margin-right: 55px;
   }
   @media screen and (min-width: 1280px) {
     width: 440px;
-    margin-right: 105px;
   }
 }
 .add-valid-error {
@@ -261,11 +231,11 @@ label {
   font-size: 80%;
   color: red;
   //margin-top: 0px;
-  
-  @media screen and (min-width: 768px){
-    padding-left: 190px;
+
+  @media screen and (min-width: 768px) {
+    padding-left: 90px;
   }
-  @media screen and (min-width: 1280px){
-    padding-left: 300px;
+  @media screen and (min-width: 1280px) {
+    //padding-left: 300px;
   }
 }

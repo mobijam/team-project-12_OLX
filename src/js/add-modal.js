@@ -4,6 +4,7 @@
 const addForm = document.querySelector('.add-modal-form')
 const validateBtn = addForm.querySelector('.button-add')
 const addInputs = addForm.querySelectorAll('.add-input')
+
 addForm.addEventListener('submit', addFormValidate); 
 async function addFormValidate(e) {
   e.preventDefault();
@@ -26,8 +27,8 @@ function removeValidation() {
   const accessToken = sessionStorage.getItem('token');
   async function formSend(e) {
     e.preventDefault();
-    let error = addFormValidate(addForm);
-  if (error === 0) {
+    let addError = addFormValidate(addForm);
+  if (addError === 0) {
     const formdata = new FormData(addForm);
     let myHeaders = new Headers();
     myHeaders.append('Authorization', `Bearer ${accessToken}`);
@@ -44,24 +45,24 @@ function removeValidation() {
   .then(res => res.json())
   .then(result => {
     console.log(result);
-    onCloseModal();
+    addForm(reset);
+    //onCloseModal();
   })
   .catch(error => console.log('error', error));
 }  
 
 //Открытие модалки "Додати оголошення" и закрытие тремя способами
 
-//const refs = {
+const refs = {
   //openModalBtn: document.querySelector('[data-action="open-modal"]'),
-  //closeModalBtn: document.querySelector('[data-action="close-modal"]'),
-  //addModalBtn: document.querySelector('[data-action="submit-modal"]'),
+  //closeModalBtn: document.querySelector('[data-action="modal-close"]'),
+  addModalBtn: document.querySelector('[data-action="submit-modal"]'),
   //backdrop: document.querySelector('.js-backdrop'),
-//};
-
+};
 //refs.openModalBtn.addEventListener('click', onOpenModal);
 //refs.closeModalBtn.addEventListener('click', onCloseModal);
-//refs.addModalBtn.addEventListener('click', addFormValidate);
-//refs.addModalBtn.addEventListener('click', formSend);
+refs.addModalBtn.addEventListener('click', addFormValidate);
+refs.addModalBtn.addEventListener('click', formSend);
 //refs.backdrop.addEventListener('click', onBackdropClick);
 
 //function onOpenModal() {
