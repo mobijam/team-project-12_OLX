@@ -1,0 +1,369 @@
+$var1: #2a2a2a;
+$var2: #000000;
+$var3: #ffffff;
+$var4: #bbbbbb;
+$var5: #ffffff;
+$var6: #ff6b09;
+$var7: #f5f6fb;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  font-family: Roboto, sans-serif;
+  color: $var1;
+  &.show-modal .edit-backdrop {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: initial;
+  }
+  &.show-modal .edit-modal {
+    transform: scale(1);
+  }
+}
+button,
+label {
+  cursor: pointer;
+}
+.edit-label {
+  display: block;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  color: $var2;
+  @media screen and (min-width: 768px) {
+    margin: 0px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin: 0px;
+  }
+}
+.edit-input {
+  height: 56px;
+  background: $var3;
+  border: 1px solid $var4;
+  &::placeholder {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    padding-left: 23px;
+    letter-spacing: 0.02em;
+    color: $var4;
+  }
+  &:focus,
+  &:hover,
+  &:active {
+    outline: none;
+    box-shadow: none;
+  }
+  @media screen and (min-width: 320px) {
+    width: 251px;
+    // margin-top: 10px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 458px;
+    // margin-right: 55px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 440px;
+    // margin-right: 105px;
+  }
+}
+.edit-title {
+  width: 256px;
+  height: 23px;
+  //   left: 315px;
+  //   top: 180px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.15;
+  color: $var2;
+  @media screen and (min-width: 320px) {
+    margin-top: 54px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+  }
+  @media screen and (min-width: 768px) {
+    margin-top: 54px;
+    margin-bottom: 30px;
+    margin-left: 53px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-top: 54px;
+    margin-bottom: 30px;
+    margin-left: 105px;
+  }
+}
+.edit-backdrop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
+  overflow-y: scroll;
+}
+.edit-modal {
+  position: absolute;
+  background-color: $var5;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  transform: scale(1.1);
+  transition: transform 200ms ease-in-out;
+  height: 100%;
+  overflow: auto;
+  @media screen and (min-width: 320px) {
+    max-width: 290px;
+    max-height: 875px;
+    height: auto;
+  }
+  @media screen and (min-width: 768px) {
+    min-width: 724px;
+    min-height: 698px;
+  }
+  @media screen and (min-width: 1280px) {
+    min-width: 861px;
+    min-height: 698px;
+  }
+}
+
+// .edit-modal-form .edit-modal-container:last-child {
+
+//       @media screen and (min-width: 320px) {
+// margin-bottom: ;
+//   }
+//   @media screen and (min-width: 768px) {
+// margin-bottom: 20px;
+//   }
+//   @media screen and (min-width: 1280px) {
+// margin-bottom: 40px;
+//   }
+// }
+
+.edit-modal-container {
+  margin-bottom: 20px;
+  @media screen and (min-width: 320px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-left: 53px;
+    padding-right: 55px;
+  }
+  @media screen and (min-width: 1280px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-left: 105px;
+    padding-right: 105px;
+  }
+}
+
+.button-edit-patch {
+  @media screen and (min-width: 320px) {
+    margin-right: 15px;
+  }
+  @media screen and (min-width: 768px) {
+    margin-right: 20px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-right: 20px;
+  }
+}
+
+.buttons-edit {
+  display: flex;
+  justify-content: flex-end;
+  @media screen and (min-width: 320px) {
+    margin-bottom: 40px;
+    margin-right: 19px;
+  }
+  @media screen and (min-width: 768px) {
+    margin-bottom: 59px;
+    margin-right: 72px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 59px;
+    margin-right: 105px;
+  }
+}
+
+.button-edit {
+  width: 251px;
+  height: 50px;
+  left: 35px;
+  top: 778px;
+  margin-top: 30px;
+  background: $var6;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.17;
+  align-content: center;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  color: $var3;
+  @media screen and (min-width: 320px) {
+    width: 118px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 210px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 210px;
+  }
+}
+.button-edit-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  width: 15px;
+  height: 30px;
+}
+
+.delete-button {
+  align-items: center;
+  width: 139px;
+  height: 14px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 1.17;
+
+  @media screen and (min-width: 320px) {
+    margin-bottom: 30px;
+  }
+  @media screen and (min-width: 768px) {
+    margin-bottom: 40px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 40px;
+  }
+}
+.edit-photo {
+  opacity: 0;
+  font-size: 0;
+  width: 0;
+  height: 0;
+}
+.edit-photo-button {
+  background: $var7;
+  border: none;
+  padding: 0px;
+  margin-bottom: 0px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: $var4;
+  cursor: pointer;
+  width: 77px;
+  height: 46px;
+  left: 122px;
+  top: 236px;
+  margin-right: 10px;
+  //   margin-bottom: 10px;
+  @media screen and (min-width: 768px) {
+    width: 83px;
+    height: 50px;
+
+    margin-bottom: 0px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 78px;
+    margin-bottom: 0px;
+    // margin-right: 10px;
+  }
+}
+
+.edit-photo-button-last {
+  margin-right: 0px;
+}
+
+.edit-photos {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  height: auto;
+
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  @media screen and (min-width: 320px) {
+    width: 251px;
+  }
+  @media screen and (min-width: 768px) {
+    flex-wrap: inherit;
+    width: 458px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 440px;
+  }
+}
+.edit-category {
+  width: 251px;
+  height: 56px;
+  left: 35px;
+  top: 484px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background: $var3;
+  border: 1px solid $var4;
+  &:focus,
+  &:hover,
+  &:active {
+    outline: none;
+    box-shadow: none;
+  }
+  @media screen and (min-width: 768px) {
+    width: 458px;
+    float: right;
+    margin-right: 55px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 440px;
+    margin-right: 105px;
+  }
+}
+.edit-category:last-child {
+  margin-right: 0px;
+}
+
+.edit-valid-error {
+  position: absolute;
+  width: 100%;
+  font-size: 80%;
+  color: red;
+  margin-top: 0px;
+  @media screen and (min-width: 768px) {
+    padding-left: 190px;
+  }
+  @media screen and (min-width: 1280px) {
+    padding-left: 300px;
+  }
+}
