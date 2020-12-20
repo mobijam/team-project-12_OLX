@@ -85,7 +85,8 @@
       svg {
         margin-right: 11px;
       }
-      &:hover {
+      &:hover,
+      &:focus {
         svg {
           fill: $c-white;
         }
@@ -182,9 +183,12 @@
   transition: $transition;
 
   &.active {
+    color: $c-white;
     background-color: $c-accent;
+    transform: scale(1.1);
   }
-  &:hover {
+  &:hover,
+  &:focus {
     transform: scale(1.1);
   }
 }
@@ -209,7 +213,8 @@
   @media screen and (min-width: $tablet-min) {
     width: 152px;
   }
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: $c-accent;
     color: $c-white;
   }
@@ -270,8 +275,26 @@
     background: $c-accent;
   }
 }
+
+//Кнока модалки
 .button-modal-close {
   position: absolute;
+
+  [data-action='search'] & {
+    .icon-close {
+      fill: $c-white;
+    }
+  }
+  .icon-close {
+    fill: $c-black;
+
+    transition: $transition;
+  }
+
+  &:hover .icon-close,
+  &:focus .icon-close {
+    transform: rotate(720deg);
+  }
 
   @media screen and (min-width: 320px) and (max-width: 767px) {
     top: 15px;
