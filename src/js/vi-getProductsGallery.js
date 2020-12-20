@@ -1,5 +1,4 @@
 /* 
-
 . приходит response.json в виде объекта из 5 массивов объектов
 . каждый объект массива содержит :
 , - category
@@ -12,9 +11,8 @@
 , - userId
 , - __v
 , - _id 
-
-
 */
+
 
 // ------------------BEGIN----------------
 import markUpList from '../templates/vi-category-list.hbs';
@@ -32,11 +30,13 @@ refs.changePage.forEach(element => element.addEventListener('click', getNewFethi
 
 getCategorytList()
 
+
 function getNewFething(e) {
     clearContainer()
     getProductGallery.pageNumber = getPageNumber(e);
     // getProductGallery.rusRequest = '/russian-categories';
     getCategorytList();
+
 }
  
 function getCategorytList() {
@@ -46,7 +46,6 @@ function getCategorytList() {
         })
         .then(parceCategoryList);
 }
-    
 
 function getCategoryPage(e) {
     getProductGallery.newRequest = 'property';
@@ -58,6 +57,7 @@ function addToFavorite(e) {
     console.log('Вы перешли на страницу ИЗБРАННЫЕ');
 }
 
+
 function parceCategoryList(arg) {
     const listOfProduct = markUpList(arg);
     refs.categoryList.insertAdjacentHTML("afterbegin", listOfProduct);
@@ -65,7 +65,7 @@ function parceCategoryList(arg) {
     const favoriteButtons = document.querySelectorAll('[data-action="favorite"]') 
     categoryPageLink.forEach(el => el.addEventListener('click', getCategoryPage));
     favoriteButtons.forEach(e=>e.addEventListener('click', addToFavorite))
-    
+
 }
 
 
@@ -79,8 +79,7 @@ function getRefs() {
         // categoryPageLink: document.querySelector('.category-navi .text'),
     }
 }
-    
+
 function clearContainer() {refs.categoryList.innerHTML = ''};
 
-export function fetchOnError(arg = 'ERROR') {console.log(arg)}
- 
+export function fetchOnError(arg = 'ERROR') { console.log(arg) };

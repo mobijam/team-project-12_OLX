@@ -1,7 +1,6 @@
 
 import authorizationModal from '../templates/auth-form.hbs';
 
-
 const hbsFunctions = [
     authorizationModal,
 ];

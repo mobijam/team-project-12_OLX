@@ -4,142 +4,138 @@ $mobile: 320px;
 $tablets: 768px;
 $desktop: 1280px;
 
-$bgc-gallery:#E5E5E5;
-$bgc-gallery-item:#ffffff;
-$c-black:#0000;
-$c-white:#ffff;
+$bgc-gallery: #e5e5e5;
+$bgc-gallery-item: #ffffff;
+$c-black: #0000;
+$c-white: #ffff;
 
-$width-image:295px;
+$width-image: 295px;
 $height-image: 275px;
-$width-item:295px;
+$width-item: 295px;
 $height-item: 350px;
 $margin-item: 20px;
-$borders-item: 1px, #E2E3E5, solid;
-$box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 1px 3px rgba(0, 0, 0, 0.12);
+$borders-item: 1px, #e2e3e5, solid;
+$box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
 
-body{
-   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+    'Helvetica Neue', sans-serif;
 }
-
-
 
 // .breackpoints--------------------------------------
 
 //| - mobile ----------------------------------------
 @media screen and (min-width: 0px) {
-  .category-list{
-        //  ul - контейнер , куда  рендерится весь контент
-        box-sizing: border-box;
-        max-width: $mobile;
-        display: block;
-        text-align: center;
-        margin: auto;
-        padding: 0;
+  .category-list {
+    //  ul - контейнер , куда  рендерится весь контент
+    box-sizing: border-box;
+    max-width: $mobile;
+    display: block;
+    text-align: center;
+    margin: auto;
+    padding: 0;
+    list-style: none;
+
+    .category {
+      // ul - модуль одной категории
+      padding: 0 10px 0 10px;
+      margin: 0 0 1px;
+      // list-style: none;
+      background-color: #e5e5e5;
+
+      .category-navi {
+        //ul - модуль навигации (кнопки влево вправо и ссылка на страницу категории)
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        margin: 28px 35px 27px 15px;
         list-style: none;
 
-        .category{
-          // ul - модуль одной категории
-          padding: 0 10px 0 10px;
-          margin: 0 0 1px ;
-          // list-style: none;
-          background-color:  #E5E5E5;
+        .navi {
+          display: none;
+        }
 
-          .category-navi{
-            //ul - модуль навигации (кнопки влево вправо и ссылка на страницу категории)
-            display: flex;
-            justify-content: start;
-            align-items: center;
-            margin: 28px 35px 27px 15px;
-            list-style: none;
-            
-            .navi{
-               display: none;
-            }
-            
-            .title{
-              //h2 - название категории
-              margin: 28px 16px 27px 15px;
-               font-family: Montserrat;
-               font-style: normal;
-               font-weight: bold;
-               font-size: 12px;
-               line-height: calc(15/12);
-               letter-spacing: 0.09rem;
-               text-transform: uppercase;
-               color: #000000;
-            }
-            
-            .text{
-              // p - текст  форма для перехода на страницу категории
-              margin: 0;
-              font-family: Montserrat;
-              font-style: normal;
-              font-weight: normal;
-              font-size: 12px;
-              line-height: calc(15/12);
-              letter-spacing: 0.06rem;
-              text-decoration-line: underline;
-              color: #FF6B09;
-            }
-          }
-          
-          .category-item{
-          // li  - элемент одной категории (товар)
-          box-sizing: border-box;  
-          display: inline-block;
-        
-            width: 290px;
-            height: 350px;
-            margin: 0 0 30px;
-            // margin: 0 10px 50.5px 10px ;
-            background-color: $bgc-gallery-item;
-            
-            .text{
-            // p - описание элемента категории (товара)
-              text-align: start;
-              margin: 20px 0 0 10px;
-              font-family: Roboto;
-              font-style: normal;
-              font-weight: 300;
-              font-size: 12px;
-              line-height: 14px;
-            }
-            
-            .img{
-            // img - адрес изображения товара
-              display: block;
-              padding: 0;
-              margin: 0;
-              // width: 290px;
-              // height: 275px;
-              object-fit:cover;
-            }
-            
-            .price{
-            // p - цена товара
-              text-align: start;
-              margin: 4px 0 0 20px;
-              font-family: Roboto;
-              font-style: normal;
-              font-weight: bold;
-              font-size: 14px;
-              line-height: 16px;
-              letter-spacing: 0.04em;
-              color: #FF6B09;
-            }
-          }
+        .title {
+          //h2 - название категории
+          margin: 28px 16px 27px 15px;
+          font-family: Montserrat;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 12px;
+          line-height: calc(15 / 12);
+          letter-spacing: 0.09rem;
+          text-transform: uppercase;
+          color: #000000;
+        }
+
+        .text {
+          // p - текст  форма для перехода на страницу категории
+          margin: 0;
+          font-family: Montserrat;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 12px;
+          line-height: calc(15 / 12);
+          letter-spacing: 0.06rem;
+          text-decoration-line: underline;
+          color: #ff6b09;
         }
       }
+
+      .category-item {
+        // li  - элемент одной категории (товар)
+        box-sizing: border-box;
+        display: inline-block;
+
+        width: 290px;
+        height: 350px;
+        margin: 0 0 30px;
+        // margin: 0 10px 50.5px 10px ;
+        background-color: $bgc-gallery-item;
+
+        .text {
+          // p - описание элемента категории (товара)
+          text-align: start;
+          margin: 20px 0 0 10px;
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: 300;
+          font-size: 12px;
+          line-height: 14px;
+        }
+        .img {
+          // img - адрес изображения товара
+          display: block;
+          padding: 0;
+          margin: 0;
+          // width: 290px;
+          // height: 275px;
+          object-fit: cover;
+        }
+
+        .price {
+          // p - цена товара
+          text-align: start;
+          margin: 4px 0 0 20px;
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 14px;
+          line-height: 16px;
+          letter-spacing: 0.04em;
+          color: #ff6b09;
+        }
+      }
+    }
+  }
 }
 
-
-.buttton-section{
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    // text-align: center;
-    margin: auto;
+.buttton-section {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  // text-align: center;
+  margin: auto;
 }
 
 .js-page-list {
@@ -181,7 +177,6 @@ body{
       background-color: $c-black;
     }
   }
-
 }
 
 .mobile-create-ad-btn {
@@ -197,44 +192,40 @@ body{
   border-radius: 50%;
   cursor: pointer;
 }
+
 //| - tablet ----------------------------------------
 @media screen and (min-width: $tablets) {
-    
-     .category-list{
-      //  ul - контейнер , куда  рендерится весь контент
-            max-width: $tablets;
-           
-        .category{
-          // ul - модуль одной категории
-            padding: 0 10px 0 10px;
-            margin: 0 0 1px 0;
-            display: flex;
+  .category-list {
+    //  ul - контейнер , куда  рендерится весь контент
+    max-width: $tablets;
 
-        }
+    .category {
+      // ul - модуль одной категории
+      padding: 0 10px 0 10px;
+      margin: 0 0 1px 0;
+      display: flex;
+    }
 
-        .category-item{
-          // li  - элемент одной категории (товар)
-            display: block;
-            width: 352px;
-            height: 350px;
-            margin: 0 10px;
-            // margin: 0 10px 50.5px 10px ;
-            background-color: $bgc-gallery-item;
-        }
+    .category-item {
+      // li  - элемент одной категории (товар)
+      display: block;
+      width: 352px;
+      height: 350px;
+      margin: 0 10px;
+      // margin: 0 10px 50.5px 10px ;
+      background-color: $bgc-gallery-item;
+    }
 
-         .img{
-          // img - адрес изображения товара
-            display: block;
-            padding: 0;
-            margin: 0;
-            width: 352px;
-            height: 275px;
-        }
-
-     }
+    .img {
+      // img - адрес изображения товара
+      display: block;
+      padding: 0;
+      margin: 0;
+      width: 352px;
+      height: 275px;
+    }
+  }
 }
-
-
 
 // ----------------------trash--------------------------------
 /* // @media screen and (min-width: $tablets) {
@@ -243,13 +234,11 @@ body{
 //             display: block;
 //             text-align: center;
 //             margin: auto;
-
 //         .category-list{
 //             display: block;
 //             text-align: center;
 //             margin: auto;
 //             // max-width: $tablets;
-
 //          .category{
 //             padding: 0 10px 0 10px;
 //             margin: 0 0 1px 0;
@@ -258,7 +247,6 @@ body{
 //             // flex-wrap: wrap;
 //             background-color:  #E5E5E5;
 //         }
-
 //         .category-item{
 //             width: 352px;
 //             height: 275px;
@@ -293,58 +281,46 @@ body{
 //             letter-spacing: 0.04em;
 //             color: #FF6B09;
 //         }
-
 //     }
-
 //     }
-
 // }
  */
 
-
 // //| - desktop ----------------------------------------
 
-
 @media screen and (min-width: $desktop) {
-    
-     .category-list{
-      //  ul - контейнер , куда  рендерится весь контент
-            max-width: $desktop;
-           
-        .category{
-          // ul - модуль одной категории
-            padding: 0 10px 0 10px;
-            margin: 0;
-            // margin: 0 0 1px 0;
-            display: flex;
+  .category-list {
+    //  ul - контейнер , куда  рендерится весь контент
+    max-width: $desktop;
 
-        }
+    .category {
+      // ul - модуль одной категории
+      padding: 0 10px 0 10px;
+      margin: 0;
+      // margin: 0 0 1px 0;
+      display: flex;
+    }
 
-        .category-item{
-          // li  - элемент одной категории (товар)
-            display: block;
-            width: 295px;
-            height: 350px;
-            margin: 0 10px 50.5px;
-            // margin: 0 10px 50.5px 10px ;
-            background-color: $bgc-gallery-item;
-        }
+    .category-item {
+      // li  - элемент одной категории (товар)
+      display: block;
+      width: 295px;
+      height: 350px;
+      margin: 0 10px 50.5px;
+      // margin: 0 10px 50.5px 10px ;
+      background-color: $bgc-gallery-item;
+    }
 
-         .img{
-          // img - адрес изображения товара
-            display: block;
-            padding: 0;
-            margin: 0;
-            width: 295px;
-            height: 275px;
-        }
-
-     }
+    .img {
+      // img - адрес изображения товара
+      display: block;
+      padding: 0;
+      margin: 0;
+      width: 295px;
+      height: 275px;
+    }
+  }
 }
-
-
-
-
 
 /* // @media screen and (min-width: $desktop) {
 // .category-list-container{
@@ -352,11 +328,9 @@ body{
 //             display: block;
 //             text-align: center;
 //             margin: auto;
-
 //     .category-list{
 //         margin: 0;
 //         padding: 0;    
-
 //         .title{
 //         }
        
@@ -368,7 +342,6 @@ body{
 //             // flex-wrap: wrap;
 //             background-color:  #E5E5E5;
 //         }
-
 //         .category-item{ 
 //             width: 295px;
 //             height: 350px;
@@ -401,8 +374,6 @@ body{
 //             font-size: 12px;
 //             line-height: 14px;
 //         }
-
-
         
 //         .price{
 //             text-align: start;
@@ -415,13 +386,7 @@ body{
 //             letter-spacing: 0.04em;
 //             color: #FF6B09;
 //         }
-
 //     }
 // }
 // }
  */
-   
-
-
-
-
