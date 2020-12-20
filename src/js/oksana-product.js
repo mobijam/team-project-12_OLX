@@ -1,32 +1,33 @@
 import userInfoTpl from '../templates/user-info.hbs';
-import productCardTpl from '../templates/product-card.hbs';
-const BASE_URL = 'https://callboard-backend.herokuapp.com';
+// import productCardTpl from '../templates/product-card.hbs';
+// const BASE_URL = 'https://callboard-backend.herokuapp.com';
 const refs = {
   userContainer: document.querySelector('.js-user-container'),
   userBtn: document.querySelector('.js-user-button'),
   cardContainer: document.querySelector('.js-product-card'),
-  cardBtn: document.querySelector('.'),
+  cardBtn: document.querySelector('.favorite buttons'),
+  favProductBtn: document.querySelector('.js-fav-button'),
 };
 
-userBtn.addEventListener('click', onUserBtnClick);
+// refs.userBtn.addEventListener('click', onUserBtnClick);
 
-function onUserBtnClick(e) {
-  e.preventDefault();
+// function onUserBtnClick(e) {
+//   e.preventDefault();
 
-  userInfo().then;
+//   userInfo().then;
 
-  return (userInfo.innerHTML = userInfoTpl(product));
-}
+//   return (userInfo.innerHTML = userInfoTpl(product));
+// }
 
-function userInfo(userId) {
-  return fetch(`${BASE_URL}/user/{userId}`).then(responce => Response.json());
-}
+// function userInfo(userId) {
+//   return fetch(`${BASE_URL}/user/{userId}`).then(responce => Response.json());
+// }
 
-function renderUserInfo(userId) {
-  refs.userContainer.innerHTML = userInfoTpl(userId);
-}
+// function renderUserInfo(userId) {
+//   refs.userContainer.innerHTML = userInfoTpl(userId);
+// }
 
-export default { userInfo };
+// export default { userInfo };
 
 cardBtn.addEventListener('click', onCardBtnClick);
 function onCardBtnClick(e) {
@@ -40,3 +41,16 @@ function cardInfo(callId) {
 function renderProductCard(cardInfo) {
   refs.cardContainer.innerHTML = productCardTpl(callId);
 }
+
+// refs.favProductBtn.addEventListener('click', onFavProductBtnClick);
+// const newFavourites = `${BASE_URL}/call/{callId}`;
+
+// fetch(`${BASE_URL}/call/favourite/{callId}}`, {
+//   method: 'POST',
+//   headers: {
+//     'Content-Type': 'application/json',
+//   },
+//   body: JSON.stringify(newFavourites),
+// })
+//   .then(res => res.json())
+//   .then(console.log);

@@ -15,8 +15,8 @@ import './js/mfhillowsJS/js-for-edit-cards';
 import './js/cj-modules';
 
 // import './js/oksana-favourites';
-// import './js/oksana-product';
-import './js/add-modal';
+import './js/oksana-product';
+// import './js/add-modal';
 import toggleMobileMenu from './js/menu_mobile';
 
 // templates
