@@ -7,6 +7,7 @@ import * as filter from './resetFilter';
 
 import mobileFilters from '../templates/mobile_filters.hbs';
 import filters from '../templates/filters.hbs';
+import cards from '../templates/item-card.hbs';
 import FetchApi from './fetchAPI';
 
 const categoriesList = document.querySelector('.category-list-container');
@@ -42,6 +43,7 @@ function onFilterBtnClick(e) {
       });
       e.target.setAttribute('disabled', 'disabled');
       e.target.classList.add('active');
+      filtersAndCategories.searchQuery = e.target.textContent;
       loadSingleCategory(filtersAndCategories.searchQuery);
     }
   }
@@ -89,7 +91,8 @@ function filtersMarkup(items) {
 
 function singleCategoryMarkup(items) {
   console.log('Loading....');
-  // categoriesList.insertAdjacentHTML('beforeend', cards(items)); нужны шаблоны карточек для отображения
+  categoriesList.insertAdjacentHTML('beforeend', cards(items));
+  // нужны шаблоны карточек для отображения
 }
 
 function clearCategories() {
