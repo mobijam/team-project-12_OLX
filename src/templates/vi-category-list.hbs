@@ -1,19 +1,45 @@
-
-<ul class="category-list">
 {{#each this}}
-<li class="category-list item">
-    <b class="title">{{this.category}}</b>
+<div class="category-section">
+    <ul class="category-navi">
+        <li>
+            <button class="navi left " type="button">
+                <svg class="direction-icons" width="30" height="30">
+                </svg>
+            </button>
+        </li>
+        <li>
+            <h2 class="title">{{this.category}}Category</h2>
+        </li>
+        <li>
+            <h2 class="title"> Other </h2>
+        </li>
+        <li>
+            <p class="text"> View All</p>
+        </li>
+        <li>
+            <button class="navi right " type="button">
+                <svg class="direction-icons" width="30" height="30">
+                </svg>
+            </button>
+        </li>
+    </ul>
     <ul class="category">
         {{#each this}}
         <li class="category-item">
-             <img class="img" src="{{imageUrls}}" alt="">
-           
-            <p class="text"> {{title}}  </p>
+            <img class="img" src="{{imageUrls}}" alt="description">
+            <p class="text"> {{title}} </p>
             <p class="price">{{price}} тугриков </p>
+            <button type="button" class="favorite buttons" data-action="favorite">
+                <svg width="16" height="14.23" aria-label="favorite" class="favorite-icons">
+                </svg>
+            </button>
+
+            <button type="button" class="full buttons" data-action="full">
+                <svg width="12" height="12" aria-label="full info" class="full-icons">
+                </svg>
+            </button>
         </li>
         {{/each}}
     </ul>
-</li>
+</div>
 {{/each}}
-</ul>
-
