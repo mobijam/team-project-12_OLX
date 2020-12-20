@@ -1,0 +1,24 @@
+{{#each this}}
+<div class="producr-card">
+    <img src="imageUrls" alt="title" class="card_image" />
+    <div class="card_content">
+        <h2 class="card_title">{{title}}</h2>
+        <p class="card_id">{{id}}</p>
+        <p class="card_price">{{price}}</p>
+        <button class="js-user-button">інформація про продавця</button>
+        <button class="js-fav-button">В обране
+            <svg class="heart_icon" aria-label="Иконка сердца">
+                <use href="./images/sprite.svg#icon-favorite-heart"></use>
+            </svg>
+        </button>
+        <button class="js-share-button">Поділитися
+            <svg class="heart_icon" aria-label="Иконка сердца">
+                <use href="./images/sprite.svg#icon-share"></use>
+            </svg>
+        </button>
+        <p class="card__descr">Опис
+            {{description}}
+        </p>
+    </div>
+</div>
+{{/each}}
