@@ -1,0 +1,73 @@
+/* 
+Вариант использования миксина 
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  @include Cardset-Responsive($mobile, 15px, 15px, 1);
+  @include Cardset-Responsive($tablet-min-min, 20px, 20px, 2);
+  @include Cardset-Responsive($desktop, 30px, 30px, 3);
+}
+*/
+
+@function Margin-in-row($margin, $cols) {
+  $result: $margin * ($cols - 1);
+  @return $result;
+}
+@mixin Cardset-Responsive(
+  $Screen-width,
+  $Margin-right,
+  $Margin-bottom,
+  $Columns
+) {
+  $margin-in-row: Margin-in-row($Margin-right, $Columns);
+  @if ($Screen-width < $tablet-min) {
+    & > li {
+      width: calc((100% - #{$margin-in-row}) / #{$Columns});
+      &:nth-child(n) {
+        margin-right: $Margin-right;
+        margin-bottom: $Margin-bottom;
+      }
+      &:nth-child(#{$Columns}n) {
+        margin-right: 0px;
+      }
+      &:nth-last-child(-n + #{$Columns}) {
+        margin-bottom: 0px;
+      }
+    }
+  } @else {
+    @if ($Screen-width < $desktop and $Screen-width >= $tablet-min) {
+      @media screen and (min-width: #{$Screen-width}), screen and (min-width: $mobile) and (orientation: landscape) {
+        & > li {
+          width: calc((100% - #{$margin-in-row}) / #{$Columns});
+          &:nth-child(n) {
+            margin-right: $Margin-right;
+            margin-bottom: $Margin-bottom;
+          }
+          &:nth-child(#{$Columns}n) {
+            margin-right: 0px;
+          }
+          &:nth-last-child(-n + #{$Columns}) {
+            margin-bottom: 0px;
+          }
+        }
+      }
+    } @else {
+      @media screen and (min-width: #{$Screen-width}) {
+        & > li {
+          width: calc((100% - #{$margin-in-row}) / #{$Columns});
+          &:nth-child(n) {
+            margin-right: $Margin-right;
+            margin-bottom: $Margin-bottom;
+          }
+          &:nth-child(#{$Columns}n) {
+            margin-right: 0px;
+          }
+          &:nth-last-child(-n + #{$Columns}) {
+            margin-bottom: 0px;
+          }
+        }
+      }
+    }
+  }
+}
