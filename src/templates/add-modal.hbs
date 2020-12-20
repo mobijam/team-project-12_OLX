@@ -1,0 +1,48 @@
+
+    <!--<button class="button" data-action="open-modal">СТВОРИТИ ОГОЛОШЕННЯ</button>
+    <div class="backdrop js-backdrop">-->
+        <div class="add-modal modal">
+        <form action="https://callboard-backend.herokuapp.com/call" class="add-modal-form" method="post" >
+          <button type="button" class="button-close" data-action="close-modal">Закрити</button>
+          <h1 class="add-tittle">Додати оголошення</h1>
+            <div class="add-modal-container">
+              <label class="add-label">Назва товару</label>
+                <input class="add-input" type="text" name="name" />
+            </div>
+            <div class="add-modal-container">  
+              <label class="add-label">Фотo</label>
+                <div class="add-photos">
+                  <ul class="file-preview-add _req">
+                    <li class="file-preview-item">
+                     <div class="add-photos-item">
+                      <input id="formImage" class="add-photo-input add-photo" name="file" type="file" />
+                      <div class="add-photo-button">+</div>
+                     </div> 
+                    </li>
+                  </ul>
+                </div>
+            </div>   
+            <div class="add-modal-container">
+              <label class="add-label">Опис товару</label>
+                <textarea class="add-input" name="" type="text"></textarea>
+            </div>
+            <div class="add-modal-container">
+              <label class="add-label">Категорія товару</label>
+                <select class="category js-category-input add-input" name="category"
+                id="category">
+                </select>  
+            </div>
+            <div class="add-modal-container">  
+              <label class="add-label">Ціна</label>
+                <input class="add-input" name="price" type="price" placeholder="0.00 грн"/>
+            </div>
+            <div class="add-modal-container">
+              <label class="add-label">Телефон</label>
+              <input class="add-input" name="tel" type="tel" placeholder="+38(0--)--- -- --"/>
+            </div>
+            <button type="submit" class="button-add" data-action="submit-modal">Додати</button>
+          </form>
+        <!--</div>
+    </div>
+  <script src="./index.js" type="module"></script>-->
+
