@@ -68,10 +68,6 @@ label {
 }
 
 .add-tittle {
-  width: 256px;
-  height: 23px;
-  left: 315px;
-  top: 180px;
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
@@ -90,6 +86,7 @@ label {
   transition: transform 200ms ease-in-out;
   height: 100%;
   overflow: auto;
+  text-align: left;
   @media screen and (max-width: 767px) {
     width: 290px;
   }
@@ -154,6 +151,7 @@ label {
 }
 
 .add-photos {
+  border: none;
   width: 251px;
   @media screen and (min-width: 768px) {
     width: 458px;
@@ -220,7 +218,6 @@ label {
   }
   @media screen and (min-width: 768px) {
     width: 458px;
-    float: right;
   }
   @media screen and (min-width: 1280px) {
     width: 440px;
@@ -234,7 +231,8 @@ label {
   //margin-top: 0px;
 
   @media screen and (min-width: 768px) {
-    padding-left: 90px;
+    padding-left: 200px;
+    margin-top: 75px;
   }
   @media screen and (min-width: 1280px) {
     //padding-left: 300px;

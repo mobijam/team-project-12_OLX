@@ -143,6 +143,9 @@ function uploadFile(file) {
   );
 
   };
+  //if (formPreview.children.length >= 5) {
+    //formImage.classList.add('show-photo');
+//}
   reader.onerror = function(e) {
   alert('Error');
   };
@@ -156,6 +159,9 @@ if (e.target.tagName === 'IMG') {
     if (remove) {
       e.target.parentNode.remove();
     }
+    //if (formPreview.children.length <= 5) {
+      //formImage.classList.remove('show-photo');
+  //}
   }
 }
 }
