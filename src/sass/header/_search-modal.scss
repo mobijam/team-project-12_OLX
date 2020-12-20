@@ -72,6 +72,9 @@
 
     max-width: 650px;
   }
+  ::placeholder {
+    color: $c-white;
+  }
 }
 
 #search-input {
@@ -104,25 +107,6 @@ button {
 input {
   padding: 0;
   margin: 0;
-}
-
-.button-modal-close {
-  position: absolute;
-
-  @media screen and (min-width: 320px) and (max-width: 767px) {
-    top: 15px;
-    right: 15px;
-  }
-
-  @media screen and (min-width: 768px) and (max-width: 1199px) {
-    top: 25px;
-    right: 20px;
-  }
-
-  @media screen and (min-width: 1200px) {
-    top: 25px;
-    right: 20px;
-  }
 }
 
 .material-icons.md-14 {

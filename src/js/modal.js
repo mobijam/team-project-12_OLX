@@ -1,28 +1,30 @@
 import checkType from './chooseModal';
+
 export const refs = {
   modal: document.querySelector('[data-modal]'),
+  modalWindow: document.querySelector('[data-modal-window]'),
   modalContent: document.querySelector('[data-modal-content]'),
 
   openModalSearchBtn: document.querySelector('[data-action="search"]'),
   openModalSearchBtnMobile: document.querySelector('[data-action="mobile-search"]'),
 
-  accountLoginBtn: document.querySelector('[data-action="login"]'),
-  accountLoginBtnMobile: document.querySelector('[data-action="mobile-login"]'),
+  accountLoginBtn: document.querySelector("[data-action='login']"),
+  accountLoginBtnMobile: document.querySelector("[data-action='mobile-login']"),
 
-  accountLogoutBtn: document.querySelector('[data-action="logout"]'),
-  accountLogoutBtnMobile: document.querySelector('[data-action="mobile-logout"]'),
+  accountLogoutBtn: document.querySelector("[data-action='logout']"),
+  accountLogoutBtnMobile: document.querySelector("[data-action='mobile-logout']"),
 
-  openModalCreateBtn: document.querySelector('[data-action="create"]'),
-  openModalCreateBtnMobile: document.querySelector('[data-action="mobile-create"]'),
+  openModalCreateBtn: document.querySelector("[data-action='create']"),
+  openModalCreateBtnMobile: document.querySelector("[data-action='mobile-create']"),
 
-  // openModalEditCallBtn: document.querySelector('[data-action="edit-call"]'),
-  // openModalEditCallBtnMobile: document.querySelector('[data-action="mobile-edit-call"]'),
+  // openModalEditCallBtn: document.querySelector('[data-action="edit-call"]'), // нужна карточка с кнопкой
+  // openModalEditCallBtnMobile: document.querySelector("[data-action='mobile-edit-call']"), //нужна карточка с кнопкой
 
-  // openModalFavoritesBtn: document.querySelector('[data-action="favorites"]'),
-  // openModalFaforitesBtnMobile: document.querySelector('[data-action="mobile-favorites"]'),
+  openModalFavoritesBtn: document.querySelector('[data-action="favorites"]'),
+  openModalFaforitesBtnMobile: document.querySelector('[data-action="mobile-favorites"]'),
 
-  // openModalMyCallsBtn: document.querySelector('[data-action="my-calls"]'),
-  // openModalMyCallsBtnMobile: document.querySelector('[data-action="mobile-my-calls"]'),
+  openModalMyCallsBtn: document.querySelector('[data-action="my-calls"]'),
+  openModalMyCallsBtnMobile: document.querySelector('[data-action="mobile-my-calls"]'),
 
   accountBtn: document.querySelector('[data-action="account"]'),
   accountBtnMobile: document.querySelector('[data-action="mobile-account"]'),
@@ -32,75 +34,105 @@ export const refs = {
   closeModalBtn: document.querySelector('[data-action="modal-close"]'),
 };
 
-export default function openModal(e) {
-  checkLogin();
+function openModal(e) {
+  const choose = () => {
+    return e.currentTarget.dataset.action;
+  };
+  showModal(choose());
+}
+
+export default function showModal(action) {
+  // checkLogin();
 
   let type = '';
-  if (e.currentTarget.dataset.action === 'search' || e.currentTarget.dataset.action === 'mobile-search') {
+
+  if (action === 'search' || action === 'mobile-search') {
     type = 'search';
-  }
-
-  if (e.currentTarget.dataset.action === 'login' || e.target.dataset.action === 'mobile-login') {
+  } else if (action === 'login' || action === 'mobile-login') {
     type = 'login';
-  }
-
-  if (e.currentTarget.dataset.action === 'logout' || e.currentTarget.dataset.action === 'mobile-logout') {
+  } else if (action === 'logout' || action === 'mobile-logout') {
     type = 'logout';
-  }
-
-  if (e.currentTarget.dataset.action === 'create' || e.currentTarget.dataset.action === 'mobile-create') {
+  } else if (action === 'create' || action === 'mobile-create') {
     type = 'create';
-  }
-
-  if (e.currentTarget.dataset.action === 'edit-call' || e.currentTarget.dataset.action === 'mobile-edit-call') {
-    type = 'edit-call ';
-  }
-
-  if (e.currentTarget.dataset.action === 'favorites' || e.currentTarget.dataset.action === 'mobile-favorites') {
+    console.log(type);
+  } else if (action === 'edit-call' || action === 'mobile-edit-call') {
+    type = 'edit-call';
+  } else if (action === 'favorites' || action === 'mobile-favorites') {
     type = 'favorites';
-  }
-
-  if (e.currentTarget.dataset.action === 'my-calls' || e.currentTarget.dataset.action === 'mobile-my-calls') {
+  } else if (action === 'my-calls' || action === 'mobile-my-calls') {
     type = 'my-calls';
   }
-  toggleModal();
-  refs.modalContent.setAttribute('data-action', `${type}`);
-  console.dir(e.currentTarget.dataset.action);
-  checkType();
+  refs.modalWindow.setAttribute('data-action', `${type}`);
+  // toggleModal();
+
+  document.body.classList.add('modal-open');
+  refs.modal.classList.remove('is-hidden');
+  document.body.classList.add('no-scroll');
+
+  checkType(type);
+
+  //Закрытие модалки
+  refs.modal.addEventListener('click', closeModal);
+  window.addEventListener('keydown', onWindowKeydown);
+  refs.closeModalBtn.addEventListener('click', closeModal);
+
+  function onWindowKeydown(e) {
+    if (e.code == 'Escape') {
+      closeModal(e);
+    }
+  }
+
+  function closeModal(e) {
+    if (
+      e.code === 'Escape' ||
+      e.currentTarget.dataset.action === 'modal-close' ||
+      e.target.hasAttribute('data-modal')
+    ) {
+      if (refs.modalWindow.hasAttribute('data-action')) {
+        refs.modalWindow.removeAttribute('data-action');
+      }
+      document.body.classList.remove('modal-open');
+      refs.modal.classList.add('is-hidden');
+      document.body.classList.remove('no-scroll');
+
+      window.removeEventListener('keydown', onWindowKeydown);
+      refs.modal.removeEventListener('click', closeModal);
+      refs.closeModalBtn.addEventListener('click', closeModal);
+    }
+  }
 }
 
 refs.openModalSearchBtn.addEventListener('click', openModal);
 refs.openModalSearchBtnMobile.addEventListener('click', openModal);
 
 refs.accountLoginBtn.addEventListener('click', openModal);
-refs.accountLoginBtnMobile.addEventListener('click', openModal);
+// refs.accountLoginBtnMobile.addEventListener('click', openModal); //ушло в мобильное меню
 
 refs.accountLogoutBtn.addEventListener('click', openModal);
-refs.accountLogoutBtnMobile.addEventListener('click', openModal);
+// refs.accountLogoutBtnMobile.addEventListener('click', openModal); //ушло в мобильное меню
 
 refs.openModalCreateBtn.addEventListener('click', openModal);
 refs.openModalCreateBtnMobile.addEventListener('click', openModal);
 
-// refs.openModalEditCallBtn.addEventListener('click', openModal);
-// refs.openModalEditCallBtnMobile.addEventListener('click', openModal);
+// refs.openModalEditCallBtn.addEventListener('click', openModal); //ушло в мобильное меню
+// refs.openModalEditCallBtnMobile.addEventListener('click', openModal); //ушло в мобильное меню
 
-// refs.openModalFavoritesBtn.addEventListener('click', openModal);
-// refs.openModalFaforitesBtnMobile.addEventListener('click', openModal);
+refs.openModalFavoritesBtn.addEventListener('click', openModal);
+// refs.openModalFaforitesBtnMobile.addEventListener('click', openModal); //ушло в мобильное меню
 
-// refs.openModalMyCallsBtn.addEventListener('click', openModal);
-// refs.openModalMyCallsBtnMobile.addEventListener('click', openModal);
+refs.openModalMyCallsBtn.addEventListener('click', openModal);
+// refs.openModalMyCallsBtnMobile.addEventListener('click', openModal); //ушло в мобильное меню
 
-refs.closeModalBtn.addEventListener('click', toggleModal);
+// refs.closeModalBtn.addEventListener('click', toggleModal);
 
-function toggleModal() {
-  refs.modalContent.innerHTML = '';
-  if (refs.modalContent.hasAttribute('data-action')) {
-    refs.modalContent.removeAttribute('data-action');
-  }
-  document.body.classList.toggle('modal-open');
-  refs.modal.classList.toggle('is-hidden');
-  document.body.classList.toggle('no-scroll');
-}
+// function toggleModal() {
+//   if (refs.modalContent.hasAttribute('data-action')) {
+//     refs.modalContent.removeAttribute('data-action');
+//   }
+//   document.body.classList.toggle('modal-open');
+//   refs.modal.classList.toggle('is-hidden');
+//   document.body.classList.toggle('no-scroll');
+// }
 
 function checkLogin() {
   const checkAuth = localStorage.getItem('key');
@@ -109,7 +141,7 @@ function checkLogin() {
     refs.openModalCreateBtn.removeAttribute('data-action');
     refs.openModalCreateBtn.setAttribute('data-action', 'create');
     refs.openModalCreateBtnMobile.removeAttribute('data-action');
-    refs.openModalCreateBtnMobile.setAttribute('create', 'mobile-create');
+    refs.openModalCreateBtnMobile.setAttribute('data-action', 'mobile-create');
 
     refs.accountLogoutBtn.classList.remove('hidden');
     refs.accountLogoutBtnMobile.classList.remove('hidden');
@@ -124,6 +156,7 @@ function checkLogin() {
     refs.openModalCreateBtn.setAttribute('data-action', 'login');
     refs.openModalCreateBtnMobile.removeAttribute('data-action');
     refs.openModalCreateBtnMobile.setAttribute('data-action', 'mobile-login');
+
     refs.accountLogoutBtn.classList.add('hidden');
     refs.accountLogoutBtnMobile.classList.add('hidden');
     refs.accountLoginBtn.classList.remove('hidden');
@@ -133,4 +166,6 @@ function checkLogin() {
     refs.accountMenuMobile.classList.add('hidden');
   }
 }
-checkLogin();
+// checkLogin();
+
+//
