@@ -8,16 +8,10 @@ export function resetFilter() {
       if (item.hasAttribute('disabled') && item.classList.contains('active')) {
         item.classList.remove('active');
         item.removeAttribute('disabled');
+        history.go(-1);
         // getProductList(); //для включения нужен шаблон галереи
       }
     });
   }
   resetFilter(listOfFilters);
-}
-function setLocation(curLoc) {
-  try {
-    history.pushState(null, null, curLoc);
-    return;
-  } catch (e) {}
-  location.hash = '#' + curLoc;
 }

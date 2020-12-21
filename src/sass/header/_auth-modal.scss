@@ -1,18 +1,18 @@
-.authorization-backdrop {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 15px;
-  @media screen and(min-width:$tablet-max) {
-    padding: 60px;
-  }
-  background-color: $c-overlay;
-  width: 100%;
-  height: 100%;
-}
+// .authorization-backdrop {
+//   position: absolute;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   padding: 15px;
+//   @media screen and(min-width:$tablet-max) {
+//     padding: 60px;
+//   }
+//   background-color: $c-overlay;
+//   width: 100%;
+//   height: 100%;
+// }
 .authorization-modal {
-  position: relative;
+  // position: relative;
   max-width: 290px;
   @media screen and(min-width:$tablet-max) {
     max-width: 650px;
@@ -31,28 +31,28 @@
   }
   &-register {
     background-color: $c-bg-grey;
-    border: 1px solid $dark-grey;
+    border: 1px solid darkgrey;
   }
   &-login {
-    background-color: $accent;
+    background-color: $c-accent;
     border: none;
-    color: $white;
+    color: $c-white;
   }
 }
-.authorization-close-button {
-  width: 24px;
-  height: 24px;
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  @media screen and(min-width:$tablet-max) {
-    top: 25px;
-    right: 25px;
-  }
-  background-color: $main-grey;
-  border: none;
-  cursor: pointer;
-}
+// .authorization-close-button {
+//   width: 24px;
+//   height: 24px;
+//   position: absolute;
+//   top: 15px;
+//   right: 15px;
+//   @media screen and(min-width:$tablet-max) {
+//     top: 25px;
+//     right: 25px;
+//   }
+//   background-color: $c-bg-grey;
+//   border: none;
+//   cursor: pointer;
+// }
 .authorization-form {
   display: flex;
   flex-direction: column;
@@ -60,15 +60,15 @@
 .authorization-input {
   height: 56px;
   padding: 20px 0 20px 25px;
-  border: 1px solid $dark-grey;
+  border: 1px solid darkgrey;
   transition: border $transition;
   &:active,
   &:focus {
     outline: none;
-    border-color: $accent;
+    border-color: $c-accent;
   }
   &::placeholder {
-    color: $dark-grey;
+    color: darkgrey;
   }
 
   &:not(:last-of-type) {
@@ -103,7 +103,7 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 40px;
-  background-color: $white;
+  background-color: $c-white;
   border: transparent;
   cursor: pointer;
   transition: border $transition;
@@ -111,7 +111,7 @@
   &:focus,
   &:hover,
   &:active {
-    border: 1px solid $accent;
+    border: 1px solid $c-accent;
   }
 
   &-icon {

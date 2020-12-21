@@ -5,11 +5,30 @@ main {
     }
   }
 }
-.js-categories {
-  display: block;
+.category-list {
   margin-top: 10px;
+  //   display: flex;
+  //   justify-content: space-between;
 
-  .categories-item {
+  &-title {
+    font-family: $Montserrat;
+    color: $c-black;
+    font-weight: $bold;
+    font-size: 12px;
+    line-height: 1.25px;
+
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    padding: 0;
+    margin-bottom: 0;
+    // margin-left: 28px;
+    // margin-right: 16px;
+  }
+  // .show-total{
+
+  // }
+
+  .category-list-item {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -20,6 +39,12 @@ main {
       border-bottom: none;
     }
   }
+}
+//   display: flex;
+.category-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .js-page-list {

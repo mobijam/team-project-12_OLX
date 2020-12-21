@@ -97,6 +97,7 @@
 
     &.account {
       display: flex;
+      justify-content: normal;
       padding: 29px 0 29px 15px;
 
       @media screen and (min-width: $mobile) {
@@ -142,6 +143,7 @@
     &.login {
       padding: 25px 0 25px 34px;
       width: 60px;
+      justify-content: center;
 
       .account-logo {
         margin-right: 10px;
@@ -237,6 +239,7 @@
 
 //Кнопка меню
 .menu-button {
+  justify-content: center;
   width: 70px;
   height: 70px;
   padding: 22px;

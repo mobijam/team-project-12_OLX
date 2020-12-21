@@ -7,9 +7,10 @@ import * as filter from './resetFilter';
 
 import mobileFilters from '../templates/mobile_filters.hbs';
 import filters from '../templates/filters.hbs';
+import cards from '../templates/item-card.hbs';
 import FetchApi from './fetchAPI';
 
-const categoriesList = document.querySelector('.category-list-container');
+const categoriesList = document.querySelector('.category-list');
 const filtersList = document.querySelector('.js-nav-menu');
 const mobileFiltersList = document.querySelector('.mobile-nav-menu');
 const siteLogo = document.getElementById('logo');
@@ -30,7 +31,6 @@ function onFilterBtnClick(e) {
   if (e.target.dataset.action === 'filter') {
     filter.resetBtn.addEventListener('click', filter.resetFilter);
 
-    const category = (filtersAndCategories.searchQuery = e.target.textContent);
     const listOfFilters = document.querySelectorAll('[data-action="filter"]');
     const status = e.target.hasAttribute('disabled');
 
@@ -43,18 +43,10 @@ function onFilterBtnClick(e) {
       });
       e.target.setAttribute('disabled', 'disabled');
       e.target.classList.add('active');
+      filtersAndCategories.searchQuery = e.target.textContent;
       loadSingleCategory(filtersAndCategories.searchQuery);
-      const curLoc = `${filtersAndCategories.endPoint.specCat}${filtersAndCategories.searchQuery}`;
     }
-    // setLocation(category, curLoc);
   }
-}
-function setLocation(category, curLoc) {
-  try {
-    history.pushState(category, null, curLoc);
-    return;
-  } catch (e) {}
-  location.hash = '#' + curLoc;
 }
 
 function onMobileFilterBtnClick(e) {
@@ -99,11 +91,14 @@ function filtersMarkup(items) {
 
 function singleCategoryMarkup(items) {
   console.log('Loading....');
-  // categoriesList.insertAdjacentHTML('beforeend', cards(items)); нужны шаблоны карточек для отображения
+  categoriesList.insertAdjacentHTML('beforeend', cards(items));
+  // нужны шаблоны карточек для отображения
 }
 
 function clearCategories() {
   categoriesList.innerHTML = '';
+  const pageList = document.querySelector('.js-page-list');
+  pageList.innerHTML = '';
 }
 
 createFilters();

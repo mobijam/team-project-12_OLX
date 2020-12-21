@@ -31,8 +31,8 @@ export default class FiltersApiService {
     };
 
     this.user = {
-      email: 'cj@examle.com',
-      password: 'qwerty123',
+      email: '',
+      password: '',
     };
 
     this.options = {
