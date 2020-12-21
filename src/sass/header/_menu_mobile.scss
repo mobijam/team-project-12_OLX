@@ -1,54 +1,58 @@
-.mobile-menu {
-  display: none;
+.mobile-menu-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: $c-overlay;
+  opacity: 1;
+  pointer-events: initial;
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.is-hidden {
+    right: -100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1) 100ms;
+  }
+}
+.mobile-menu-container {
+  overflow: scroll;
+
+  transition: $transition 200ms;
+  //  display: none;
   @media screen and (max-width: $tablet-max) {
     height: 100vh;
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10;
+    right: 100%;
+    width: 90%;
+
     background-color: $c-bg-grey;
 
     &.is-open {
-      display: block;
+      transition: $transition;
+
+      transform: translateX(100%);
     }
   }
   @media screen and (min-width: $tablet-min) {
     width: 45%;
   }
 }
-//   @media screen and (min-width: 768px) {
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     flex-grow: 1;
-//     position: static;
-//   }
-// }
-
-.mobile-navigation-menu {
-  .btn[data-action='mobile-register'] {
-    display: flex;
-    align-items: center;
-    text-align: left;
-    padding: 25px 24px 25px 34px;
-    border: none;
-    width: 100%;
-    svg {
-      margin-right: 10px;
-    }
-  }
+.mobile-menu-inner {
+  margin-top: 70px;
 }
-
 .mobile-inner-menu-button {
-  position: absolute;
-  right: 25px;
-  top: 25px;
-
-  background-color: inherit;
-  padding: 0;
   border: none;
-  //   border-right: 1px solid red; //#E2E3E5
+  background: transparent;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  padding: 10px;
 
   &:hover,
   &:focus {
@@ -56,20 +60,31 @@
   }
 }
 
-.mobile-js-nav-menu {
+.mobile-nav-menu {
+  display: block;
+  align-items: center;
   margin-top: 70px;
-  border-top: 1px solid red;
+  border-top: 1px solid $c-accent;
   width: 100%;
-  .mobile-js-nav-menu-item {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+}
 
-    border-bottom: 1px solid red;
+.mobile-nav-item {
+  list-style: none;
+  margin: 0;
 
-    .dropdown-menu {
-      background: none;
-      border: none;
-    }
+  border-bottom: 1px solid $c-accent;
+}
+
+.mobile-account-menu {
+  display: flex; // CHECK
+  flex-wrap: wrap;
+  align-items: center;
+  &.hidden {
+    display: none;
   }
+}
+.mobile-dropdown-menu {
+  padding-left: 64px;
+  padding-right: 50px;
+  width: 100%;
 }

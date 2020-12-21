@@ -1,0 +1,240 @@
+$var1: #2a2a2a;
+$var2: #000000;
+$var3: #ffffff;
+$var4: #bbbbbb;
+$var5: #ffffff;
+$var6: #ff6b09;
+$var7: #f5f6fb;
+//*,
+//*::before,
+//*::after {
+  //box-sizing: border-box;
+//}
+//body {
+  //font-family: Roboto, sans-serif;
+  //color: $var1;
+  //&.show-modal .backdrop {
+    //opacity: 1;
+    //visibility: visible;
+    //pointer-events: initial;
+  //}
+  //&.show-modal .modal {
+    //transform: scale(1);
+  //}
+//}
+button,
+label {
+  cursor: pointer;
+}
+
+.add-label {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  color: $var2;
+}
+.add-input {
+  height: 56px;
+  background: $var3;
+  border: 1px solid $var4;
+  &::placeholder {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    padding-left: 23px;
+    letter-spacing: 0.02em;
+    color: $var4;
+  }
+  &:focus,
+  &:hover,
+  &:active {
+    outline: none;
+    box-shadow: none;
+  }
+  @media screen and (min-width: 320px) {
+    width: 251px;
+    margin-top: 10px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 458px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 440px;
+  }
+}
+
+.add-tittle {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.15;
+  color: $var2;
+}
+
+.add-modal {
+  padding: 54px 19px 60px 20px;
+  //position: absolute;
+  background-color: $var5;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  transform: scale(1.1);
+  transition: transform 200ms ease-in-out;
+  height: 100%;
+  overflow: auto;
+  text-align: left;
+  @media screen and (max-width: 767px) {
+    width: 290px;
+  }
+  @media screen and (min-width: 768px) {
+    padding: 54px 105px 60px 105px;
+    width: auto;
+  }
+  @media screen and (min-width: 1280px) {
+    padding: 53px 105px 55px 105px;
+  }
+}
+.add-modal-container {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.button-add {
+  width: 251px;
+  height: 50px;
+  left: 35px;
+  top: 778px;
+  margin-top: 30px;
+  background: $var6;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.17;
+  align-content: center;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  color: $var3;
+  margin-top: 41px;
+  margin-left: auto;
+  margin-right: auto;
+  @media screen and (min-width: 768px) {
+    width: 266px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 210px;
+  }
+}
+
+//.button-close {
+  //top: 20px;
+  //right: 20px;
+//}
+
+.add-photo {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  font-size: 0;
+}
+
+.add-photos {
+  border: none;
+  width: 251px;
+  @media screen and (min-width: 768px) {
+    width: 458px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 440px;
+  }
+}
+
+.file-preview-add {
+  display: grid;
+  grid-gap: 10px;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: start;
+  padding: 0px;
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+.file-preview-item {
+  list-style-type: none;
+  position: relative;
+  width: 75px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f6fb;
+  padding: 0px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  @media screen and (min-width: 768px) {
+    width: 83px;
+    height: 50px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 78px;
+    height: 50px;
+  }
+}
+
+.add-photo-button {
+  margin: 0px;
+}
+
+.category {
+  width: 251px;
+  height: 56px;
+  left: 35px;
+  top: 484px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background: $var3;
+  border: 1px solid $var4;
+  &:focus,
+  &:hover,
+  &:active {
+    outline: none;
+    box-shadow: none;
+  }
+  @media screen and (min-width: 768px) {
+    width: 458px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 440px;
+  }
+}
+.add-valid-error {
+  position: absolute;
+  width: 100%;
+  font-size: 80%;
+  color: red;
+  //margin-top: 0px;
+
+  @media screen and (min-width: 768px) {
+    padding-left: 200px;
+    margin-top: 75px;
+  }
+  @media screen and (min-width: 1280px) {
+    //padding-left: 300px;
+  }
+}

@@ -14,6 +14,7 @@ $cg-secondary-text-color:#FF6B09;
 $borders-item: 1px, #E2E3E5, solid;
 $box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 1px 3px rgba(0, 0, 0, 0.12);
+
 // .cg-container{
 //   margin: 0;
 //   padding: 0;
@@ -96,6 +97,7 @@ $box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
         margin: 0 16px 0 0;;
     }
 
+
     .cg-category-link{
         margin: 0;
         letter-spacing: 0.06em;
@@ -115,9 +117,11 @@ $box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
         width: 290px;
         margin: 0 auto 30px;
         padding: 0;
-        box-shadow: $box-shadow;
-        background-color: $bgc-gallery-item;
+
+
         background-color: #ffffff;
+        box-shadow: $box-shadow;
+
         // border: solid 1px red;
     }
 
@@ -209,21 +213,21 @@ $box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
     padding: 0px;
     margin-right: 1px;
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (min-width: $mobile) {
       width: 50px;
       height: 50px;
     }
     &:hover,
     &:focus {
       color: $c-white;
-      background-color: $c-black;
+      background-color: #000000;
       cursor: pointer;
     }
 
-    &.active {
-      color: $c-white;
-      background-color: $c-black;
-    }
+    // &.active {
+    //   color: $c-white;
+    //   background-color: #000000;
+    // }
   }
 
 }
@@ -232,7 +236,8 @@ $box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
     display: flex;
     justify-content: center;
     list-style: none;
-    margin-left: 100px;
+    margin: auto;
+
 }
 
 /*| точка перелома tablets  */
@@ -244,6 +249,7 @@ $box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
         padding: 0 10px;
     }
 
+
     .cg-category-head{
       margin-bottom: 0;
       text-align: start;
@@ -254,7 +260,7 @@ $box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
     
     .cg-category-title{
         margin-left:20px;
-        margin-right: 342px;
+        margin-right: 492px;
         padding: 0;
         font-family: Montserrat;
         font-size: 12px;
@@ -290,8 +296,8 @@ $box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
 }
 
 .buttton-section{
-  margin-right: 590px;
-}
+margin-right: 590px;
+    }
 
     /*| точка перелома desktop  */
 @media screen and (min-width:$desktop){
@@ -312,6 +318,7 @@ $box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
     .cg-cat-item-img{
         width: 295px;
     }
+
     .buttton-section{
   margin-right: 1100px;
 }

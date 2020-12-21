@@ -47,7 +47,9 @@ function addToFavorite(e) {
 function parceCategoryList(arg) {
     const listOfProduct = markUpList(arg);
     refs.categoryList.insertAdjacentHTML("afterbegin", listOfProduct);
+
     refs.categoryPageLink = document.querySelectorAll('.cg-category-link');
+
     refs.favoriteButtons = document.querySelectorAll('[data-action="favorite"]');
     refs.fullCardInfo = document.querySelectorAll('[data-action="full"]');
     refs.categoryPageLink.forEach(el => el.addEventListener('click', getCategoryPage, { once: true }));

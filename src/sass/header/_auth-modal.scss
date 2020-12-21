@@ -1,0 +1,120 @@
+.authorization-backdrop {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  @media screen and(min-width:$tablet-max) {
+    padding: 60px;
+  }
+  background-color: $c-overlay;
+  width: 100%;
+  height: 100%;
+}
+.authorization-modal {
+  position: relative;
+  max-width: 290px;
+  @media screen and(min-width:$tablet-max) {
+    max-width: 650px;
+  }
+  padding: 60px 18px;
+  @media screen and(min-width:$tablet-max) {
+    padding: 65px 100px;
+  }
+  background-color: $c-bg-grey;
+  &-header {
+    font-weight: $bold;
+    margin-bottom: 20px;
+    @media screen and(min-width:$tablet-max) {
+      margin-bottom: 35px;
+    }
+  }
+  &-register {
+    background-color: $c-bg-grey;
+    border: 1px solid $dark-grey;
+  }
+  &-login {
+    background-color: $accent;
+    border: none;
+    color: $white;
+  }
+}
+.authorization-close-button {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  @media screen and(min-width:$tablet-max) {
+    top: 25px;
+    right: 25px;
+  }
+  background-color: $main-grey;
+  border: none;
+  cursor: pointer;
+}
+.authorization-form {
+  display: flex;
+  flex-direction: column;
+}
+.authorization-input {
+  height: 56px;
+  padding: 20px 0 20px 25px;
+  border: 1px solid $dark-grey;
+  transition: border $transition;
+  &:active,
+  &:focus {
+    outline: none;
+    border-color: $accent;
+  }
+  &::placeholder {
+    color: $dark-grey;
+  }
+
+  &:not(:last-of-type) {
+    margin-bottom: 20px;
+    @media screen and(min-width:$tablet-max) {
+      margin-bottom: 25px;
+    }
+  }
+}
+.authorization-button {
+  height: 50px;
+  width: 118px;
+  @media screen and(min-width:$tablet-max) {
+    height: 60px;
+    width: 210px;
+  }
+  text-align: center;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16;
+  cursor: pointer;
+}
+.authorization-button-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.google-auth {
+  width: 140px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  background-color: $white;
+  border: transparent;
+  cursor: pointer;
+  transition: border $transition;
+
+  &:focus,
+  &:hover,
+  &:active {
+    border: 1px solid $accent;
+  }
+
+  &-icon {
+    margin-right: 10px;
+  }
+}

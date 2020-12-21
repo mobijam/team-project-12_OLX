@@ -52,6 +52,8 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "handlebars": "^4.7.6",
+    "lodash.debounce": "^4.0.8",
+    "lodash.flatmapdeep": "^4.10.0",
     "material-design-icons": "^3.0.1"
   }
 }
