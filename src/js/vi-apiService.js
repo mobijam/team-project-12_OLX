@@ -1,7 +1,5 @@
 
 const BASE_URL = 'https://callboard-backend.herokuapp.com/call?';
-const RUS_URL = 'https://callboard-backend.herokuapp.com/call/russian-categories';
-const EN_URL = 'https://callboard-backend.herokuapp.com/call/categories';
 import { fetchOnError } from './vi-getProductsGallery';
 
 
