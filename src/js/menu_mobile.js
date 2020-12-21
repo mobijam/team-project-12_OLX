@@ -49,22 +49,22 @@ function insideMobileMenulistener(e) {
   toggleMobileMenu();
   const type = e.currentTarget.dataset.action;
   if (type === 'mobile-login') {
-    toggleMobileMenu;
+    toggleMobileMenu();
     showModal(type);
     menuMobileBtnRef.removeEventListener('click', addMobileMenuListeners);
   }
   if (type === 'mobile-logout') {
-    toggleMobileMenu;
+    toggleMobileMenu();
     showModal(type);
     menuMobileBtnRef.removeEventListener('click', addMobileMenuListeners);
   }
   if (type === 'mobile-my-calls') {
-    toggleMobileMenu;
+    toggleMobileMenu();
     showModal(type);
     menuMobileBtnRef.removeEventListener('click', addMobileMenuListeners);
   }
   if (type === 'mobile-favorites') {
-    toggleMobileMenu;
+    toggleMobileMenu();
     showModal(type);
     menuMobileBtnRef.removeEventListener('click', addMobileMenuListeners);
   }

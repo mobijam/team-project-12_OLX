@@ -20,7 +20,8 @@ const filtersAndCategories = new FetchApi();
 siteLogo.addEventListener('onClick', onSiteLogoClick); //для работы нужен запрос постраничных категорий + карточки
 
 filtersList.addEventListener('click', onFilterBtnClick); // для работы нужны карточки товаров
-// mobileFiltersList.addEventListener('click', onMobileFilterBtnClick); // для работы нужны карточки товаров
+mobileFiltersList.addEventListener('click', onMobileFilterBtnClick);
+// для работы нужны карточки товаров
 
 function onSiteLogoClick(e) {
   e.preventDefault();
