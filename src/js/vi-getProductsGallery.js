@@ -1,20 +1,3 @@
-/* 
-
-. приходит response.json в виде объекта из 5 массивов объектов
-. каждый объект массива содержит :
-, - category
-, - description
-, - imageUrls
-, - isOnSale
-, - phone
-, - price
-, - title
-, - userId
-, - __v
-, - _id 
-
-
-*/
 
 // ------------------BEGIN----------------
 import markUpList from '../templates/vi-category-list.hbs';
@@ -23,8 +6,6 @@ const getProductGallery = new GetProductGallery();
 const refs = getRefs();
 const getPageNumber = (event) => event.target.outerText;
 
-//| ---------------------tests-------------------
-// | --------------------------------------------
 
 if (window.innerWidth <= 768) { refs.mobileButton.addEventListener('click', getNewFething) };
 
@@ -35,8 +16,8 @@ getCategorytList()
 function getNewFething(e) {
     clearContainer()
     getProductGallery.pageNumber = getPageNumber(e);
-    // getProductGallery.rusRequest = '/russian-categories';
     getCategorytList();
+
 }
  
 function getCategorytList() {
@@ -46,7 +27,6 @@ function getCategorytList() {
         })
         .then(parceCategoryList);
 }
-    
 
 function getCategoryPage(e) {
     getProductGallery.newRequest = 'property';
@@ -54,33 +34,35 @@ function getCategoryPage(e) {
     getProductGallery.fetchCategoryContent();
 }
 
+function getCardInfo(e) {
+    console.log('Вы перешли на страницу КАРОТЧКА ТОВАРА');
+    // refs.fullCardInfo.forEach(el => el.removeEventListener('click', getCardInfo));    // не стоит этого делать))))
+}
+
 function addToFavorite(e) {
     console.log('Вы перешли на страницу ИЗБРАННЫЕ');
+    // refs.favoriteButtons.forEach(e => e.removeEventListener('click', addToFavorite));    // не стоит этого делать))))
 }
 
 function parceCategoryList(arg) {
     const listOfProduct = markUpList(arg);
     refs.categoryList.insertAdjacentHTML("afterbegin", listOfProduct);
-    const categoryPageLink = document.querySelectorAll('.category-navi .text');
-    const favoriteButtons = document.querySelectorAll('[data-action="favorite"]') 
-    categoryPageLink.forEach(el => el.addEventListener('click', getCategoryPage));
-    favoriteButtons.forEach(e=>e.addEventListener('click', addToFavorite))
-    
+    refs.categoryPageLink = document.querySelectorAll('.cg-category-link');
+    refs.favoriteButtons = document.querySelectorAll('[data-action="favorite"]');
+    refs.fullCardInfo = document.querySelectorAll('[data-action="full"]');
+    refs.categoryPageLink.forEach(el => el.addEventListener('click', getCategoryPage, { once: true }));
+    refs.favoriteButtons.forEach(e => e.addEventListener('click', addToFavorite, { once: true }));
+    refs.fullCardInfo.forEach(el => el.addEventListener('click', getCardInfo, { once: true }));
 }
-
 
 function getRefs() {
     return {
-        // mainContainer: document.querySelector('.category-list-container'),
-        // mainContainer: document.querySelector('.js-categories'),
-        categoryList: document.querySelector('.category-list'),
+        categoryList: document.querySelector('.cg-list'),
         changePage: document.querySelectorAll('.js-page-number'),
         mobileButton: document.querySelector('[data-action="data-modal-create-mobile"]'),
-        // categoryPageLink: document.querySelector('.category-navi .text'),
     }
 }
-    
+
 function clearContainer() {refs.categoryList.innerHTML = ''};
 
-export function fetchOnError(arg = 'ERROR') {console.log(arg)}
- 
+export function fetchOnError(arg = 'ERROR') { console.log(arg) };

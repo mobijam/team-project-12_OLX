@@ -1,57 +1,50 @@
-
-
 {{#each this}}
-    
-     <div class="category-section">
-<ul class="category-navi">
-            <li>
-                <button class="navi left " type="button" >
-                    <svg class="direction-icons" width="30" height="30">                       
-                    </svg>
-                </button>
-            </li>
-            <li><h2 class="title">{{this.category}}Category</h2></li>
-            <li><h2 class="title"> Other </h2></li>
-            <li><p class="text"> View All</p></li>
-            <li>
-                <button class="navi right " type="button">
-                <svg class="direction-icons" width="30" height="30">                       
-                </svg>
-                </button>
-            </li>
-        </ul>
-     <ul class="category">
-       
-
+<div class="cg-category">
+    <ul class="cg-category-head">
+        <li>
+            <button class="cg-navy cg-navy-before" type="button">
+                <i class="material-icons  cg-navy-before">navigate_before</i>
+            </button>
+        </li>
+        <li>
+            <ul class="cg-category-title">
+                <li>
+                     <h2 class="cg-category-name">{{this.category}}Category</h2>
+                </li>
+                {{!-- <li>
+                     <h2 class="cg-category-name"> Other </h2>
+                </li> --}}
+                <li>
+                     <p class="cg-category-link"> View All</p>
+                </li>
+             </ul>
+        </li>
+        
+        
+        <li>
+            <button class="cg-navy cg-navy-next" type="button">
+                 <i class="material-icons ">navigate_next</i>
+                
+            </button>
+        </li>
+    </ul>
+    <ul class="cg-category-body">
         {{#each this}}
-            <li class="category-item">
-                <img class="img" src="{{imageUrls}}" alt="description">
-            <p class="text"> {{title}}  </p>
-            <p class="price">{{price}} тугриков </p>
-             <button type="button" class="favorite buttons" data-action="favorite">
-                <svg
-                    width="16"
-                    height="14.23"
-                    aria-label="favorite"
-                    class="favorite-icons"
-                >     
-                </svg>
+        <li class="cg-category-item">
+            <img class="cg-cat-item-img" src="{{imageUrls}}" alt="description">
+            <p class="cg-cat-item-name"> {{title}} </p>
+            <p class="cg-cat-item-price">{{price}} кредитов </p>
+            <button type="button" class="cg-favorite" data-action="favorite">
+                <i class="material-icons cg-icons-pick">favorite_border</i>
+                
             </button>
 
-            <button type="button" class="full buttons" data-action="full">
-                <svg
-                    width="12"
-                    height="12"
-                    aria-label="full info"
-                    class="full-icons"
-                >
-                </svg>
+            <button type="button" class="cg-fullinfo" data-action="full">
+                <i class="material-icons cg-icons-pick ">fullscreen</i>
+                
             </button>
-            </li>
+        </li>
         {{/each}}
-
-    </ul> 
-    </div>
+    </ul>
+</div>
 {{/each}}
-
-
