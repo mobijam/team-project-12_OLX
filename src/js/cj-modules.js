@@ -57,7 +57,7 @@ function onMobileFilterBtnClick(e) {
   toggleMobileMenu();
 }
 
-async function createFilters() {
+export async function createFilters() {
   try {
     const filters = await filtersAndCategories.fetchFIlters();
     const buildMarkup = items => {

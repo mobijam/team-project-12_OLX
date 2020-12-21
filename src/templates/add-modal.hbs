@@ -2,8 +2,8 @@
     <!--<button class="button" data-action="open-modal">СТВОРИТИ ОГОЛОШЕННЯ</button>
     <div class="backdrop js-backdrop">-->
         <div class="add-modal modal">
-        <form action="https://callboard-backend.herokuapp.com/call" class="add-modal-form" method="post" >
-          <button type="button" class="button-close" data-action="close-modal">Закрити</button>
+        <form id="addForm" action="https://callboard-backend.herokuapp.com/call" class="add-modal-form" method="post" >
+          <!--<button type="button" class="button-close" data-action="close-modal">Закрити</button>-->
           <h1 class="add-tittle">Додати оголошення</h1>
             <div class="add-modal-container">
               <label class="add-label">Назва товару</label>
@@ -11,7 +11,7 @@
             </div>
             <div class="add-modal-container">  
               <label class="add-label">Фотo</label>
-                <div class="add-photos">
+                <div class="add-photos add-input">
                   <ul class="file-preview-add _req">
                     <li class="file-preview-item">
                      <div class="add-photos-item">

@@ -1,19 +1,50 @@
-
-<ul class="category-list">
 {{#each this}}
-<li class="category-list item">
-    <b class="title">{{this.category}}</b>
-    <ul class="category">
+<div class="cg-category">
+    <ul class="cg-category-head">
+        <li>
+            <button class="cg-navy cg-navy-before" type="button">
+                <i class="material-icons  cg-navy-before">navigate_before</i>
+            </button>
+        </li>
+        <li>
+            <ul class="cg-category-title">
+                <li>
+                     <h2 class="cg-category-name">{{this.category}}Category</h2>
+                </li>
+                {{!-- <li>
+                     <h2 class="cg-category-name"> Other </h2>
+                </li> --}}
+                <li>
+                     <p class="cg-category-link"> View All</p>
+                </li>
+             </ul>
+        </li>
+        
+        
+        <li>
+            <button class="cg-navy cg-navy-next" type="button">
+                 <i class="material-icons ">navigate_next</i>
+                
+            </button>
+        </li>
+    </ul>
+    <ul class="cg-category-body">
         {{#each this}}
-        <li class="category-item">
-             <img class="img" src="{{imageUrls}}" alt="">
-           
-            <p class="text"> {{title}}  </p>
-            <p class="price">{{price}} тугриков </p>
+        <li class="cg-category-item">
+            <img class="cg-cat-item-img" src="{{imageUrls}}" alt="description">
+            <p class="cg-cat-item-name"> {{title}} </p>
+            <p class="cg-cat-item-price">{{price}} кредитов </p>
+            <button type="button" class="cg-favorite" data-action="favorite">
+                <i class="material-icons cg-icons-pick">favorite_border</i>
+                
+            </button>
+
+            <button type="button" class="cg-fullinfo" data-action="full">
+                <i class="material-icons cg-icons-pick ">fullscreen</i>
+                
+            </button>
         </li>
         {{/each}}
     </ul>
-</li>
+</div>
 {{/each}}
-</ul>
-

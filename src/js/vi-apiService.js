@@ -1,48 +1,47 @@
 
-// const BASE_URL = 'https://callboard-backend.herokuapp.com/call/categories';
-const BASE_URL =  'https://callboard-backend.herokuapp.com/call?';
-
-// const API_KEY = '19172915-1886b55ac07c270b02db4da6f';
-//  должен еще быть импорт алертов из нотифай
+const BASE_URL = 'https://callboard-backend.herokuapp.com/call?';
+import { fetchOnError } from './vi-getProductsGallery';
 
 
-export default class GetProduct {
+export default class GetProducts {
     constructor() {
-        // this.searchQuery = '';
         this.page = 1;
-        // this.key = API_KEY
-        // this.perpage = perpage;
+        this.request = '';
+        this.categoryName = '';
     }
-    
 
-    fetchProduct() {
+    fetchCategoryList() {
         const url = `${BASE_URL}page=${this.page}`;
 
+        // const url = `${RUS_URL}`;
+        // const url = `${EN_URL}`;
         return fetch(url)
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-                            }
-           return fetchOnError('error'+ response.status)
-        })
-        
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                return fetchOnError('error' + response.status)
+            })
     };
+
+    fetchCategoryContent() {
+        const url = `${BASE_URL}/specific/${this.request}`;
+        // const url = `${EN_URL}`;
+        return fetch(url)
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                return fetchOnError('error' + response.status)
+            });
+    };
+
+    
+    set newRequest(request) {
+        this.request = request;
+    }
 
     set pageNumber (newPage) {
         this.page = newPage;
     }
-    
-    pageReset() {
-        return this.page = 1
-    };
-
-
-    set query(newQuery) {
-        this.searchQuery = newQuery;
-    };
-
-    get query() {
-       return this.searchQuery
-    }
-
 }
