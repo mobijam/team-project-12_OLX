@@ -3,42 +3,40 @@
   <li class="cardset__item">
     <div class="card">
 
-    <a href="" class="cardset__link">
-      <picture class="cardset__picture">
-        <img class="cardset__image" 
-        src="{{imageUrls}}" alt="{{name}}" /> 
-      <div class="cardset__overlay">
-          <button style="padding: 10px;"><span class="material-icons cardset__icons" data-fav>favorite_border</span></button>
-        {{!-- <div class="icons-container">
-        </div> --}}
-          <span class="material-icons cardset__icons" data-edit>create</span>
-        {{!-- <div class="icons-container">
-        </div> --}}
-          <span class="material-icons cardset__icons" data-fullscreen>fullscreen</span>
-        {{!-- <div class="icons-container">
-        </div> --}}
-      </div>
-      </picture>
-     
-       <div class="cardset__description">
-        <h4 class="cardset__title">{{title}}</h4>
-        <p><span class="cardset__price del"><span class="cardset__price old">{{oldPrice}}</span></span><span
-            class="cardset__price new">{{price}}</span></p>
-      </div>
-    </a>
+      <a href="" class="cardset__link">
+        <picture class="cardset__picture">
+          <img class="cardset__image" src="{{imageUrls}}" alt="{{name}}" />
+          <div class="cardset__overlay">
+            <button><span class="material-icons cardset__icons" data-fav>favorite_border</span></button>
+            {{!-- <div class="icons-container">
+            </div> --}}
+            <button><span class="material-icons cardset__icons" data-edit>create</span>
+              {{!-- <div class="icons-container">
+              </div> --}}
+              <span class="material-icons cardset__icons" data-fullscreen>fullscreen</span></button>
+            {{!-- <div class="icons-container">
+            </div> --}}
+          </div>
+        </picture>
+
+        <div class="cardset__description">
+          <h4 class="cardset__title">{{title}}</h4>
+          <p><span class="cardset__price del"><span class="cardset__price old">{{oldPrice}}</span></span><span
+              class="cardset__price new">{{price}}</span></p>
+        </div>
+      </a>
     </div>
   </li>
   {{/each}}
 </ul>
-{{!-- 
+{{!--
 <ul class="cardset">
   {{#each this}}
   <li class="cardset__item">
-        <a href="" class="cardset__link">
-    <div class="cardset_inner">
-      <div class="cardset__picture">
-          <img class="cardset__image" 
-            src={{imageUrls}} alt={{title}} />
+    <a href="" class="cardset__link">
+      <div class="cardset_inner">
+        <div class="cardset__picture">
+          <img class="cardset__image" src={{imageUrls}} alt={{title}} />
           <div class="cardset__overlay">
             <div class="icons-container">
               <span class="material-icons cardset__icons">favorite_border</span>
@@ -50,15 +48,15 @@
               <span class="material-icons cardset__icons">fullscreen</span>
             </div>
           </div>
-      </div>
-      </div>
-    </div>
-        <div class="cardset__description">
-          <h4 class="cardset__title">{{description}}</h4>
-          <p><span class="cardset__price del"><span class="cardset__price old">{{oldPrice}}</span></span><span
-              class="cardset__price new">{{price}}</span></p>
         </div>
-        </a>
+      </div>
+      </div>
+      <div class="cardset__description">
+        <h4 class="cardset__title">{{description}}</h4>
+        <p><span class="cardset__price del"><span class="cardset__price old">{{oldPrice}}</span></span><span
+            class="cardset__price new">{{price}}</span></p>
+      </div>
+    </a>
   </li>
   {{/each}}
 </ul> --}}

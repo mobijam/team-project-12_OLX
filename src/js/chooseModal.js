@@ -1,6 +1,6 @@
 import { refs } from './modal';
 import search from '../templates/search.hbs';
-import login from '../templates/auth-form.hbs';
+import auth from '../templates/auth-form.hbs';
 // import makeCall from '../templates/add-modal.hbs';
 
 import userAuthorization from './authorization';
@@ -14,9 +14,9 @@ export default function chooseModal(checkType) {
     refs.modalContent.insertAdjacentHTML('beforeend', search());
   }
   if (checkType === 'login') {
-    // refs.modalContent.insertAdjacentHTML('beforeend', login());
-    // userAuthorization();
-    refs.modalContent.innerHTML = `<h1> Шаблон для модалки ${checkType} вставляется в chooseModal.js</h1>`;
+    refs.modalContent.insertAdjacentHTML('beforeend', auth());
+    userAuthorization();
+    // refs.modalContent.innerHTML = `<h1> Шаблон для модалки ${checkType} вставляется в chooseModal.js</h1>`;
   }
   if (checkType === 'logout') {
     // refs.modalContent.insertAdjacentHTML('beforeend', logOut());

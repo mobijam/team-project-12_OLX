@@ -1,23 +1,21 @@
-<div class="authorization-backdrop backdrop" data-close>
-    <div class="authorization-modal">
-        <button class="authorization-close-button"><span data-close class="material-icons">clear</span></button>
-        <h3 class="authorization-modal-header">Ви можете авторизуватися за допомогою Google Account:</h3>
-        <button class="google-auth"><svg class="google-auth-icon" width="18px" height="18px">
-                <use href="./img/Google-icon.svg#google">
-                </use>
-            </svg>
-            <p>Google</p>
-        </button>
-        <h3 class="authorization-modal-header">Або зайти за допомогою імейлу і пароля, попередньо зареєструвавшись:</h3>
-        <form action="authorization" class="authorization-form">
-            <input type="email" name="email" class="authorization-input" id="authorization-modal-email"
-                placeholder="E-mail">
-            <input type="password" name="password" class="authorization-input" id="authorization-modal-password"
-                placeholder="Password">
-            <div class="authorization-button-container"><button type="submit"
-                    class="authorization-modal-login authorization-button">Увійти</button>
-                <button type="submit" class="authorization-modal-register authorization-button">Зареєструватись</button>
-            </div>
-        </form>
+< <div class="authorization-modal">
+    {{!-- <button class="authorization-close-button"><span data-close class="material-icons">clear</span></button> --}}
+    <h3 class="authorization-modal-header">Ви можете авторизуватися за допомогою Google Account:</h3>
+    <button class="google-auth"><svg class="google-auth-icon" width="18px" height="18px">
+            <use href="./img/Google-icon.svg#google">
+            </use>
+        </svg>
+        <p>Google</p>
+    </button>
+    <h3 class="authorization-modal-header">Або зайти за допомогою імейлу і пароля, попередньо зареєструвавшись:</h3>
+    <form action="authorization" class="authorization-form">
+        <input type="email" name="email" class="authorization-input" id="authorization-modal-email"
+            placeholder="E-mail">
+        <input type="password" name="password" class="authorization-input" id="authorization-modal-password"
+            placeholder="Password">
+        <div class="authorization-button-container"><button type="submit"
+                class="authorization-modal-login authorization-button">Увійти</button>
+            <button type="submit" class="authorization-modal-register authorization-button">Зареєструватись</button>
+        </div>
+    </form>
     </div>
-</div>

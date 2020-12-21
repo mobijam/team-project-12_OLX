@@ -1,5 +1,7 @@
 .card {
   box-shadow: $shade;
+  overflow: hidden;
+  position: relative;
 }
 .cardset {
   display: flex;
@@ -9,23 +11,23 @@
   // @include Cardset-Responsive($tablet-min, 20px, 20px, 2);
   // @include Cardset-Responsive($desktop, 20px, 20px, 4);
 
-  margin: -15px;
+  margin: -10px;
 
   &__item {
-    position: relative;
+    // position: relative;
     width: 295px;
     height: 350px;
 
-    margin: 15px;
+    margin: 10px;
   }
   &__link {
-    overflow: hidden;
     cursor: crosshair;
     &:hover,
     &:focus {
       & .cardset__overlay {
-        transform: translateY(-100%);
+        // transform: translateY(-100%);
         opacity: 1;
+        visibility: visible;
       }
       & .cardset__icons {
         opacity: 1;
@@ -44,8 +46,8 @@
     // object-position: center center;
     // will-change: object-position;
     // transition: object-position $transition;
-    width: 275px;
-    height: 295px;
+    width: 295px;
+    height: 275px;
     // height: calc((100vw - 30px) * 275 / 290);
     // @media screen and (min-width: $tablet-min), screen and (min-width: $mobile) and (orientation: landscape) {
     //   height: calc((100vw - 64px) / 2 * 275 / 352);
@@ -59,6 +61,7 @@
     width: 100%;
     padding: 20px;
     background: $c-white;
+    border-top: 1px solid $c-bg-grey;
   }
   &__title {
     font-weight: 300;
@@ -68,19 +71,21 @@
   }
   &__overlay {
     position: absolute;
-    pointer-events: none;
+    top: 0;
+    left: 0;
     z-index: 1;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     align-items: flex-end;
-    height: 295px;
+    height: 275px;
     width: 100%;
     background: $c-overlay;
     padding: 20px;
     opacity: 0;
-    will-change: opacity, transform;
-    transition: transform $transition, opacity $transition;
+    visibility: hidden;
+    will-change: opacity, visibility;
+    transition: visibility $transition, opacity $transition;
     // & .icons-container {
     //   width: 24px;
     //   height: 24px;
@@ -112,11 +117,11 @@
     }
     &.old {
       color: $c-input-grey;
+      margin-right: 10px;
     }
     &.del {
       color: $c-black;
       text-decoration: line-through;
-      margin-right: 10px;
     }
   }
 }

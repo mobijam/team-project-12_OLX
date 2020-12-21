@@ -10,7 +10,7 @@ import filters from '../templates/filters.hbs';
 import cards from '../templates/item-card.hbs';
 import FetchApi from './fetchAPI';
 
-const categoriesList = document.querySelector('.category-list-container');
+const categoriesList = document.querySelector('.category-list');
 const filtersList = document.querySelector('.js-nav-menu');
 const mobileFiltersList = document.querySelector('.mobile-nav-menu');
 const siteLogo = document.getElementById('logo');
@@ -97,6 +97,8 @@ function singleCategoryMarkup(items) {
 
 function clearCategories() {
   categoriesList.innerHTML = '';
+  const pageList = document.querySelector('.js-page-list');
+  pageList.innerHTML = '';
 }
 
 createFilters();
